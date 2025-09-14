@@ -2,7 +2,7 @@ import React from 'react'
 function Header() {
   return (
     <header className="flex items-center justify-between py-6">
-      <div className="text-2xl font-bold">efatuix</div>
+      <div className="text-2xl font-bold">AntonyPeter</div>
       <nav>
         <ul className="flex gap-6">
           <li className="hover:text-green-400 cursor-pointer">Home</li>

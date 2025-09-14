@@ -2,8 +2,8 @@ import React from "react";
 function HeroSection() {
   return (
     <section className="flex flex-col items-center text-center py-16">
-      <h1 className="text-5xl font-bold mb-2">Hi! Efat</h1>
-      <p className="text-green-400 font-semibold mb-2">Product Designer</p>
+      <h1 className="text-5xl font-bold mb-2">Hello, I'm Antony Peter</h1>
+      <p className="text-green-400 font-semibold mb-2">Full Stack Software Developer</p>
       <p className="text-gray-300 mb-6">
         Designing user friendly interfaces and seamless user experiences.
       </p>
@@ -24,7 +24,7 @@ function HeroSection() {
           <div className="text-xs text-gray-400">Years of experience</div>
         </div>
         <div>
-          <span className="text-2xl font-bold">750+</span>
+          <span className="text-2xl font-bold">20+</span>
           <div className="text-xs text-gray-400">Project delivered</div>
         </div>
         <div>
