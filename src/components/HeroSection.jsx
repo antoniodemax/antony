@@ -7,6 +7,7 @@ function HeroSection() {
       <p className="text-gray-300 mb-6">
         Designing user friendly interfaces and seamless user experiences.
       </p>
+    
       <div className="flex gap-4 mb-4">
         <button className="bg-green-500 px-6 py-2 rounded text-white font-semibold hover:bg-green-600">
           Let's Talk
