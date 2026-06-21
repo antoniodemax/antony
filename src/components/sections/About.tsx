@@ -36,25 +36,27 @@ export default function About() {
             className="space-y-6"
           >
             {/* Profile image */}
-            <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-card border border-white/8 overflow-hidden max-w-sm shadow-[0_32px_64px_rgba(0,0,0,0.5)]">
+            <div className="relative mx-auto w-48 sm:w-64 lg:w-full lg:max-w-sm">
+              <div className="aspect-[3/4] rounded-2xl bg-card border border-white/8 overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.5)]">
                 <img
                   src="/antony.jpg"
                   alt="Antony Peter — Senior Full-Stack Software Engineer"
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {/* Subtle gold gradient overlay at bottom */}
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
 
               {/* Floating info card */}
-              <div className="absolute -bottom-4 -right-4 bg-card border border-white/8 rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-2 text-sm text-white font-medium">
-                  <MapPin size={14} className="text-accent" />
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-card border border-white/8 rounded-xl p-3 sm:p-4 shadow-lg">
+                <div className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium">
+                  <MapPin size={12} className="text-accent" />
                   Nairobi, Kenya
                 </div>
-                <div className="flex items-center gap-2 text-xs text-muted mt-1">
-                  <Calendar size={12} />
+                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-muted mt-1">
+                  <Calendar size={11} />
                   Available for projects
                 </div>
               </div>
