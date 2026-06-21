@@ -25,10 +25,10 @@ export default function Hero() {
           aria-hidden="true"
           className="w-full h-full object-cover object-center"
         />
-        {/* Base dark layer — ensures text is always readable */}
-        <div className="absolute inset-0 bg-black/80" />
-        {/* Directional gradient for depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/60 to-transparent" />
+        {/* Base dark layer */}
+        <div className="absolute inset-0 bg-black/50" />
+        {/* Directional gradient — dark on left for text, image visible on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/40 to-transparent" />
         {/* Bottom fade into site background */}
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bg to-transparent" />
         {/* Subtle gold tint */}
