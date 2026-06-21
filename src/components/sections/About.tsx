@@ -35,18 +35,16 @@ export default function About() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
-            {/* Profile image placeholder */}
+            {/* Profile image */}
             <div className="relative">
-              <div className="aspect-[4/5] rounded-2xl bg-card border border-white/5 overflow-hidden max-w-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-indigo-500/5" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <div className="w-24 h-24 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto">
-                      <span className="text-3xl font-bold text-accent">AP</span>
-                    </div>
-                    <p className="text-sm text-muted">Antony Peter</p>
-                  </div>
-                </div>
+              <div className="aspect-[4/5] rounded-2xl bg-card border border-white/8 overflow-hidden max-w-sm shadow-[0_32px_64px_rgba(0,0,0,0.5)]">
+                <img
+                  src="/antony.jpg"
+                  alt="Antony Peter — Senior Full-Stack Software Engineer"
+                  className="w-full h-full object-cover object-top"
+                />
+                {/* Subtle gold gradient overlay at bottom */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
               </div>
 
               {/* Floating info card */}
