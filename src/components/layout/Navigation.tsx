@@ -114,10 +114,9 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="py-4 text-xl font-medium text-white border-b border-white/5 flex items-center justify-between"
+                  className="py-3 text-base font-medium text-white border-b border-white/5"
                 >
                   {link.label}
-                  <span className="text-muted text-sm">0{i + 1}</span>
                 </motion.a>
               ))}
             </nav>
