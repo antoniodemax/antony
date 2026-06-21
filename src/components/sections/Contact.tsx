@@ -49,12 +49,25 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background glow */}
+      {/* Background image */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/6 rounded-full blur-[120px]" />
+        <img
+          src="/hero-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Base dark layer */}
+        <div className="absolute inset-0 bg-black/80" />
+        {/* Gradient — heavier on the right this time (bookend to hero) */}
+        <div className="absolute inset-0 bg-gradient-to-l from-bg via-bg/60 to-transparent" />
+        {/* Top fade from site background */}
+        <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-bg to-transparent" />
+        {/* Subtle gold tint */}
+        <div className="absolute inset-0 bg-accent/[0.03]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <SectionHeader
             label="Contact"
