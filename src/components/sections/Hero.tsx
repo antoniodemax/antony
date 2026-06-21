@@ -53,7 +53,7 @@ export default function Hero() {
             >
               Building digital products,{' '}
               <br className="hidden lg:block" />
-              <span className="text-gradient">web applications,</span>
+              <span className="text-white">web applications,</span>
               {' '}and{' '}
               <span className="text-gradient-gold">AI&#8209;powered</span>
               <br className="hidden lg:block" />
@@ -63,7 +63,7 @@ export default function Hero() {
             {/* Subtext */}
             <motion.p
               variants={item}
-              className="text-[0.95rem] sm:text-lg text-muted leading-relaxed max-w-lg"
+              className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
             >
               Senior Full-Stack Engineer — I help ambitious businesses design,
               build, and ship scalable software products that move the needle.
@@ -114,7 +114,7 @@ export default function Hero() {
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-lg sm:text-xl font-bold text-accent">{stat.value}</span>
-                  <span className="text-[11px] sm:text-xs text-muted">{stat.label}</span>
+                  <span className="text-[11px] sm:text-xs text-white/80">{stat.label}</span>
                 </div>
               ))}
             </motion.div>
