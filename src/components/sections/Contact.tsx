@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, MessageCircle, ArrowRight, Send } from 'lucide-react'
-import { GitHubIcon, LinkedInIcon } from '../ui/Icons'
+import { Mail, ArrowRight, Send } from 'lucide-react'
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Icons'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 
@@ -15,20 +15,26 @@ const channels = [
   {
     icon: LinkedInIcon,
     label: 'LinkedIn',
-    value: '/in/antonypeter',
-    href: 'https://linkedin.com/in/antonypeter',
+    value: 'antony-peter-96318a338',
+    href: 'https://www.linkedin.com/in/antony-peter-96318a338',
   },
   {
     icon: GitHubIcon,
     label: 'GitHub',
-    value: '@antonypeter',
-    href: 'https://github.com/antonypeter',
+    value: '@antoniodemax',
+    href: 'https://github.com/antoniodemax',
   },
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: 'WhatsApp',
-    value: '+254 700 000 000',
-    href: 'https://wa.me/254700000000',
+    value: 'Chat on WhatsApp',
+    href: 'https://web.whatsapp.com/',
+  },
+  {
+    icon: InstagramIcon,
+    label: 'Instagram',
+    value: '@antony.peter',
+    href: 'https://www.instagram.com/',
   },
 ]
 

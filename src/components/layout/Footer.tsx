@@ -1,11 +1,12 @@
-import { Mail, MessageCircle } from 'lucide-react'
-import { GitHubIcon, LinkedInIcon } from '../ui/Icons'
+import { Mail } from 'lucide-react'
+import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Icons'
 
 const socials = [
-  { icon: GitHubIcon, href: 'https://github.com/antonypeter', label: 'GitHub' },
-  { icon: LinkedInIcon, href: 'https://linkedin.com/in/antonypeter', label: 'LinkedIn' },
+  { icon: GitHubIcon, href: 'https://github.com/antoniodemax', label: 'GitHub' },
+  { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/antony-peter-96318a338', label: 'LinkedIn' },
+  { icon: WhatsAppIcon, href: 'https://web.whatsapp.com/', label: 'WhatsApp' },
+  { icon: InstagramIcon, href: 'https://www.instagram.com/', label: 'Instagram' },
   { icon: Mail, href: 'mailto:hello@antonypeter.dev', label: 'Email' },
-  { icon: MessageCircle, href: 'https://wa.me/254700000000', label: 'WhatsApp' },
 ]
 
 export default function Footer() {
