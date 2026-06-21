@@ -11,6 +11,23 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: 'basic-website',
+    title: 'Basic Website',
+    description:
+      'A clean, professional web presence for individuals and small businesses — fast to launch, mobile-friendly, and built to impress.',
+    kes: 'KES 30,000+',
+    usd: 'USD 230+',
+    pricingType: 'starting',
+    features: [
+      'Up to 5 pages',
+      'Mobile-responsive design',
+      'Contact form',
+      'Basic SEO setup',
+      'Social media links',
+      'Fast delivery (1–2 weeks)',
+    ],
+  },
+  {
     id: 'business-website',
     title: 'Business Website',
     description:
@@ -43,7 +60,6 @@ export const services: Service[] = [
       'Discount & promotions engine',
       'Mobile-optimised checkout',
     ],
-    recommended: true,
   },
   {
     id: 'web-application',

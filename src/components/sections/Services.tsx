@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Check, Sparkles } from 'lucide-react'
+import { Check } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 import { services } from '../../data/services'
@@ -11,20 +11,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className={`relative flex flex-col rounded-2xl border p-6 transition-all duration-300 ${
-        service.recommended
-          ? 'border-accent/30 bg-accent/5 shadow-gold'
-          : 'border-white/5 bg-card hover:border-white/10'
-      }`}
+      className="relative flex flex-col rounded-2xl border border-white/5 bg-card hover:border-white/10 p-6 transition-all duration-300"
     >
-      {service.recommended && (
-        <div className="absolute -top-3 left-6">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent text-black text-[11px] font-bold uppercase tracking-wide">
-            <Sparkles size={10} />
-            Most Popular
-          </span>
-        </div>
-      )}
 
       <div className="flex-1 space-y-4">
         <div>
@@ -79,7 +67,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             e.preventDefault()
             document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
           }}
-          variant={service.recommended ? 'primary' : 'secondary'}
+          variant="secondary"
           className="w-full"
           size="md"
         >
@@ -102,7 +90,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 mt-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mt-8">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
