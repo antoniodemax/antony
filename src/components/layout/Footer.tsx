@@ -4,7 +4,7 @@ import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Ico
 const socials = [
   { icon: GitHubIcon, href: 'https://github.com/antoniodemax', label: 'GitHub' },
   { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/antony-peter-96318a338', label: 'LinkedIn' },
-  { icon: WhatsAppIcon, href: 'https://web.whatsapp.com/', label: 'WhatsApp' },
+  { icon: WhatsAppIcon, href: 'https://wa.me/254741052614', label: 'WhatsApp' },
   { icon: InstagramIcon, href: 'https://www.instagram.com/', label: 'Instagram' },
   { icon: Mail, href: 'mailto:hello@antonypeter.dev', label: 'Email' },
 ]

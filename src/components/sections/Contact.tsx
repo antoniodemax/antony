@@ -27,8 +27,8 @@ const channels = [
   {
     icon: WhatsAppIcon,
     label: 'WhatsApp',
-    value: 'Chat on WhatsApp',
-    href: 'https://web.whatsapp.com/',
+    value: '+254 741 052 614',
+    href: 'https://wa.me/254741052614',
   },
   {
     icon: InstagramIcon,
