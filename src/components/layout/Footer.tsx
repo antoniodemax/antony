@@ -1,0 +1,56 @@
+import { Mail, MessageCircle } from 'lucide-react'
+import { GitHubIcon, LinkedInIcon } from '../ui/Icons'
+
+const socials = [
+  { icon: GitHubIcon, href: 'https://github.com/antonypeter', label: 'GitHub' },
+  { icon: LinkedInIcon, href: 'https://linkedin.com/in/antonypeter', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:hello@antonypeter.dev', label: 'Email' },
+  { icon: MessageCircle, href: 'https://wa.me/254700000000', label: 'WhatsApp' },
+]
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-white/5 bg-bg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand */}
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-black font-bold text-sm flex-shrink-0">
+              AP
+            </div>
+            <div>
+              <p className="font-semibold text-white text-sm">Antony Peter</p>
+              <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
+            </div>
+          </div>
+
+          {/* Tagline */}
+          <p className="text-sm text-muted text-center">
+            Building scalable digital products.
+          </p>
+
+          {/* Socials */}
+          <div className="flex items-center gap-3">
+            {socials.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-9 h-9 rounded-lg border border-white/8 flex items-center justify-center text-muted hover:text-white hover:border-white/20 transition-all duration-200"
+              >
+                <Icon size={15} className="text-current" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-muted/60">© 2026 Antony Peter. All rights reserved.</p>
+          <p className="text-xs text-muted/40">Kenya → Global</p>
+        </div>
+      </div>
+    </footer>
+  )
+}

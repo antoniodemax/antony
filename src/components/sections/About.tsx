@@ -1,0 +1,154 @@
+import { motion } from 'framer-motion'
+import { MapPin, Calendar, Target, Lightbulb } from 'lucide-react'
+import SectionHeader from '../ui/SectionHeader'
+import Button from '../ui/Button'
+
+const experience = [
+  { period: '2023 — Present', role: 'Senior Full-Stack Engineer & Consultant', company: 'Independent' },
+  { period: '2022 — 2023', role: 'Full-Stack Developer', company: 'Product Studio' },
+  { period: '2021 — 2022', role: 'Software Engineer', company: 'Tech Startup' },
+]
+
+const pillars = [
+  {
+    icon: Target,
+    title: 'Mission',
+    text: 'To help ambitious startups, organisations, and businesses build digital products that create real value — software that grows revenue, saves time, and positions them as leaders in their markets.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Philosophy',
+    text: 'Great software is the intersection of clear thinking and strong execution. I believe in building less, building right, and iterating with intention. Complexity is the enemy of scale.',
+  },
+]
+
+export default function About() {
+  return (
+    <section id="about" className="py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left: Image + quick facts */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-6"
+          >
+            {/* Profile image placeholder */}
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-2xl bg-card border border-white/5 overflow-hidden max-w-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-indigo-500/5" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center space-y-2">
+                    <div className="w-24 h-24 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center mx-auto">
+                      <span className="text-3xl font-bold text-accent">AP</span>
+                    </div>
+                    <p className="text-sm text-muted">Antony Peter</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating info card */}
+              <div className="absolute -bottom-4 -right-4 bg-card border border-white/8 rounded-xl p-4 shadow-lg">
+                <div className="flex items-center gap-2 text-sm text-white font-medium">
+                  <MapPin size={14} className="text-accent" />
+                  Nairobi, Kenya
+                </div>
+                <div className="flex items-center gap-2 text-xs text-muted mt-1">
+                  <Calendar size={12} />
+                  Available for projects
+                </div>
+              </div>
+            </div>
+
+            {/* Experience timeline */}
+            <div className="space-y-3 pt-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted/50">Experience</p>
+              {experience.map((exp, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.1 }}
+                  className="flex items-start gap-3"
+                >
+                  <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
+                  <div>
+                    <p className="text-sm font-medium text-white">{exp.role}</p>
+                    <p className="text-xs text-muted">{exp.company} · {exp.period}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right: Story + Mission + Philosophy */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            className="space-y-10"
+          >
+            <SectionHeader
+              label="About Me"
+              title="Engineering at the intersection of product and impact"
+              align="left"
+            />
+
+            <div className="space-y-4 text-muted leading-relaxed">
+              <p>
+                I'm Antony Peter — a Senior Full-Stack Software Engineer based in Nairobi, Kenya,
+                building digital products for businesses that refuse to accept mediocrity in their
+                technology.
+              </p>
+              <p>
+                Over the past 3+ years, I've gone from shipping my first production app to
+                architecting and delivering complex SaaS platforms, e-commerce systems, real-time
+                dashboards, and AI-integrated products for clients across Africa and beyond.
+              </p>
+              <p>
+                My edge isn't just technical depth — it's the ability to understand your business
+                model, align technology decisions with your goals, and execute with the discipline
+                of an engineer who's seen what happens when shortcuts are taken.
+              </p>
+              <p>
+                I've built Crevia from the ground up: a B2B SaaS platform for creative professionals
+                handling contracts, invoicing, KRA compliance, client workspaces, and AI-assisted
+                deal structuring. It's the product I'm most proud of, and it reflects exactly how
+                I approach every client engagement.
+              </p>
+            </div>
+
+            {/* Mission + Philosophy cards */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {pillars.map(({ icon: Icon, title, text }) => (
+                <div
+                  key={title}
+                  className="p-5 rounded-xl border border-white/5 bg-card space-y-3"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <Icon size={15} className="text-accent" />
+                  </div>
+                  <h4 className="text-sm font-semibold text-white">{title}</h4>
+                  <p className="text-xs text-muted leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+
+            <Button as="a" href="#contact" size="md"
+              onClick={e => {
+                e.preventDefault()
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+            >
+              Let's Build Together
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
