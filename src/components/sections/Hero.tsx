@@ -113,8 +113,8 @@ export default function Hero() {
               className="flex items-center gap-6 sm:gap-10 pt-4 border-t border-white/5 w-full lg:justify-center"
             >
               {[
-                { value: '10+', label: 'Projects Delivered' },
-                { value: '3+', label: 'Years Experience' },
+                { value: '4+', label: 'Projects Delivered' },
+                { value: '2+', label: 'Years Experience' },
                 { value: '100%', label: 'Client Satisfaction' },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">

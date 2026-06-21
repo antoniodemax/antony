@@ -4,13 +4,13 @@ import { Code2, Globe, Layers, Star } from 'lucide-react'
 const stats = [
   {
     icon: Layers,
-    value: '10+',
+    value: '4+',
     label: 'Projects Delivered',
     sub: 'Across diverse industries',
   },
   {
     icon: Star,
-    value: '3+',
+    value: '2+',
     label: 'Years Experience',
     sub: 'Production-grade engineering',
   },
