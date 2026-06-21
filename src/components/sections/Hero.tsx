@@ -157,18 +157,6 @@ export default function Hero() {
             animate="animate"
             className="flex flex-col gap-6 max-w-2xl"
           >
-            <motion.div variants={item} className="flex items-center gap-3">
-              <img
-                src="/antony.jpg"
-                alt="Antony Peter"
-                className="w-10 h-10 rounded-full object-cover object-top border-2 border-accent/30"
-              />
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent text-xs font-medium tracking-wide">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                Available for new projects
-              </span>
-            </motion.div>
-
             <motion.h1
               variants={item}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.5rem] font-bold leading-[1.05] tracking-tight"
