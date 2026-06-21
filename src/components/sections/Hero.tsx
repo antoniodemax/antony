@@ -17,30 +17,25 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden pt-20"
     >
-      {/* Background effects */}
+      {/* Background image */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          animate={{ x: [0, 30, 0], y: [0, -20, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]"
+        <img
+          src="/hero-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-center"
         />
-        <motion.div
-          animate={{ x: [0, -20, 0], y: [0, 30, 0], scale: [1, 1.05, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-          className="absolute bottom-1/3 left-1/4 w-[400px] h-[400px] bg-indigo-500/4 rounded-full blur-[100px]"
-        />
-        {/* Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-            backgroundSize: '72px 72px',
-          }}
-        />
+        {/* Base dark layer — ensures text is always readable */}
+        <div className="absolute inset-0 bg-black/80" />
+        {/* Directional gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/60 to-transparent" />
+        {/* Bottom fade into site background */}
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bg to-transparent" />
+        {/* Subtle gold tint */}
+        <div className="absolute inset-0 bg-accent/[0.03]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex justify-center py-20 lg:py-32">
           <motion.div
             variants={container}
