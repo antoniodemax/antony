@@ -41,38 +41,49 @@ export default function Hero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex justify-center py-16 lg:py-32">
+        <div className="flex justify-center py-20 lg:py-32">
           <motion.div
             variants={container}
             initial="initial"
             animate="animate"
-            className="flex flex-col gap-6 max-w-3xl text-center items-center"
+            className="flex flex-col gap-7 w-full max-w-6xl
+                       text-left items-start
+                       lg:text-center lg:items-center"
           >
+            {/* Heading */}
             <motion.h1
               variants={item}
-              className="text-4xl sm:text-5xl lg:text-6xl xl:text-[4.75rem] font-bold leading-[1.05] tracking-tight"
+              className="text-[2.1rem] sm:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]
+                         font-bold leading-[1.1] tracking-[-0.03em] w-full"
             >
-              Building digital products,
-              <span className="block text-gradient"> web applications,</span>
-              and{' '}
+              Building digital products,{' '}
+              <br className="hidden lg:block" />
+              <span className="text-gradient">web applications,</span>
+              {' '}and{' '}
               <span className="text-gradient-gold">AI&#8209;powered</span>
+              <br className="hidden lg:block" />
               {' '}experiences.
             </motion.h1>
 
+            {/* Subtext */}
             <motion.p
               variants={item}
-              className="text-lg sm:text-xl text-muted leading-relaxed max-w-2xl"
+              className="text-[0.95rem] sm:text-lg text-muted leading-relaxed max-w-lg"
             >
-              Senior Full-Stack Software Engineer specializing in scalable systems, modern
-              web technologies, product development, and digital transformation. I help
-              ambitious businesses build software that actually moves the needle.
+              Senior Full-Stack Engineer — I help ambitious businesses design,
+              build, and ship scalable software products that move the needle.
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-wrap gap-3 pt-2 justify-center">
+            {/* CTAs */}
+            <motion.div
+              variants={item}
+              className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto lg:justify-center"
+            >
               <Button
                 as="a"
                 href="#work"
                 size="lg"
+                className="w-full sm:w-auto justify-center"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })
@@ -85,6 +96,7 @@ export default function Hero() {
                 href="#contact"
                 variant="secondary"
                 size="lg"
+                className="w-full sm:w-auto justify-center"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
@@ -95,18 +107,19 @@ export default function Hero() {
               </Button>
             </motion.div>
 
+            {/* Stats */}
             <motion.div
               variants={item}
-              className="flex items-center gap-8 pt-4 border-t border-white/5"
+              className="flex items-center gap-6 sm:gap-10 pt-4 border-t border-white/5 w-full lg:justify-center"
             >
               {[
                 { value: '10+', label: 'Projects Delivered' },
                 { value: '3+', label: 'Years Experience' },
                 { value: '100%', label: 'Client Satisfaction' },
               ].map((stat, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <span className="text-xl font-bold text-accent">{stat.value}</span>
-                  <span className="text-xs text-muted">{stat.label}</span>
+                <div key={i} className="flex flex-col">
+                  <span className="text-lg sm:text-xl font-bold text-accent">{stat.value}</span>
+                  <span className="text-[11px] sm:text-xs text-muted">{stat.label}</span>
                 </div>
               ))}
             </motion.div>
