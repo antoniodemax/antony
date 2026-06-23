@@ -65,7 +65,7 @@ export default function Hero() {
               variants={item}
               className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
             >
-              Senior Full-Stack Software Engineer — I help ambitious businesses design,
+              Senior Full-Stack Software Engineer & AI Engineer — I help ambitious businesses design,
               build, and ship scalable software products that move the needle.
             </motion.p>
 

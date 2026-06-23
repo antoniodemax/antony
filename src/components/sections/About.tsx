@@ -103,7 +103,7 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Software Engineering Certificate</p>
+                  <p className="text-sm font-medium text-white">Software Engineering & AI Engineering Certificate</p>
                   <p className="text-xs text-muted">Moringa School</p>
                 </div>
               </div>
