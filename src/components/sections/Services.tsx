@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Check } from 'lucide-react'
+import { Check, Clock } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 import { services } from '../../data/services'
@@ -36,6 +36,15 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
               <p className="text-sm text-muted">{service.usd}</p>
             </div>
           )}
+        </div>
+
+        {/* Timeline */}
+        <div className="rounded-lg bg-accent/5 border border-accent/15 px-3 py-2.5 space-y-1">
+          <div className="flex items-center gap-1.5">
+            <Clock size={11} className="text-accent flex-shrink-0" />
+            <span className="text-xs font-semibold text-accent">{service.timeline}</span>
+          </div>
+          <p className="text-[11px] text-muted leading-relaxed">{service.timelineNote}</p>
         </div>
 
         <div className="border-t border-white/5 pt-4">

@@ -6,27 +6,12 @@ export interface Service {
   usd: string
   pricingType: 'starting' | 'custom' | 'hourly'
   features: string[]
+  timeline: string
+  timelineNote: string
   recommended?: boolean
 }
 
 export const services: Service[] = [
-  {
-    id: 'basic-website',
-    title: 'Basic Website',
-    description:
-      'A clean, professional web presence for individuals and small businesses — fast to launch, mobile-friendly, and built to impress.',
-    kes: 'KES 30,000+',
-    usd: 'USD 230+',
-    pricingType: 'starting',
-    features: [
-      'Up to 5 pages',
-      'Mobile-responsive design',
-      'Contact form',
-      'Basic SEO setup',
-      'Social media links',
-      'Fast delivery (1–2 weeks)',
-    ],
-  },
   {
     id: 'business-website',
     title: 'Business Website',
@@ -43,6 +28,8 @@ export const services: Service[] = [
       'Contact & lead capture forms',
       'Analytics setup',
     ],
+    timeline: '3–5 Weeks',
+    timelineNote: 'Includes strategy, custom UI/UX design, mobile optimization, and CMS integration.',
   },
   {
     id: 'ecommerce',
@@ -60,6 +47,8 @@ export const services: Service[] = [
       'Discount & promotions engine',
       'Mobile-optimised checkout',
     ],
+    timeline: '6–8 Weeks',
+    timelineNote: 'Includes secure payment routing, custom product architecture, and checkout optimization.',
   },
   {
     id: 'web-application',
@@ -77,6 +66,8 @@ export const services: Service[] = [
       'Real-time features',
       'Deployment & DevOps setup',
     ],
+    timeline: '8–12+ Weeks',
+    timelineNote: 'Includes bespoke system architecture, database design, user authentication, and DevOps setup.',
   },
   {
     id: 'ai-consulting',
@@ -94,5 +85,7 @@ export const services: Service[] = [
       'Legacy system modernisation',
       'Technical due diligence',
     ],
+    timeline: '4–10+ Weeks',
+    timelineNote: 'Varies based on requirements, from strategic roadmapping to full LLM and custom agent integration.',
   },
 ]
