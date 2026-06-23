@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Button from '../ui/Button'
@@ -15,11 +15,33 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [compact, setCompact] = useState(false)
+
+  const containerRef = useRef<HTMLDivElement>(null)
+  const logoRef = useRef<HTMLAnchorElement>(null)
+  const measureRef = useRef<HTMLDivElement>(null) // hidden, always in DOM
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const checkFit = () => {
+      if (!containerRef.current) return
+      const available = containerRef.current.offsetWidth
+      const logoW = logoRef.current?.offsetWidth ?? 180
+      const linksW = measureRef.current?.scrollWidth ?? 520
+      const ctaW = 200 // "Book a Consultation" button is ~200px
+      const padding = 96  // breathing room between sections
+      setCompact(logoW + linksW + ctaW + padding > available)
+    }
+
+    const ro = new ResizeObserver(checkFit)
+    if (containerRef.current) ro.observe(containerRef.current)
+    checkFit()
+    return () => ro.disconnect()
   }, [])
 
   const handleNavClick = (href: string) => {
@@ -33,78 +55,95 @@ export default function Navigation() {
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-bg/80 backdrop-blur-xl border-b border-white/5'
-            : 'bg-transparent'
+          scrolled ? 'bg-bg/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
         }`}
       >
-        <div className="w-full px-6 sm:px-10 lg:px-16">
+        <div ref={containerRef} className="w-full px-6 sm:px-10 lg:px-16">
           <div className="flex items-center h-20">
-            {/* Logo — hard left */}
+
+            {/* Logo — always hard left */}
             <a
+              ref={logoRef}
               href="#home"
               onClick={e => { e.preventDefault(); handleNavClick('#home') }}
-              className="flex-shrink-0 mr-auto"
+              className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
               <img
                 src="/logo.jpg"
                 alt="Antony Peter"
-                className="h-11 md:h-14 w-auto object-contain brightness-110"
+                className="h-11 lg:h-14 w-auto object-contain brightness-110"
               />
             </a>
 
-            {/* Desktop Links — truly centered */}
-            <div className="hidden md:flex items-center gap-14 absolute left-1/2 -translate-x-1/2">
+            {/* Hidden measurement clone — always in DOM so ResizeObserver can read real link widths */}
+            <div
+              ref={measureRef}
+              aria-hidden="true"
+              className="absolute invisible pointer-events-none flex items-center gap-14"
+            >
               {navLinks.map(link => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="text-sm tracking-wide text-muted hover:text-white transition-colors duration-200"
-                >
+                <span key={link.href} className="text-base font-medium tracking-widest whitespace-nowrap">
                   {link.label}
-                </a>
+                </span>
               ))}
             </div>
 
-            {/* Desktop CTA — hard right */}
-            <div className="hidden md:flex items-center ml-auto">
-              <Button
-                as="a"
-                href="#contact"
-                onClick={e => { e.preventDefault(); handleNavClick('#contact') }}
-                size="sm"
-              >
-                Book a Consultation
-              </Button>
+            {/* Desktop nav links — absolutely centered, hidden when compact */}
+            {!compact && (
+              <div className="flex items-center gap-14 absolute left-1/2 -translate-x-1/2">
+                {navLinks.map(link => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
+                    className="text-base font-medium tracking-widest text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {/* Right side — CTA or hamburger */}
+            <div className="ml-auto flex items-center">
+              {!compact ? (
+                <Button
+                  as="a"
+                  href="#contact"
+                  onClick={e => { e.preventDefault(); handleNavClick('#contact') }}
+                  size="sm"
+                >
+                  Book a Consultation
+                </Button>
+              ) : (
+                <button
+                  className="p-2 text-white hover:text-white/70 transition-colors"
+                  onClick={() => setMobileOpen(v => !v)}
+                  aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                >
+                  {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+                </button>
+              )}
             </div>
 
-            {/* Mobile Toggle */}
-            <button
-              className="md:hidden p-2 text-muted hover:text-white transition-colors ml-auto"
-              onClick={() => setMobileOpen(v => !v)}
-              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            >
-              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Compact / mobile overlay menu */}
       <AnimatePresence>
-        {mobileOpen && (
+        {mobileOpen && compact && (
           <motion.div
             initial={{ opacity: 0, y: -16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg/98 backdrop-blur-xl pt-20 px-6 flex flex-col md:hidden"
+            className="fixed inset-0 z-40 bg-bg/98 backdrop-blur-xl pt-24 px-8 flex flex-col"
           >
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.href}
@@ -113,7 +152,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="py-3 text-base font-medium text-white border-b border-white/5"
+                  className="py-4 text-lg font-medium text-white border-b border-white/5 tracking-wide"
                 >
                   {link.label}
                 </motion.a>
