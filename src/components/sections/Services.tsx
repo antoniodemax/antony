@@ -7,68 +7,63 @@ import { services } from '../../data/services'
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-      className="relative flex flex-col rounded-2xl border border-white/5 bg-card hover:border-white/10 p-6 transition-all duration-300"
+      transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
+      className="group relative flex flex-col rounded-2xl border border-white/8 bg-card overflow-hidden hover:border-accent/30 transition-all duration-500"
     >
+      {/* Gold top accent bar */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-accent/80 via-accent to-accent/20" />
 
-      <div className="flex-1 space-y-4">
-        <div>
-          <h3 className="text-lg font-bold text-white">{service.title}</h3>
-          <p className="text-sm text-muted mt-2 leading-relaxed">{service.description}</p>
+      <div className="flex flex-col flex-1 p-8 gap-6">
+
+        {/* Header */}
+        <div className="space-y-2">
+          <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors duration-300">
+            {service.title}
+          </h3>
+          <p className="text-sm text-muted leading-relaxed">{service.description}</p>
         </div>
 
         {/* Price */}
-        <div>
+        <div className="pb-6 border-b border-white/5">
           {service.pricingType === 'custom' ? (
             <div>
-              <p className="text-2xl font-bold text-white">Custom Quote</p>
-              <p className="text-xs text-muted mt-1">Scoped to your requirements</p>
+              <p className="text-3xl font-bold text-white tracking-tight">Custom Quote</p>
+              <p className="text-xs text-muted mt-1.5 uppercase tracking-widest">Scoped to your requirements</p>
             </div>
           ) : (
             <div>
-              <p className="text-xs text-muted/60 uppercase tracking-wider mb-1">Starting at</p>
-              <p className="text-2xl font-bold text-white">
-                {service.kes}
-              </p>
-              <p className="text-sm text-muted">{service.usd}</p>
+              <p className="text-[11px] text-muted/50 uppercase tracking-widest mb-2">Starting at</p>
+              <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
+              <p className="text-sm text-muted mt-1">{service.usd}</p>
             </div>
           )}
         </div>
 
         {/* Timeline */}
-        <div className="rounded-lg bg-accent/5 border border-accent/15 px-3 py-2.5 space-y-1">
-          <div className="flex items-center gap-1.5">
-            <Clock size={11} className="text-accent flex-shrink-0" />
-            <span className="text-xs font-semibold text-accent">{service.timeline}</span>
+        <div className="flex items-start gap-3 px-4 py-3 rounded-xl bg-accent/5 border border-accent/15">
+          <Clock size={14} className="text-accent mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-accent">{service.timeline}</p>
+            <p className="text-xs text-muted mt-0.5 leading-relaxed">{service.timelineNote}</p>
           </div>
-          <p className="text-[11px] text-muted leading-relaxed">{service.timelineNote}</p>
         </div>
 
-        <div className="border-t border-white/5 pt-4">
-          <ul className="space-y-2.5">
-            {service.features.map(feature => (
-              <li key={feature} className="flex items-start gap-2.5">
-                <div
-                  className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                    service.recommended ? 'bg-accent/20' : 'bg-white/8'
-                  }`}
-                >
-                  <Check
-                    size={9}
-                    className={service.recommended ? 'text-accent' : 'text-muted'}
-                  />
-                </div>
-                <span className="text-sm text-muted">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+        {/* Features */}
+        <ul className="space-y-3 flex-1">
+          {service.features.map(feature => (
+            <li key={feature} className="flex items-start gap-3">
+              <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Check size={10} className="text-accent" />
+              </div>
+              <span className="text-sm text-muted leading-relaxed">{feature}</span>
+            </li>
+          ))}
+        </ul>
 
-      <div className="mt-6">
+        {/* CTA */}
         <Button
           as="a"
           href="#contact"
@@ -76,12 +71,13 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             e.preventDefault()
             document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
           }}
-          variant="secondary"
-          className="w-full"
+          variant={service.recommended ? 'primary' : 'secondary'}
+          className="w-full mt-2"
           size="md"
         >
           {service.pricingType === 'custom' ? 'Discuss Your Project' : 'Get Started'}
         </Button>
+
       </div>
     </motion.div>
   )
@@ -89,8 +85,9 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-surface/30">
+    <section id="services" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="mb-16 text-center">
           <SectionHeader
             label="Services & Investment"
@@ -99,7 +96,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mt-8">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
@@ -109,12 +106,21 @@ export default function Services() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-sm text-muted/60 mt-8"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-center text-sm text-muted/50 mt-10 max-w-2xl mx-auto"
         >
           Every project is unique. Final investment depends on scope, integrations, timelines,
-          and business requirements. All prices are estimates. Book a consultation for an exact quote.
+          and business requirements. All prices are estimates.{' '}
+          <a
+            href="#contact"
+            onClick={e => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }) }}
+            className="text-accent hover:text-white transition-colors underline underline-offset-2"
+          >
+            Book a consultation
+          </a>{' '}
+          for an exact quote.
         </motion.p>
+
       </div>
     </section>
   )
