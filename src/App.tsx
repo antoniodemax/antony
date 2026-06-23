@@ -1,7 +1,6 @@
 import Navigation from './components/layout/Navigation'
 import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
-import Credibility from './components/sections/Credibility'
 import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
 import WhyMe from './components/sections/WhyMe'
@@ -18,7 +17,6 @@ export default function App() {
       <Navigation />
       <main>
         <Hero />          {/* Home */}
-        <Credibility />   {/* trust signals — right after hero */}
         <About />         {/* About */}
         <TechStack />     {/* skills — under About */}
         <Services />      {/* Services */}

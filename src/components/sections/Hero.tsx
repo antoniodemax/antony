@@ -111,6 +111,7 @@ export default function Hero() {
                 { value: '2+', label: 'Projects Delivered' },
                 { value: '2+', label: 'Years Experience' },
                 { value: '100%', label: 'Client Satisfaction' },
+                { value: 'Kenya', label: '→ Global' },
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-lg sm:text-xl font-bold text-accent">{stat.value}</span>
