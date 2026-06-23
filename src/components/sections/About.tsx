@@ -69,20 +69,20 @@ export default function About() {
           >
             <SectionHeader
               label="About Me"
-              title="Engineering at the intersection of product and impact"
+              title="Engineering at the intersection of product and impact."
               align="left"
             />
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 I'm Antony Peter — a Senior Full-Stack Software Engineer based in Nairobi, Kenya,
-                building digital products for businesses that refuse to accept mediocrity in their
-                technology.
+                building scalable digital products for organizations that treat technology as a
+                competitive advantage.
               </p>
               <p>
-                Over the past 3+ years, I've gone from shipping my first production app to
+                Over the past 2 years, I've gone from shipping my first production app to
                 architecting and delivering complex SaaS platforms, e-commerce systems, real-time
-                dashboards, and AI-integrated products for clients across Africa and beyond.
+                dashboards, and AI-integrated products for clients across Kenya.
               </p>
               <p>
                 My edge isn't just technical depth — it's the ability to understand your business
@@ -90,11 +90,23 @@ export default function About() {
                 of an engineer who's seen what happens when shortcuts are taken.
               </p>
               <p>
-                I've built Crevia from the ground up: a B2B SaaS platform for creative professionals
-                handling contracts, invoicing, KRA compliance, client workspaces, and AI-assisted
-                deal structuring. It's the product I'm most proud of, and it reflects exactly how
-                I approach every client engagement.
+                As the Lead Developer at Crevia, I am building a B2B SaaS platform for business
+                professionals involving invoicing, client workspaces, and AI-assisted deal
+                structuring. It's the product I'm most proud of, and it reflects exactly how I
+                approach every client engagement.
               </p>
+            </div>
+
+            {/* Education */}
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted/50">Education</p>
+              <div className="flex items-start gap-3">
+                <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-medium text-white">Software Engineering Certificate</p>
+                  <p className="text-xs text-muted">Moringa School</p>
+                </div>
+              </div>
             </div>
 
             {/* Mission + Philosophy cards */}
