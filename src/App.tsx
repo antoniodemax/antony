@@ -17,17 +17,17 @@ export default function App() {
     <div className="bg-bg text-white min-h-screen font-sans antialiased">
       <Navigation />
       <main>
-        <Hero />
-        <Credibility />
-        <Projects />
-        <Services />
-        <WhyMe />
-        <Testimonials />
-        <About />
-        <TechStack />
-        <Insights />
-        <FAQ />
-        <Contact />
+        <Hero />          {/* Home */}
+        <Credibility />   {/* trust signals — right after hero */}
+        <About />         {/* About */}
+        <TechStack />     {/* skills — under About */}
+        <Services />      {/* Services */}
+        <WhyMe />         {/* supports Services */}
+        <Projects />      {/* Work */}
+        <Testimonials />  {/* social proof — under Work */}
+        <Insights />      {/* Insights */}
+        <FAQ />           {/* before Contact */}
+        <Contact />       {/* Contact */}
       </main>
       <Footer />
     </div>
