@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, FileText, ArrowRight } from 'lucide-react'
-import { GitHubIcon } from '../ui/Icons'
+import { ExternalLink, ArrowRight } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import Badge from '../ui/Badge'
 import { projects } from '../../data/projects'
@@ -14,53 +13,22 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
       className="group relative bg-card rounded-2xl border border-white/5 overflow-hidden hover:border-white/10 transition-all duration-500"
     >
-      {/* Project Image */}
+      {/* Project Screenshot */}
       <div className={`relative h-52 sm:h-60 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-        {/* Abstract mock UI */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-30">
-          <div className="grid grid-cols-3 gap-2 w-3/4">
-            {Array.from({ length: 9 }).map((_, i) => (
-              <div
-                key={i}
-                className="h-6 rounded"
-                style={{ background: project.color, opacity: 0.3 + (i % 3) * 0.2 }}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Browser chrome overlay */}
-        <div className="absolute inset-4 bg-black/30 rounded-xl backdrop-blur-sm border border-white/10 overflow-hidden">
-          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/10 bg-black/20">
-            <div className="w-2 h-2 rounded-full bg-red-400/60" />
-            <div className="w-2 h-2 rounded-full bg-yellow-400/60" />
-            <div className="w-2 h-2 rounded-full bg-green-400/60" />
-            <div
-              className="ml-2 h-1.5 w-24 rounded-full"
-              style={{ background: project.color, opacity: 0.4 }}
-            />
-          </div>
-          <div className="p-3 space-y-2">
-            {Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="flex gap-2">
-                <div
-                  className="h-1.5 rounded-full"
-                  style={{
-                    width: `${60 + i * 15}%`,
-                    background: project.color,
-                    opacity: 0.2 + i * 0.1,
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          />
+        ) : null}
+        {/* Subtle overlay so the industry badge stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         {/* Industry badge */}
         <div className="absolute top-3 left-3">
           <span
-            className="px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wide"
-            style={{ background: `${project.color}22`, color: project.color, border: `1px solid ${project.color}33` }}
+            className="px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wide backdrop-blur-sm"
+            style={{ background: `${project.color}33`, color: project.color, border: `1px solid ${project.color}55` }}
           >
             {project.industry}
           </span>
@@ -100,30 +68,18 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
         {/* Actions */}
         <div className="flex items-center gap-2 pt-2 border-t border-white/5">
-          <a
-            href={project.liveUrl}
-            className="flex items-center gap-1.5 text-xs text-muted hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5"
-            aria-label={`View ${project.title} live`}
-          >
-            <ExternalLink size={13} />
-            View Project
-          </a>
-          <a
-            href={project.caseStudyUrl}
-            className="flex items-center gap-1.5 text-xs text-muted hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5"
-            aria-label={`${project.title} case study`}
-          >
-            <FileText size={13} />
-            Case Study
-          </a>
-          <a
-            href={project.githubUrl}
-            className="flex items-center gap-1.5 text-xs text-muted hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5"
-            aria-label={`${project.title} GitHub`}
-          >
-            <GitHubIcon size={13} />
-            GitHub
-          </a>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-accent hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5 font-medium"
+              aria-label={`View ${project.title} live`}
+            >
+              <ExternalLink size={13} />
+              View Live
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
@@ -138,7 +94,7 @@ export default function Projects() {
           <SectionHeader
             label="Featured Work"
             title="Products built with intention"
-            description="Selected projects spanning SaaS, e-commerce, analytics, and healthcare — each solving a real business problem with measurable outcomes."
+            description="Real products built and shipped — from a luxury fashion storefront to a full-stack B2B SaaS platform."
             align="left"
           />
           <motion.a

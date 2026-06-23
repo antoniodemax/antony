@@ -8,6 +8,7 @@ export interface Project {
   stack: string[]
   color: string
   gradient: string
+  image?: string
   liveUrl?: string
   caseStudyUrl?: string
   githubUrl?: string
@@ -16,7 +17,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'crevia',
-    title: 'Crevia Platform',
+    title: 'Crevia',
     industry: 'B2B SaaS / Creative Economy',
     tagline: 'The all-in-one business OS for creative professionals',
     problem:
@@ -26,56 +27,22 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Framer Motion'],
     color: '#D4AF37',
     gradient: 'from-amber-900/40 via-yellow-900/20 to-stone-900/40',
-    liveUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: '#',
+    image: '/project-crevia.png',
+    liveUrl: 'https://crevia.app/',
   },
   {
-    id: 'shopflow',
-    title: 'ShopFlow Commerce',
-    industry: 'E-Commerce / Retail Technology',
-    tagline: 'High-converting e-commerce with AI-powered recommendations',
+    id: 'millux',
+    title: 'Millux Collections',
+    industry: 'E-Commerce / Fashion & Luxury',
+    tagline: 'A premium digital storefront for a luxury fashion brand',
     problem:
-      'A regional retail chain needed to move from legacy spreadsheet management to a scalable digital storefront that could handle 10,000+ SKUs and real-time inventory sync across 5 branches.',
+      'A luxury fashion brand needed a high-end online presence that matched the prestige of its physical collections — fast, elegant, and built to convert discerning shoppers.',
     outcome:
-      'Increased online conversion rate by 34% and reduced cart abandonment by 28% within 3 months of launch through performance optimization and personalized product flows.',
-    stack: ['Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe'],
-    color: '#6366F1',
-    gradient: 'from-indigo-900/40 via-violet-900/20 to-slate-900/40',
-    liveUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    id: 'datapulse',
-    title: 'DataPulse Analytics',
-    industry: 'Business Intelligence / FinTech',
-    tagline: 'Real-time financial analytics dashboard for SMEs',
-    problem:
-      'A fintech startup needed a white-label analytics dashboard that could aggregate data from 7 different payment providers and display live business metrics to their 200+ merchant clients.',
-    outcome:
-      'Delivered a real-time dashboard processing 50,000+ daily transactions with sub-200ms query response times, enabling merchants to make data-driven decisions instantly.',
-    stack: ['React', 'TypeScript', 'FastAPI', 'Python', 'PostgreSQL', 'WebSockets'],
-    color: '#10B981',
-    gradient: 'from-emerald-900/40 via-teal-900/20 to-slate-900/40',
-    liveUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: '#',
-  },
-  {
-    id: 'healthlink',
-    title: 'HealthLink Pro',
-    industry: 'Healthcare / HealthTech',
-    tagline: 'Smart appointment and patient management system',
-    problem:
-      'A network of private clinics operated on paper-based patient records and manual scheduling, causing appointment conflicts, lost patient history, and significant revenue leakage.',
-    outcome:
-      'Digitized operations for 12 clinic branches, reducing no-show rates by 41% through automated SMS reminders and cutting administrative overhead by 6 hours per clinic per day.',
-    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Twilio', 'AWS'],
-    color: '#3B82F6',
-    gradient: 'from-blue-900/40 via-sky-900/20 to-slate-900/40',
-    liveUrl: '#',
-    caseStudyUrl: '#',
-    githubUrl: '#',
+      'Delivered a sleek, performance-optimized e-commerce experience with smooth product browsing, a refined UI, and a checkout flow designed to reduce friction and drive sales.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    color: '#8B5CF6',
+    gradient: 'from-violet-900/40 via-purple-900/20 to-slate-900/40',
+    image: '/project-millux.png',
+    liveUrl: 'https://milluxcollections.vercel.app/',
   },
 ]
