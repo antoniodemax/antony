@@ -44,8 +44,6 @@ export const techStack: TechCategory[] = [
     items: [
       { name: 'PostgreSQL', level: 'expert' },
       { name: 'Supabase', level: 'expert' },
-      { name: 'MongoDB', level: 'proficient' },
-      { name: 'Redis', level: 'proficient' },
       { name: 'Prisma ORM', level: 'expert' },
       { name: 'SQLite', level: 'familiar' },
     ],
@@ -56,7 +54,6 @@ export const techStack: TechCategory[] = [
     items: [
       { name: 'Vercel', level: 'expert' },
       { name: 'AWS (EC2, S3, RDS)', level: 'proficient' },
-      { name: 'Railway', level: 'expert' },
       { name: 'Cloudflare', level: 'proficient' },
       { name: 'Render', level: 'proficient' },
       { name: 'Linux / VPS', level: 'proficient' },
@@ -80,7 +77,6 @@ export const techStack: TechCategory[] = [
     items: [
       { name: 'Docker', level: 'proficient' },
       { name: 'GitHub Actions', level: 'proficient' },
-      { name: 'Nginx', level: 'proficient' },
       { name: 'Git', level: 'expert' },
       { name: 'CI/CD Pipelines', level: 'proficient' },
       { name: 'PM2', level: 'familiar' },
