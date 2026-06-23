@@ -46,15 +46,14 @@ export default function Navigation() {
             <a
               href="#home"
               onClick={e => { e.preventDefault(); handleNavClick('#home') }}
-              className="flex items-center gap-3 group"
+              className="flex items-center group"
               aria-label="Antony Peter — Home"
             >
-              <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-black font-bold text-sm flex-shrink-0">
-                AP
-              </div>
-              <span className="font-semibold text-white text-sm tracking-tight hidden sm:block">
-                Antony Peter
-              </span>
+              <img
+                src="/logo.jpg"
+                alt="Antony Peter"
+                className="h-10 md:h-12 w-auto object-contain brightness-110"
+              />
             </a>
 
             {/* Desktop Links */}

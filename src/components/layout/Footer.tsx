@@ -16,13 +16,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-black font-bold text-sm flex-shrink-0">
-              AP
-            </div>
-            <div>
-              <p className="font-semibold text-white text-sm">Antony Peter</p>
-              <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
-            </div>
+            <img
+              src="/logo.jpg"
+              alt="Antony Peter"
+              className="h-10 w-auto object-contain brightness-110"
+            />
+            <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
           </div>
 
           {/* Tagline */}
