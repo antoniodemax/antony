@@ -1,13 +1,8 @@
 import { motion } from 'framer-motion'
 import { MapPin, Calendar, Target, Lightbulb } from 'lucide-react'
+
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
-
-const experience = [
-  { period: '2023 — Present', role: 'Senior Full-Stack Engineer & Consultant', company: 'Independent' },
-  { period: '2022 — 2023', role: 'Full-Stack Developer', company: 'Product Studio' },
-  { period: '2021 — 2022', role: 'Software Engineer', company: 'Tech Startup' },
-]
 
 const pillars = [
   {
@@ -62,26 +57,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Experience timeline */}
-            <div className="space-y-3 pt-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted/50">Experience</p>
-              {experience.map((exp, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
-                  <div>
-                    <p className="text-sm font-medium text-white">{exp.role}</p>
-                    <p className="text-xs text-muted">{exp.company} · {exp.period}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Right: Story + Mission + Philosophy */}
