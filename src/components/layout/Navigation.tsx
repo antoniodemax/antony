@@ -40,38 +40,38 @@ export default function Navigation() {
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-18">
-            {/* Logo */}
+        <div className="w-full px-6 sm:px-10 lg:px-16">
+          <div className="flex items-center h-20">
+            {/* Logo — hard left */}
             <a
               href="#home"
               onClick={e => { e.preventDefault(); handleNavClick('#home') }}
-              className="flex items-center group"
+              className="flex-shrink-0 mr-auto"
               aria-label="Antony Peter — Home"
             >
               <img
                 src="/logo.jpg"
                 alt="Antony Peter"
-                className="h-10 md:h-12 w-auto object-contain brightness-110"
+                className="h-11 md:h-14 w-auto object-contain brightness-110"
               />
             </a>
 
-            {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop Links — truly centered */}
+            <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
               {navLinks.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="px-3 py-2 text-sm text-muted hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                  className="text-sm tracking-wide text-muted hover:text-white transition-colors duration-200"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden md:flex items-center gap-4">
+            {/* Desktop CTA — hard right */}
+            <div className="hidden md:flex items-center ml-auto">
               <Button
                 as="a"
                 href="#contact"
@@ -84,7 +84,7 @@ export default function Navigation() {
 
             {/* Mobile Toggle */}
             <button
-              className="md:hidden p-2 text-muted hover:text-white transition-colors"
+              className="md:hidden p-2 text-muted hover:text-white transition-colors ml-auto"
               onClick={() => setMobileOpen(v => !v)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             >
