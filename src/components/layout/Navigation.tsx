@@ -84,7 +84,7 @@ export default function Navigation() {
             <div
               ref={measureRef}
               aria-hidden="true"
-              className="absolute invisible pointer-events-none flex items-center gap-14"
+              className="absolute invisible pointer-events-none flex items-center gap-14 text-xs font-medium tracking-widest"
             >
               {navLinks.map(link => (
                 <span key={link.href} className="text-base font-medium tracking-widest whitespace-nowrap">
@@ -101,7 +101,7 @@ export default function Navigation() {
                     key={link.href}
                     href={link.href}
                     onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                    className="text-base font-medium tracking-widest text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
+                    className="text-xs font-medium tracking-widest text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
                   >
                     {link.label}
                   </a>
