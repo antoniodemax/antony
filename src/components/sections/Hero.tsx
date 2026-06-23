@@ -65,7 +65,7 @@ export default function Hero() {
               variants={item}
               className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
             >
-              Senior Full-Stack Engineer — I help ambitious businesses design,
+              Senior Full-Stack Software Engineer — I help ambitious businesses design,
               build, and ship scalable software products that move the needle.
             </motion.p>
 
@@ -108,7 +108,7 @@ export default function Hero() {
               className="flex items-center gap-6 sm:gap-10 pt-4 border-t border-white/5 w-full lg:justify-center"
             >
               {[
-                { value: '4+', label: 'Projects Delivered' },
+                { value: '2+', label: 'Projects Delivered' },
                 { value: '2+', label: 'Years Experience' },
                 { value: '100%', label: 'Client Satisfaction' },
               ].map((stat, i) => (
