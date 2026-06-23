@@ -75,7 +75,7 @@ export default function About() {
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I'm Antony Peter — a Senior Full-Stack Software Engineer based in Nairobi, Kenya,
+                I'm Antony Peter — a Senior Full-Stack Software Engineer & AI Engineer based in Nairobi, Kenya,
                 building scalable digital products for organizations that treat technology as a
                 competitive advantage.
               </p>
@@ -103,7 +103,7 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Software Engineering & AI Engineering Certificate</p>
+                  <p className="text-sm font-medium text-white">Software Engineering Certificate</p>
                   <p className="text-xs text-muted">Moringa School</p>
                 </div>
               </div>
