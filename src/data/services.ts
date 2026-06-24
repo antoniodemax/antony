@@ -85,7 +85,7 @@ export const services: Service[] = [
       'Legacy system modernisation',
       'Technical due diligence',
     ],
-    timeline: '4–10+ Weeks',
-    timelineNote: 'Varies based on requirements, from strategic roadmapping to full LLM and custom agent integration.',
+    timeline: '6–16+ Weeks',
+    timelineNote: 'Highly variable. From a simple API integration to a full RAG system with custom embeddings and production deployment.',
   },
 ]
