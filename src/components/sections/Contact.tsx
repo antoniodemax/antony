@@ -17,30 +17,40 @@ const channels = [
     label: 'Email',
     value: 'antonypeter.dev@gmail.com',
     href: 'mailto:antonypeter.dev@gmail.com',
+    color: '#EA4335',
+    bg: 'rgba(234,67,53,0.12)',
   },
   {
     icon: LinkedInIcon,
     label: 'LinkedIn',
     value: 'antony-peter-96318a338',
     href: 'https://www.linkedin.com/in/antony-peter-96318a338',
+    color: '#0A66C2',
+    bg: 'rgba(10,102,194,0.12)',
   },
   {
     icon: GitHubIcon,
     label: 'GitHub',
     value: '@antoniodemax',
     href: 'https://github.com/antoniodemax',
+    color: '#ffffff',
+    bg: 'rgba(255,255,255,0.08)',
   },
   {
     icon: WhatsAppIcon,
     label: 'WhatsApp',
     value: '+254 741 052 614',
     href: 'https://wa.me/254741052614',
+    color: '#25D366',
+    bg: 'rgba(37,211,102,0.12)',
   },
   {
     icon: InstagramIcon,
     label: 'Instagram',
     value: '@antony.peter',
     href: 'https://www.instagram.com/',
+    color: '#E1306C',
+    bg: 'rgba(225,48,108,0.12)',
   },
 ]
 
@@ -109,7 +119,7 @@ export default function Contact() {
             className="space-y-4"
           >
             <p className="text-sm font-semibold text-white mb-6">Reach me directly</p>
-            {channels.map(({ icon: Icon, label, value, href }, i) => (
+            {channels.map(({ icon: Icon, label, value, href, color, bg }, i) => (
               <motion.a
                 key={label}
                 href={href}
@@ -122,8 +132,8 @@ export default function Contact() {
                 whileHover={{ x: 4 }}
                 className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-card hover:border-white/12 hover:bg-white/3 transition-all duration-200 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Icon size={18} className="text-accent" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: bg }}>
+                  <Icon size={18} style={{ color }} />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs text-muted">{label}</p>
