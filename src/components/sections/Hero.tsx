@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { type Variants, motion } from 'framer-motion'
 import { ArrowRight, MessageSquare } from 'lucide-react'
 import Button from '../ui/Button'
+import BookingModal from '../ui/BookingModal'
 
 const container: Variants = {
   animate: { transition: { staggerChildren: 0.12 } },
@@ -12,6 +14,8 @@ const item: Variants = {
 }
 
 export default function Hero() {
+  const [bookingOpen, setBookingOpen] = useState(false)
+
   return (
     <section
       id="home"
@@ -87,15 +91,11 @@ export default function Hero() {
                 View My Work <ArrowRight size={16} />
               </Button>
               <Button
-                as="a"
-                href="#contact"
+                as="button"
                 variant="secondary"
                 size="lg"
                 className="w-full sm:w-auto justify-center"
-                onClick={e => {
-                  e.preventDefault()
-                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-                }}
+                onClick={() => setBookingOpen(true)}
               >
                 <MessageSquare size={16} />
                 Let's Talk
@@ -122,6 +122,7 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
   )
 }

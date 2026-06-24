@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Button from '../ui/Button'
+import BookingModal from '../ui/BookingModal'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -16,6 +17,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [compact, setCompact] = useState(false)
+  const [bookingOpen, setBookingOpen] = useState(false)
 
   const containerRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLAnchorElement>(null)
@@ -112,12 +114,7 @@ export default function Navigation() {
             {/* Right side — CTA or hamburger */}
             <div className="ml-auto flex items-center">
               {!compact ? (
-                <Button
-                  as="a"
-                  href="#contact"
-                  onClick={e => { e.preventDefault(); handleNavClick('#contact') }}
-                  size="sm"
-                >
+                <Button size="sm" onClick={() => setBookingOpen(true)}>
                   Book a Consultation
                 </Button>
               ) : (
@@ -162,11 +159,9 @@ export default function Navigation() {
             </nav>
             <div className="mt-8">
               <Button
-                as="a"
-                href="#contact"
-                onClick={e => { e.preventDefault(); handleNavClick('#contact') }}
                 size="lg"
                 className="w-full"
+                onClick={() => { setMobileOpen(false); setBookingOpen(true) }}
               >
                 Book a Consultation
               </Button>
@@ -174,6 +169,7 @@ export default function Navigation() {
           </motion.div>
         )}
       </AnimatePresence>
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </>
   )
 }
