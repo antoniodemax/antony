@@ -1,14 +1,14 @@
 import { useState } from 'react'
-import { Mail } from 'lucide-react'
-import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Icons'
+import { SiGithub, SiGmail } from 'react-icons/si'
+import { FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import LegalModal, { type LegalDoc } from '../ui/LegalModal'
 
 const socials = [
-  { icon: GitHubIcon, href: 'https://github.com/antoniodemax', label: 'GitHub' },
-  { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/antony-peter-96318a338', label: 'LinkedIn' },
-  { icon: WhatsAppIcon, href: 'https://wa.me/254741052614', label: 'WhatsApp' },
-  { icon: InstagramIcon, href: 'https://www.instagram.com/', label: 'Instagram' },
-  { icon: Mail, href: 'mailto:antonypeter.dev@gmail.com', label: 'Email' },
+  { icon: SiGithub,      href: 'https://github.com/antoniodemax',                   label: 'GitHub',    color: '#ffffff' },
+  { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/antony-peter-96318a338', label: 'LinkedIn',  color: '#0A66C2' },
+  { icon: FaWhatsapp,   href: 'https://wa.me/254741052614',                         label: 'WhatsApp',  color: '#25D366' },
+  { icon: FaInstagram,  href: 'https://www.instagram.com/',                         label: 'Instagram', color: '#E1306C' },
+  { icon: SiGmail,      href: 'mailto:antonypeter.dev@gmail.com',                   label: 'Email',     color: '#EA4335' },
 ]
 
 const legalLinks: { label: string; doc: LegalDoc }[] = [
@@ -42,16 +42,16 @@ export default function Footer() {
 
             {/* Socials */}
             <div className="flex items-center gap-3">
-              {socials.map(({ icon: Icon, href, label }) => (
+              {socials.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/8 flex items-center justify-center text-muted hover:text-white hover:border-white/20 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg border border-white/8 flex items-center justify-center hover:border-white/20 transition-all duration-200 hover:scale-110"
                 >
-                  <Icon size={15} className="text-current" />
+                  <Icon size={15} style={{ color }} />
                 </a>
               ))}
             </div>

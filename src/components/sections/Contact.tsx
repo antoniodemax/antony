@@ -1,8 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
-import { Mail, ArrowRight, Send, CalendarCheck, AlertCircle } from 'lucide-react'
-import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Icons'
+import { ArrowRight, Send, CalendarCheck, AlertCircle } from 'lucide-react'
+import { SiGmail, SiGithub } from 'react-icons/si'
+import { FaLinkedinIn, FaWhatsapp, FaInstagram } from 'react-icons/fa'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 import BookingModal from '../ui/BookingModal'
@@ -13,7 +14,7 @@ const EJS_KEY      = '-zTzuJ4lAOrxF-uzn'
 
 const channels = [
   {
-    icon: Mail,
+    icon: SiGmail,
     label: 'Email',
     value: 'antonypeter.dev@gmail.com',
     href: 'mailto:antonypeter.dev@gmail.com',
@@ -21,7 +22,7 @@ const channels = [
     bg: 'rgba(234,67,53,0.12)',
   },
   {
-    icon: LinkedInIcon,
+    icon: FaLinkedinIn,
     label: 'LinkedIn',
     value: 'antony-peter-96318a338',
     href: 'https://www.linkedin.com/in/antony-peter-96318a338',
@@ -29,7 +30,7 @@ const channels = [
     bg: 'rgba(10,102,194,0.12)',
   },
   {
-    icon: GitHubIcon,
+    icon: SiGithub,
     label: 'GitHub',
     value: '@antoniodemax',
     href: 'https://github.com/antoniodemax',
@@ -37,7 +38,7 @@ const channels = [
     bg: 'rgba(255,255,255,0.08)',
   },
   {
-    icon: WhatsAppIcon,
+    icon: FaWhatsapp,
     label: 'WhatsApp',
     value: '+254 741 052 614',
     href: 'https://wa.me/254741052614',
@@ -45,7 +46,7 @@ const channels = [
     bg: 'rgba(37,211,102,0.12)',
   },
   {
-    icon: InstagramIcon,
+    icon: FaInstagram,
     label: 'Instagram',
     value: '@antony.peter',
     href: 'https://www.instagram.com/',
