@@ -9,10 +9,6 @@ const faqs = [
     a: 'Timelines depend on scope, but here\'s a realistic guide: a business website takes 3–5 weeks, an e-commerce platform 6–10 weeks, and a custom web application 8–16 weeks. I don\'t rush — I build right. We define a clear scope and timeline before work begins, and I keep you updated throughout.',
   },
   {
-    q: 'Do you work with international clients?',
-    a: 'Yes, absolutely. While I\'m based in Nairobi, Kenya, I work with clients across Africa, Europe, and North America. I\'m comfortable with asynchronous communication and adapt to different time zones. Payments are accepted in both KES and USD via bank transfer, M-Pesa, or Stripe.',
-  },
-  {
     q: 'Do you offer maintenance and support after launch?',
     a: 'Yes. I offer flexible post-launch support packages covering bug fixes, feature additions, security updates, and performance monitoring. I believe in being a long-term technology partner, not just a vendor who disappears after delivery.',
   },
