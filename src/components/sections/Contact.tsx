@@ -9,8 +9,8 @@ const channels = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@antonypeter.dev',
-    href: 'mailto:hello@antonypeter.dev',
+    value: 'antonypeter.dev@gmail.com',
+    href: 'mailto:antonypeter.dev@gmail.com',
   },
   {
     icon: LinkedInIcon,

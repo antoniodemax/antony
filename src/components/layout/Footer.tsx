@@ -8,7 +8,7 @@ const socials = [
   { icon: LinkedInIcon, href: 'https://www.linkedin.com/in/antony-peter-96318a338', label: 'LinkedIn' },
   { icon: WhatsAppIcon, href: 'https://wa.me/254741052614', label: 'WhatsApp' },
   { icon: InstagramIcon, href: 'https://www.instagram.com/', label: 'Instagram' },
-  { icon: Mail, href: 'mailto:hello@antonypeter.dev', label: 'Email' },
+  { icon: Mail, href: 'mailto:antonypeter.dev@gmail.com', label: 'Email' },
 ]
 
 const legalLinks: { label: string; doc: LegalDoc }[] = [
