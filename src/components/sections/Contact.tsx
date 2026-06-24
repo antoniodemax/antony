@@ -1,9 +1,15 @@
 import { useState, type FormEvent } from 'react'
+import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
-import { Mail, ArrowRight, Send } from 'lucide-react'
+import { Mail, ArrowRight, Send, CalendarCheck, AlertCircle } from 'lucide-react'
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon, InstagramIcon } from '../ui/Icons'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
+import BookingModal from '../ui/BookingModal'
+
+const EJS_SERVICE  = 'service_rui097h'
+const EJS_TEMPLATE = 'template_ibahavl'
+const EJS_KEY      = '-zTzuJ4lAOrxF-uzn'
 
 const channels = [
   {
@@ -41,10 +47,27 @@ const channels = [
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(false)
+  const [bookingOpen, setBookingOpen] = useState(false)
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSending(true)
+    setError(false)
+    try {
+      await emailjs.send(
+        EJS_SERVICE,
+        EJS_TEMPLATE,
+        { name: form.name, email: form.email, company: form.company, message: form.message },
+        EJS_KEY
+      )
+      setSent(true)
+    } catch {
+      setError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -135,16 +158,29 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center text-center gap-4 h-full py-16 border border-white/5 rounded-2xl bg-card"
+                className="flex flex-col items-center justify-center text-center gap-6 h-full py-14 px-8 border border-white/5 rounded-2xl bg-card"
               >
                 <div className="w-14 h-14 rounded-full bg-green-500/15 flex items-center justify-center">
                   <Send size={20} className="text-green-400" />
                 </div>
-                <div>
-                  <p className="text-white font-semibold text-lg">Message sent.</p>
-                  <p className="text-sm text-muted mt-1">
-                    I'll be in touch within 24 hours.
-                  </p>
+                <div className="space-y-1">
+                  <p className="text-white font-semibold text-lg">Message received.</p>
+                  <p className="text-sm text-muted">I'll be in touch within 24 hours.</p>
+                </div>
+
+                {/* Calendly upsell */}
+                <div className="w-full border-t border-white/5 pt-6 space-y-3">
+                  <p className="text-sm text-white/80 font-medium">Want to fast-track your project?</p>
+                  <p className="text-xs text-muted">Skip the back-and-forth — book a free 30-minute call and let's scope it together.</p>
+                  <Button
+                    as="button"
+                    size="md"
+                    className="w-full"
+                    onClick={() => setBookingOpen(true)}
+                  >
+                    <CalendarCheck size={15} />
+                    Book a Call Now
+                  </Button>
                 </div>
               </motion.div>
             ) : (
@@ -212,8 +248,15 @@ export default function Contact() {
                   />
                 </div>
 
-                <Button type="submit" size="md" className="w-full">
-                  Start a Project <ArrowRight size={15} />
+                {error && (
+                  <div className="flex items-center gap-2 text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2">
+                    <AlertCircle size={13} />
+                    Something went wrong. Please try again or email me directly.
+                  </div>
+                )}
+
+                <Button type="submit" size="md" className="w-full" disabled={sending}>
+                  {sending ? 'Sending…' : <> Start a Project <ArrowRight size={15} /> </>}
                 </Button>
 
                 <p className="text-[11px] text-center text-muted/50">
@@ -224,6 +267,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
   )
 }
