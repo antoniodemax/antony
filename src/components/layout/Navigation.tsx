@@ -97,13 +97,13 @@ export default function Navigation() {
 
             {/* Desktop nav links — absolutely centered, hidden when compact */}
             {!compact && (
-              <div className="flex items-center gap-14 absolute left-1/2 -translate-x-1/2">
+              <div className="flex items-center gap-16 absolute left-1/2 -translate-x-1/2">
                 {navLinks.map(link => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                    className="text-xs font-medium tracking-widest text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
+                    className="text-sm lg:text-base font-semibold tracking-[0.2em] text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
                   >
                     {link.label}
                   </a>
