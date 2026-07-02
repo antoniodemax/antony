@@ -32,10 +32,8 @@ export const techStack: TechCategory[] = [
       { name: 'Python', level: 'proficient' },
       { name: 'Express.js', level: 'expert' },
       { name: 'FastAPI', level: 'proficient' },
-      { name: 'GraphQL', level: 'proficient' },
       { name: 'REST APIs', level: 'expert' },
       { name: 'WebSockets', level: 'proficient' },
-      { name: 'tRPC', level: 'familiar' },
     ],
   },
   {
@@ -45,7 +43,7 @@ export const techStack: TechCategory[] = [
       { name: 'PostgreSQL', level: 'expert' },
       { name: 'Supabase', level: 'expert' },
       { name: 'Prisma ORM', level: 'expert' },
-      { name: 'SQLite', level: 'familiar' },
+      { name: 'SQLite', level: 'proficient' },
     ],
   },
   {
@@ -76,7 +74,7 @@ export const techStack: TechCategory[] = [
     label: 'DevOps',
     items: [
       { name: 'Docker', level: 'proficient' },
-      { name: 'GitHub Actions', level: 'proficient' },
+      { name: 'GitHub Actions', level: 'expert' },
       { name: 'Git', level: 'expert' },
       { name: 'CI/CD Pipelines', level: 'proficient' },
       { name: 'PM2', level: 'familiar' },
