@@ -75,15 +75,12 @@ export default function Navigation() {
               className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center">
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
                   className="h-20 lg:h-24 w-auto object-contain brightness-110"
                 />
-                <span className="hidden sm:inline text-base lg:text-lg font-semibold tracking-[0.22em] text-white uppercase">
-                  Antony Peter
-                </span>
               </div>
             </a>
 
