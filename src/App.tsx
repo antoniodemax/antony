@@ -10,38 +10,48 @@ import TechStack from './components/sections/TechStack'
 import Insights from './components/sections/Insights'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
+import usePath from './hooks/usePath'
+import { AnimatePresence, motion } from 'framer-motion'
 import FAQ from './components/sections/FAQ'
 import Contact from './components/sections/Contact'
 
 export default function App() {
-  const path = typeof window !== 'undefined' ? window.location.pathname : '/'
+  const path = usePath()
   const isInsights = path.startsWith('/insights')
   const parts = path.split('/').filter(Boolean)
 
   return (
     <div className="bg-bg text-white min-h-screen font-sans antialiased">
       <Navigation />
-      <main>
-        {!isInsights ? (
-          <>
-            <Hero />          {/* Home */}
-            <About />         {/* About */}
-            <TechStack />     {/* skills — under About */}
-            <Services />      {/* Services */}
-            <WhyMe />         {/* supports Services */}
-            <Projects />      {/* Work */}
-            <Testimonials />  {/* social proof — under Work */}
-            <Insights />      {/* Insights section preview */}
-            <FAQ />           {/* before Contact */}
-            <Contact />       {/* Contact */}
-          </>
-        ) : (
-          parts.length === 1 ? (
-            <InsightsList />
-          ) : (
-            <ArticlePage slug={parts[1]} />
-          )
-        )}
+      <main className="min-h-screen">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={path}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+          >
+            {!isInsights ? (
+              <>
+                <Hero />          {/* Home */}
+                <About />         {/* About */}
+                <TechStack />     {/* skills — under About */}
+                <Services />      {/* Services */}
+                <WhyMe />         {/* supports Services */}
+                <Projects />      {/* Work */}
+                <Testimonials />  {/* social proof — under Work */}
+                <Insights />      {/* Insights section preview */}
+                <FAQ />           {/* before Contact */}
+                <Contact />       {/* Contact */}
+              </>
+            ) : parts.length === 1 ? (
+              <InsightsList />
+            ) : (
+              <ArticlePage slug={parts[1]} />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </main>
       <Footer />
     </div>

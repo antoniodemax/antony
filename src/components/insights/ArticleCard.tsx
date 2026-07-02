@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import Button from '../ui/Button'
 import type { Article } from '../../types/article'
+import { navigateTo } from '../../utils/navigation'
 
 export default function ArticleCard({ article }: { article: Article }) {
   return (
@@ -19,7 +19,7 @@ export default function ArticleCard({ article }: { article: Article }) {
         <h3 className="text-lg font-bold text-white mb-2">{article.title}</h3>
         <p className="text-sm text-muted mb-4">{article.excerpt}</p>
         <div className="flex items-center justify-between">
-          <Button as="a" href={`/insights/${article.slug}`} size="sm">Read Article</Button>
+          <button onClick={() => navigateTo(`/insights/${article.slug}`)} className="inline-flex items-center px-4 py-2 rounded-full bg-accent text-black text-sm">Read Article</button>
           <span className="text-xs text-muted">{article.publishDate}</span>
         </div>
       </div>

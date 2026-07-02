@@ -3,6 +3,7 @@ import ArticleCard from './ArticleCard'
 import SearchBar from './SearchBar'
 import { getAllArticles } from '../../articles'
 import type { Article } from '../../types/article'
+import { navigateTo } from '../../utils/navigation'
 
 export default function InsightsList() {
   const all = useMemo(() => getAllArticles(), []) as Article[]
@@ -42,7 +43,7 @@ export default function InsightsList() {
             <h2 className="text-3xl font-bold text-white mt-2">{featured.title}</h2>
             <p className="text-muted mt-4">{featured.excerpt}</p>
             <div className="mt-6">
-              <a href={`/insights/${featured.slug}`} className="inline-flex items-center px-6 py-3 rounded-full bg-accent text-black">Read Article</a>
+              <button onClick={() => navigateTo(`/insights/${featured.slug}`)} className="inline-flex items-center px-6 py-3 rounded-full bg-accent text-black">Read Article</button>
             </div>
           </div>
         </div>
