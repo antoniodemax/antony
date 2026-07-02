@@ -78,7 +78,7 @@ export default function Navigation() {
               <img
                 src="/logo.jpg"
                 alt="Antony Peter"
-                className="h-17 lg:h-22 w-auto object-contain brightness-110"
+                className="h-17 lg:h-20.3 w-auto object-contain brightness-110"
               />
             </a>
 
