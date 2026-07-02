@@ -140,7 +140,7 @@ export default function Navigation() {
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
               >
-                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                {theme === 'dark' ? <Moon size={18} /> : <Sun size={18} />}
               </button>
               {!compact ? (
                 <Button size="sm" onClick={() => setBookingOpen(true)}>
