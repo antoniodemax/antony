@@ -82,7 +82,7 @@ export default function About() {
               <p>
                 Over the past 2 years, I've gone from shipping my first production app to
                 architecting and delivering complex SaaS platforms, e-commerce systems, real-time
-                dashboards, and AI-integrated products for clients across Kenya.
+                dashboards, and AI-integrated products for clients.
               </p>
               <p>
                 My edge isn't just technical depth — it's the ability to understand your business
@@ -90,10 +90,9 @@ export default function About() {
                 of an engineer who's seen what happens when shortcuts are taken.
               </p>
               <p>
-                As the Lead Developer at Crevia, I am building a B2B SaaS platform for business
-                professionals involving invoicing, client workspaces, and AI-assisted deal
-                structuring. It's the product I'm most proud of, and it reflects exactly how I
-                approach every client engagement.
+                As the Lead Software Engineer at Crevia, I am building a B2B SaaS platform for business
+                professionals involving invoicing and AI-assisted deal structuring.
+                It's the product I'm most proud of, and it reflects exactly how I approach every client engagement.
               </p>
             </div>
 
@@ -103,7 +102,7 @@ export default function About() {
               <div className="flex items-start gap-3">
                 <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
                 <div>
-                  <p className="text-sm font-medium text-white">Software Engineering Certificate</p>
+                  <p className="text-sm font-medium text-white">Software Engineering </p>
                   <p className="text-xs text-muted">Moringa School</p>
                 </div>
               </div>
