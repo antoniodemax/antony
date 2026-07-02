@@ -65,7 +65,7 @@ export default function Navigation() {
         }`}
       >
         <div ref={containerRef} className="w-full px-6 sm:px-10 lg:px-16">
-          <div className="flex items-center h-20">
+          <div className="flex items-center h-24">
 
             {/* Logo — always hard left */}
             <a
@@ -75,11 +75,16 @@ export default function Navigation() {
               className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
-              <img
-                src="/logo.jpg"
-                alt="Antony Peter"
-                className="h-16 lg:h-18 w-auto object-contain brightness-110"
-              />
+              <div className="flex items-center gap-3">
+                <img
+                  src="/logo.jpg"
+                  alt="Antony Peter"
+                  className="h-20 lg:h-24 w-auto object-contain brightness-110"
+                />
+                <span className="hidden sm:inline text-base lg:text-lg font-semibold tracking-[0.22em] text-white uppercase">
+                  Antony Peter
+                </span>
+              </div>
             </a>
 
             {/* Hidden measurement clone — always in DOM so ResizeObserver can read real link widths */}
