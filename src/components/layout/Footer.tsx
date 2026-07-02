@@ -30,7 +30,7 @@ export default function Footer() {
               <img
                 src="/logo.jpg"
                 alt="Antony Peter"
-                className="h-10 w-auto object-contain brightness-110"
+                className="h-14 w-auto object-contain brightness-110"
               />
               <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
             </div>
