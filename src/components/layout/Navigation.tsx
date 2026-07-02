@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import Button from '../ui/Button'
 import BookingModal from '../ui/BookingModal'
 
@@ -18,6 +18,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [compact, setCompact] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
   const containerRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLAnchorElement>(null)
@@ -28,6 +29,18 @@ export default function Navigation() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem('theme') as 'dark' | 'light' | null
+    const preferredTheme = savedTheme ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+    setTheme(preferredTheme)
+    document.documentElement.setAttribute('data-theme', preferredTheme)
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    window.localStorage.setItem('theme', theme)
+  }, [theme])
 
   useEffect(() => {
     const checkFit = () => {
@@ -61,7 +74,11 @@ export default function Navigation() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'bg-bg/80 backdrop-blur-xl border-b border-white/5' : 'bg-transparent'
+          scrolled
+            ? theme === 'dark'
+              ? 'bg-bg/80 backdrop-blur-xl border-b border-white/5'
+              : 'bg-white/80 backdrop-blur-xl border-b border-slate-200/70'
+            : 'bg-transparent'
         }`}
       >
         <div ref={containerRef} className="w-full px-6 sm:px-10 lg:px-16">
@@ -112,14 +129,31 @@ export default function Navigation() {
             )}
 
             {/* Right side — CTA or hamburger */}
-            <div className="ml-auto flex items-center">
+            <div className="ml-auto flex items-center gap-2">
+              <button
+                type="button"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border-2 shadow-sm transition-all duration-200 ${
+                  theme === 'dark'
+                    ? 'border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white shadow-black/20'
+                    : 'border-slate-300 bg-white/95 text-slate-800 hover:bg-white hover:text-slate-950 shadow-slate-200/70'
+                }`}
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              >
+                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+              </button>
               {!compact ? (
                 <Button size="sm" onClick={() => setBookingOpen(true)}>
                   Book a Consultation
                 </Button>
               ) : (
                 <button
-                  className="p-2 text-white hover:text-white/70 transition-colors"
+                  type="button"
+                  className={`flex h-11 w-11 items-center justify-center rounded-full border-2 transition-all duration-200 ${
+                    theme === 'dark'
+                      ? 'border-white/20 bg-white/10 text-white hover:bg-white/20 hover:text-white shadow-black/20'
+                      : 'border-slate-300 bg-white/95 text-slate-800 hover:bg-white hover:text-slate-950 shadow-slate-200/70'
+                  }`}
                   onClick={() => setMobileOpen(v => !v)}
                   aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 >
@@ -140,7 +174,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg/98 backdrop-blur-xl pt-24 px-8 flex flex-col"
+            className={`fixed inset-0 z-40 ${theme === 'dark' ? 'bg-bg/98' : 'bg-white/98'} backdrop-blur-xl pt-24 px-8 flex flex-col`}
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
@@ -151,7 +185,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="py-4 text-lg font-medium text-white border-b border-white/5 tracking-wide"
+                  className={`py-4 text-lg font-medium border-b tracking-wide ${theme === 'dark' ? 'text-white border-white/5' : 'text-slate-800 border-slate-200'}`}
                 >
                   {link.label}
                 </motion.a>
