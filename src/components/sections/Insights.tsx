@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import { ArrowUpRight, Clock } from 'lucide-react'
+import { navigateTo } from '../../utils/navigation'
 import SectionHeader from '../ui/SectionHeader'
 
 const articles = [
   {
     id: '1',
+    slug: 'building-products-in-the-ai-era',
     title: 'Building Products in the AI Era',
     excerpt:
       'The rules of product development are shifting. Here\'s how to think about AI integration without falling into the hype trap — and where it genuinely changes the game.',
@@ -16,6 +18,7 @@ const articles = [
   },
   {
     id: '2',
+    slug: 'why-great-software-architecture-still-wins',
     title: 'Why Great Software Architecture Still Wins',
     excerpt:
       'In a world of fast ships and MVP culture, the businesses that build durable products are the ones that took architecture seriously from day one. A deep dive into what "scalable" really means.',
@@ -27,6 +30,7 @@ const articles = [
   },
   {
     id: '3',
+    slug: 'lessons-from-building-b2b-saas-in-africa',
     title: 'Lessons from Building B2B SaaS in Africa',
     excerpt:
       'Building Crevia taught me more about product-market fit, compliance complexity, and user behaviour in the African market than any course could. Raw lessons from the ground.',
@@ -38,6 +42,7 @@ const articles = [
   },
   {
     id: '4',
+    slug: 'modern-full-stack-from-idea-to-production',
     title: 'Modern Full-Stack: From Idea to Production',
     excerpt:
       'A practical walkthrough of my go-to stack — Vite, React, TypeScript, Supabase, and Vercel — and how I use it to take a product from concept to production in weeks, not months.',
@@ -60,12 +65,13 @@ export default function Insights() {
             description="Writing on software engineering, product development, AI, and building businesses in Africa."
             align="left"
           />
-          <a
-            href="#"
-            className="flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors whitespace-nowrap flex-shrink-0"
+          <button
+            type="button"
+            onClick={() => navigateTo('/insights')}
+            className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-light transition-colors whitespace-nowrap flex-shrink-0"
           >
             All articles <ArrowUpRight size={14} />
-          </a>
+          </button>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -76,6 +82,7 @@ export default function Insights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
+              onClick={() => navigateTo(`/insights/${article.slug}`)}
               className="group flex flex-col bg-card border border-white/5 rounded-2xl overflow-hidden hover:border-white/10 transition-all duration-300 cursor-pointer"
             >
               {/* Image */}
