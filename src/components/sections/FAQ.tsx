@@ -6,23 +6,35 @@ import SectionHeader from '../ui/SectionHeader'
 const faqs = [
   {
     q: 'How long does a project typically take?',
-    a: 'Timelines depend on scope, but here\'s a realistic guide: a business website takes 3–5 weeks, an e-commerce platform 6–10 weeks, and a custom web application 8–16 weeks. I don\'t rush — I build right. We define a clear scope and timeline before work begins, and I keep you updated throughout.',
+    a: 'Every project is different, but here are typical delivery timelines: Business Websites: 4–6 weeks; E-Commerce Platforms: 8–12 weeks; Custom Web Applications: 12–20 weeks; AI Solutions: timeline based on project scope. Before development begins, we agree on a clear scope, milestones, and delivery schedule so you always know what to expect.',
   },
   {
-    q: 'Do you offer maintenance and support after launch?',
-    a: 'Yes. I offer flexible post-launch support packages covering bug fixes, feature additions, security updates, and performance monitoring. I believe in being a long-term technology partner, not just a vendor who disappears after delivery.',
+    q: 'How do payments work?',
+    a: 'Projects begin with a 40% upfront payment to secure your booking and allow work to commence. The remaining balance is paid in agreed milestones throughout the project, as outlined in the Software Development Agreement. This keeps the process transparent and ensures steady progress from start to finish.',
   },
   {
-    q: 'Can you modernise or rebuild existing software?',
-    a: 'This is a significant part of what I do. Many businesses are sitting on legacy systems — outdated tech stacks, poor architecture, or software that can\'t scale. I can audit your existing codebase, propose a modernisation strategy, and execute it incrementally to minimise disruption.',
+    q: 'Do you provide maintenance and support after launch?',
+    a: 'Yes. Ongoing maintenance is available through optional support plans that include security updates, bug fixes, performance optimisation, technical support, and feature enhancements. This helps keep your website or software secure, reliable, and up to date after launch.',
   },
   {
-    q: 'Do you build AI-powered systems and integrations?',
-    a: 'Yes. I have hands-on production experience with OpenAI APIs, Claude (Anthropic), LangChain, RAG architectures, and AI agent frameworks. I help businesses identify where AI creates genuine value — not just where it\'s trendy — and build those systems responsibly.',
+    q: 'Can you redesign or improve an existing website or application?',
+    a: 'Absolutely. Whether your current website feels outdated or your software no longer meets your business needs, I can redesign, rebuild, or improve it while preserving valuable functionality where appropriate. The goal is to improve performance, usability, security, and scalability with minimal disruption.',
   },
   {
-    q: 'What information do you need to provide a quote?',
-    a: 'The clearer your brief, the more accurate my estimate. Ideally: what the product does, who uses it, key features needed, any existing designs or systems, your timeline, and budget range. A 30-minute discovery call is usually the fastest way to arrive at a clear scope and quote.',
+    q: 'Do you build AI-powered solutions?',
+    a: 'Yes. I develop practical AI solutions that automate workflows, improve customer experiences, streamline business operations, and help organisations work more efficiently. Every AI solution is designed to solve real business challenges and deliver measurable value.',
+  },
+  {
+    q: 'Will I own the website or software after the project is completed?',
+    a: 'Yes. Once the project is completed and the final payment has been received, ownership of the completed website or software is transferred to you, excluding any third-party software, licensed assets, or services that are governed by their own licences.',
+  },
+  {
+    q: 'Do you help with domain registration and hosting?',
+    a: 'Yes. I can assist with registering your domain name, selecting reliable hosting, configuring your server, and deploying your website or application. Domain registration and hosting costs are billed separately unless otherwise agreed in writing.',
+  },
+  {
+    q: 'What information do you need to prepare a quotation?',
+    a: 'To prepare an accurate proposal, I need a brief overview of your business, your project goals, the features you require, your preferred timeline, and any existing designs or systems. We will discuss everything during a discovery session before I prepare a detailed proposal and quotation.',
   },
 ]
 
@@ -76,7 +88,7 @@ export default function FAQ() {
             <SectionHeader
               label="FAQ"
               title="Questions worth answering upfront"
-              description="If your question isn't here, book a call — I'd rather over-communicate than leave you guessing."
+              description="If your question isn't here, book a discovery call. I'd rather over-communicate than leave you guessing."
               align="left"
             />
           </div>
