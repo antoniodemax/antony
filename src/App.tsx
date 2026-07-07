@@ -7,7 +7,6 @@ import WhyMe from './components/sections/WhyMe'
 import Testimonials from './components/sections/Testimonials'
 import About from './components/sections/About'
 import TechStack from './components/sections/TechStack'
-import Insights from './components/sections/Insights'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
 import usePath from './hooks/usePath'
@@ -41,7 +40,6 @@ export default function App() {
                 <WhyMe />         {/* supports Services */}
                 <Projects />      {/* Work */}
                 <Testimonials />  {/* social proof — under Work */}
-                <Insights />      {/* Insights section preview */}
                 <FAQ />           {/* before Contact */}
                 <Contact />       {/* Contact */}
               </>
