@@ -55,22 +55,21 @@ export default function Hero() {
               className="text-[2.1rem] sm:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]
                          font-bold leading-[1.1] tracking-[-0.03em] w-full"
             >
-              Building digital products,{' '}
+              Building scalable software,{' '}
               <br className="hidden lg:block" />
-              <span className="text-white">web applications,</span>
+              <span className="text-white">intelligent AI solutions,</span>
               {' '}and{' '}
-              <span className="text-gradient-gold">AI&#8209;powered</span>
+              <span className="text-gradient-gold">digital products</span>
               <br className="hidden lg:block" />
-              {' '}experiences.
+              {' '}that help ambitious businesses grow.
             </motion.h1>
 
             {/* Subtext */}
             <motion.p
               variants={item}
-              className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
+              className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-xl"
             >
-              Senior Full-Stack Software Engineer & AI Engineer — I help ambitious businesses design,
-              build, and ship scalable software products that move the needle.
+              Senior Full Stack Software Engineer • AI Engineer • Founder of Vertex Labs
             </motion.p>
 
             {/* CTAs */}

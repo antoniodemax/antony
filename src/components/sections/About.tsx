@@ -75,24 +75,16 @@ export default function About() {
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I'm Antony Peter — a Senior Full-Stack Software Engineer & AI Engineer based in Nairobi, Kenya,
-                building scalable digital products for organizations that treat technology as a
-                competitive advantage.
+                I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder of Vertex Labs</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
               </p>
               <p>
-                Over the past 2 years, I've gone from shipping my first production app to
-                architecting and delivering complex SaaS platforms, e-commerce systems, real-time
-                dashboards, and AI-integrated products for clients.
+                Over the past two years, I've progressed from building my first production applications to designing and developing modern web applications, SaaS platforms, e-commerce systems, real-time dashboards, and AI-powered solutions. Every project is built with a strong focus on performance, scalability, security, and long-term maintainability.
               </p>
               <p>
-                My edge isn't just technical depth — it's the ability to understand your business
-                model, align technology decisions with your goals, and execute with the discipline
-                of an engineer who's seen what happens when shortcuts are taken.
+                My strength extends beyond writing code. I take the time to understand each client's business, identify the challenges that matter most, and build technology solutions that align with their goals. I believe exceptional software should do more than function—it should solve real problems, create measurable value, and support sustainable business growth.
               </p>
               <p>
-                As the Lead Software Engineer at Crevia, I am building a B2B SaaS platform for business
-                professionals involving invoicing and AI-assisted deal structuring.
-                It's the product I'm most proud of, and it reflects exactly how I approach every client engagement.
+                As the <strong>Founder of Vertex Labs</strong>, I am building a <strong>digital solutions firm</strong> focused on designing and developing premium web applications, mobile applications, AI-powered solutions, enterprise software, and custom digital products. Guided by our mission, <strong>"Building the Future, One Solution at a Time,"</strong> Vertex Labs is committed to delivering secure, scalable, and high-quality software that helps businesses innovate, grow, and succeed with confidence.
               </p>
             </div>
 
