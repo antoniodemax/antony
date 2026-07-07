@@ -3,11 +3,12 @@ export interface Service {
   title: string
   description: string
   kes: string
-  usd: string
-  pricingType: 'starting' | 'custom' | 'hourly'
+  usd?: string
+  pricingType: 'starting' | 'custom'
+  buttonLabel: string
   features: string[]
   timeline: string
-  timelineNote: string
+  timelineNote?: string
   recommended?: boolean
 }
 
@@ -17,57 +18,64 @@ export const services: Service[] = [
     title: 'Business Website',
     description:
       'A conversion-optimised, high-performance business website that establishes authority, generates leads, and scales with your brand.',
-    kes: 'KES 85,000+',
-    usd: 'USD 650+',
+    kes: 'KES 85,000',
+    usd: 'Approx. USD 650',
     pricingType: 'starting',
+    buttonLabel: 'Request Proposal',
     features: [
-      'Custom design & branding',
-      'Mobile-first responsive layout',
-      'SEO & performance optimised',
-      'CMS integration',
-      'Contact & lead capture forms',
-      'Analytics setup',
+      'Discovery & Strategy',
+      'Custom UI/UX Design',
+      'Responsive Development',
+      'CMS Integration',
+      'SEO Foundations',
+      'Performance Optimisation',
+      'Contact Forms',
+      'Analytics Setup',
     ],
-    timeline: '3–5 Weeks',
-    timelineNote: 'Includes strategy, custom UI/UX design, mobile optimization, and CMS integration.',
+    timeline: '4–6 Weeks',
+    timelineNote: 'Includes discovery, planning, design, and launch readiness.',
   },
   {
     id: 'ecommerce',
     title: 'E-Commerce Platform',
     description:
       'Full-featured online store with payment integration, inventory management, and a seamless checkout experience built for conversion.',
-    kes: 'KES 140,000+',
-    usd: 'USD 1,070+',
+    kes: 'KES 150,000',
+    usd: 'Approx. USD 1,150',
     pricingType: 'starting',
+    buttonLabel: 'Start Your Store',
     features: [
-      'Product catalogue & inventory',
-      'Secure payment integration',
-      'Order management system',
-      'Customer accounts & history',
-      'Discount & promotions engine',
-      'Mobile-optimised checkout',
+      'Product Catalogue',
+      'Inventory Management',
+      'Secure Payment Integration',
+      'Customer Accounts',
+      'Order Management',
+      'Checkout Optimisation',
+      'Promotions & Discounts',
     ],
-    timeline: '6–8 Weeks',
-    timelineNote: 'Includes secure payment routing, custom product architecture, and checkout optimization.',
+    timeline: '8–12 Weeks',
+    timelineNote: 'Includes commerce architecture, payment setup, and conversion-focused checkout design.',
   },
   {
     id: 'web-application',
     title: 'Custom Web Application',
     description:
       'Bespoke, scalable web applications built to solve complex business problems — from internal tools to full SaaS products.',
-    kes: 'KES 200,000+',
-    usd: 'USD 1,530+',
+    kes: 'KES 250,000',
+    usd: 'Approx. USD 1,920',
     pricingType: 'starting',
+    buttonLabel: 'Discuss Your Project',
     features: [
-      'Custom architecture design',
-      'User authentication & RBAC',
-      'Database design & optimisation',
-      'Third-party API integrations',
-      'Real-time features',
-      'Deployment & DevOps setup',
+      'Custom Architecture',
+      'Authentication & RBAC',
+      'Database Design',
+      'API Integrations',
+      'Real-time Features',
+      'Admin Dashboard',
+      'DevOps & Deployment',
     ],
-    timeline: '8–12+ Weeks',
-    timelineNote: 'Includes bespoke system architecture, database design, user authentication, and DevOps setup.',
+    timeline: '12–20 Weeks',
+    timelineNote: 'Includes product architecture, secure access, and scalable system design.',
   },
   {
     id: 'ai-consulting',
@@ -75,17 +83,18 @@ export const services: Service[] = [
     description:
       'Strategic AI integration and technical consulting to help your business leverage AI where it creates measurable business value.',
     kes: 'Custom Quote',
-    usd: 'Custom Quote',
     pricingType: 'custom',
+    buttonLabel: 'Book a Consultation',
     features: [
-      'AI strategy & roadmap',
-      'LLM & RAG implementation',
-      'Custom AI agent development',
-      'Model fine-tuning & evaluation',
-      'Legacy system modernisation',
-      'Technical due diligence',
+      'AI Strategy',
+      'AI Automation',
+      'LLM Integration',
+      'RAG Systems',
+      'AI Agents',
+      'Model Evaluation',
+      'AI Consulting',
     ],
-    timeline: '6–16+ Weeks',
-    timelineNote: 'Highly variable. From a simple API integration to a full RAG system with custom embeddings and production deployment.',
+    timeline: 'Project Dependent',
+    timelineNote: 'Investment and timeline are defined after discovery based on your goals and requirements.',
   },
 ]
