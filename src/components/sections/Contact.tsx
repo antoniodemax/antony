@@ -207,7 +207,7 @@ export default function Contact() {
                       id="name"
                       type="text"
                       required
-                      placeholder="Amina Osei"
+                      placeholder="Enter your full name"
                       value={form.name}
                       onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                       className="w-full bg-surface border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-muted/40 focus:outline-none focus:border-accent/40 transition-colors"
@@ -215,13 +215,13 @@ export default function Contact() {
                   </div>
                   <div className="space-y-1.5">
                     <label htmlFor="email" className="text-xs font-medium text-muted">
-                      Email <span className="text-accent">*</span>
+                      Business Email <span className="text-accent">*</span>
                     </label>
                     <input
                       id="email"
                       type="email"
                       required
-                      placeholder="amina@company.com"
+                      placeholder="name@company.com"
                       value={form.email}
                       onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                       className="w-full bg-surface border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-muted/40 focus:outline-none focus:border-accent/40 transition-colors"
@@ -236,7 +236,7 @@ export default function Contact() {
                   <input
                     id="company"
                     type="text"
-                    placeholder="Elevate Digital"
+                    placeholder="Company name (optional)"
                     value={form.company}
                     onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
                     className="w-full bg-surface border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-muted/40 focus:outline-none focus:border-accent/40 transition-colors"
@@ -251,7 +251,7 @@ export default function Contact() {
                     id="message"
                     required
                     rows={4}
-                      placeholder="Tell me about your project, your business goals, the features you need, your preferred timeline, and any additional information that will help me understand your requirements."
+                    placeholder="Describe your project, business goals, required features, preferred timeline, and any additional details that will help me understand your requirements."
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                     className="w-full bg-surface border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-muted/40 focus:outline-none focus:border-accent/40 transition-colors resize-none"
