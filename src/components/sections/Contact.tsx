@@ -106,7 +106,7 @@ export default function Contact() {
           <SectionHeader
             label="Contact"
             title="Let's build something exceptional."
-            description="Have a project in mind? I'd love to hear about it. Book a consultation or drop me a message and I'll get back to you within 24 hours."
+            description="Whether you're planning a new website, custom software, AI solution, or digital transformation initiative, I'd love to learn more about your project. Complete the form below, and I'll respond within one business day to discuss the next steps."
           />
         </div>
 
@@ -119,7 +119,7 @@ export default function Contact() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="space-y-4"
           >
-            <p className="text-sm font-semibold text-white mb-6">Reach me directly</p>
+            <p className="text-sm font-semibold text-white mb-6">Reach Me Directly</p>
             {channels.map(({ icon: Icon, label, value, href, color, bg }, i) => (
               <motion.a
                 key={label}
@@ -149,11 +149,10 @@ export default function Contact() {
 
             <div className="pt-4 p-5 rounded-xl border border-accent/15 bg-accent/5">
               <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">
-                Response Time
+                Project Enquiries
               </p>
-              <p className="text-sm text-muted">
-                I respond to all enquiries within 24 hours. For urgent projects,
-                WhatsApp is the fastest channel.
+              <p className="text-sm text-muted leading-relaxed">
+                Every project enquiry receives a response within one business day. Once I’ve reviewed your requirements, I’ll reply by email with the next steps. If your project is a good fit, we’ll schedule a discovery call to discuss goals, timeline, budget, and scope before preparing a detailed proposal.
               </p>
             </div>
           </motion.div>
@@ -252,7 +251,7 @@ export default function Contact() {
                     id="message"
                     required
                     rows={4}
-                    placeholder="Tell me about your project — what you're building, who it's for, and what you'd like to achieve."
+                      placeholder="Tell me about your project, your business goals, the features you need, your preferred timeline, and any additional information that will help me understand your requirements."
                     value={form.message}
                     onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
                     className="w-full bg-surface border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-muted/40 focus:outline-none focus:border-accent/40 transition-colors resize-none"
@@ -267,11 +266,11 @@ export default function Contact() {
                 )}
 
                 <Button type="submit" size="md" className="w-full" disabled={sending}>
-                  {sending ? 'Sending…' : <> Start a Project <ArrowRight size={15} /> </>}
+                  {sending ? 'Sending…' : <> Request a Proposal <ArrowRight size={15} /> </>}
                 </Button>
 
                 <p className="text-[11px] text-center text-muted/50">
-                  No spam. Your information is never shared.
+                  Your information is handled with complete confidentiality and used solely to respond to your enquiry.
                 </p>
               </form>
             )}
