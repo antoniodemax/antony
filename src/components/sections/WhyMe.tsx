@@ -14,37 +14,37 @@ const reasons = [
     icon: Brain,
     title: 'Strategic Thinking',
     description:
-      'I connect technology decisions to business outcomes. Every architectural choice is made with your growth trajectory in mind, not just what\'s technically interesting.',
+      'Every technology decision is made with your business goals in mind. I focus on building solutions that improve efficiency, support growth, and deliver measurable long-term value—not just technically impressive software.',
   },
   {
     icon: Layers,
     title: 'Scalable Architecture',
     description:
-      'Systems built to handle 100 users today should be ready for 100,000 tomorrow. I design with scale, reliability, and maintainability as non-negotiables.',
+      'I design software with scalability, reliability, and maintainability at its core, ensuring your solution is built to support future growth as your business evolves.',
   },
   {
     icon: Cpu,
     title: 'Modern Technology',
     description:
-      'I work exclusively with proven, modern tools — React, TypeScript, Supabase, Next.js — so your codebase stays clean, performant, and easy to hand off.',
+      'I build with modern, industry-standard technologies selected to match your project requirements — including React, TypeScript, Next.js, Python, Flask, PostgreSQL, Supabase, and AI frameworks where appropriate.',
   },
   {
     icon: Bot,
     title: 'AI Integration',
     description:
-      'I have hands-on experience integrating LLMs, RAG systems, and AI agents into production products. I know where AI adds value and where it creates noise.',
+      'I integrate AI solutions that automate workflows, improve decision-making, and enhance user experiences. Every implementation is driven by practical business value, ensuring AI solves real problems rather than adding unnecessary complexity.',
   },
   {
     icon: HeartHandshake,
     title: 'Long-Term Partnership',
     description:
-      'I don\'t disappear after launch. I offer ongoing support, feature development, and technical advisory so your product keeps improving with your business.',
+      'Launching your software is just the beginning. I provide ongoing support, maintenance, feature enhancements, and technical guidance to help your product continue evolving alongside your business.',
   },
   {
     icon: Zap,
     title: 'Performance First',
     description:
-      'Speed is a feature. I optimise for Lighthouse scores above 95, sub-second loads, and Core Web Vitals that make both users and search engines happy.',
+      'Performance is built into every project from the start. I optimise for fast load times, responsive user experiences, and modern web standards to ensure your software performs reliably across devices.',
   },
 ]
 
@@ -54,9 +54,9 @@ export default function WhyMe() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <SectionHeader
-            label="Why Work With Me"
+            label="HOW I WORK"
             title="Engineering excellence meets business strategy"
-            description="I combine deep technical expertise with a product mindset — building software that works beautifully and delivers measurable results."
+            description="I combine technical expertise with a business-focused approach to build secure, scalable, and high-performing software that delivers measurable results."
           />
         </div>
 
