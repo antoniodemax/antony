@@ -88,10 +88,10 @@ export default function Navigation() {
             <div
               ref={measureRef}
               aria-hidden="true"
-              className="absolute invisible pointer-events-none flex items-center gap-14 text-xs font-medium tracking-widest"
+              className="absolute invisible pointer-events-none flex items-center gap-10 text-[11px] sm:text-xs font-medium tracking-[0.2em]"
             >
               {navLinks.map(link => (
-                <span key={link.href} className="text-base font-medium tracking-widest whitespace-nowrap">
+                <span key={link.href} className="text-[11px] sm:text-xs font-medium tracking-[0.2em] whitespace-nowrap">
                   {link.label}
                 </span>
               ))}
@@ -99,13 +99,13 @@ export default function Navigation() {
 
             {/* Desktop nav links — absolutely centered, hidden when compact */}
             {!compact && (
-              <div className="flex items-center gap-16 absolute left-1/2 -translate-x-1/2">
+              <div className="flex items-center gap-10 sm:gap-12 absolute left-1/2 -translate-x-1/2">
                 {navLinks.map(link => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                    className="text-sm lg:text-base font-semibold tracking-[0.2em] text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
+                    className="text-[11px] sm:text-xs lg:text-sm font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
                   >
                     {link.label}
                   </a>
