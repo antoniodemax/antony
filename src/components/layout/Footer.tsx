@@ -14,7 +14,7 @@ const socials = [
 const legalLinks: { label: string; doc: LegalDoc }[] = [
   { label: 'Privacy Policy', doc: 'privacy' },
   { label: 'Terms of Use', doc: 'terms' },
-  { label: 'Project Terms', doc: 'project-terms' },
+  { label: 'Project Engagement Terms', doc: 'project-terms' },
 ]
 
 export default function Footer() {
