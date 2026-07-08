@@ -23,7 +23,7 @@ function PrivacyPolicy() {
 
       <p className="text-white/90 font-medium text-lg mb-4">Clear, responsible data handling.</p>
       <p className="text-muted leading-relaxed mb-6">
-        Vertex Labs collects and uses personal and project information to respond to enquiries,
+        Antony Peter collects and uses personal and project information to respond to enquiries,
         deliver services and improve the website experience.
       </p>
 
@@ -66,8 +66,8 @@ function PrivacyPolicy() {
 
       <h2 className="text-lg font-semibold text-white mb-3">Third-Party Services</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Vertex Labs works with third-party providers for email, hosting, analytics and other services.
-        These providers handle data under their own privacy policies. Vertex Labs does not sell
+        Antony Peter works with third-party providers for email, hosting, analytics and other services.
+        These providers handle data under their own privacy policies. Antony Peter does not sell
         your information.
       </p>
 
@@ -79,20 +79,20 @@ function PrivacyPolicy() {
 
       <h2 className="text-lg font-semibold text-white mb-3">Data Retention</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Vertex Labs retains data only as long as needed to provide services and comply with legal
+        Antony Peter retains data only as long as needed to provide services and comply with legal
         obligations. Personal information is deleted or anonymised when it is no longer required.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Information Sharing</h2>
       <p className="text-muted leading-relaxed mb-6">
         Information is shared only when necessary to deliver services or when required by law.
-        Vertex Labs never sells or rents personal data to third parties.
+        Antony Peter never sells or rents personal data to third parties.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Your Rights</h2>
       <ul className="space-y-2 mb-8">
         {[
-          'Request access to the information Vertex Labs holds about you',
+          'Request access to the information Antony Peter holds about you',
           'Ask for corrections to inaccurate or incomplete data',
           'Request that personal information be erased when no longer required',
           'Object to processing in certain circumstances',
@@ -106,7 +106,7 @@ function PrivacyPolicy() {
 
       <h2 className="text-lg font-semibold text-white mb-3">Changes to This Policy</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Vertex Labs may update this policy from time to time. The date above reflects the most
+        Antony Peter may update this policy from time to time. The date above reflects the most
         recent revision.
       </p>
 
@@ -129,19 +129,19 @@ function TermsOfUse() {
       <p className="text-muted text-sm mb-10">Last updated: {lastUpdated}</p>
 
       <p className="text-muted leading-relaxed mb-8">
-        These terms govern your access to and use of the Vertex Labs website. By using the site,
+        These terms govern your access to and use of the website. By using the site,
         you confirm that you agree to these conditions.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Acceptance of Terms</h2>
       <p className="text-muted leading-relaxed mb-6">
-        If you do not agree with these terms, please do not use the Vertex Labs website. Continued
-        use of the site indicates your acceptance.
+        If you do not agree with these terms, please do not use the site. Continued use of the site
+        indicates your acceptance.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Intellectual Property</h2>
       <p className="text-muted leading-relaxed mb-6">
-        All website content is owned by Vertex Labs or its licensors. This includes branding,
+        All website content is owned by Antony Peter or its licensors. This includes branding,
         logos, case studies, design concepts, source code, written material, images and related
         assets. You may not copy, reproduce, distribute or use this content without written
         permission.
@@ -165,7 +165,7 @@ function TermsOfUse() {
 
       <h2 className="text-lg font-semibold text-white mb-3">Website Content</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Content on this website is provided for general information only. Vertex Labs may update,
+        Content on this website is provided for general information only. Antony Peter may update,
         remove or revise content at any time without notice.
       </p>
 
@@ -177,19 +177,19 @@ function TermsOfUse() {
 
       <h2 className="text-lg font-semibold text-white mb-3">Third-Party Links</h2>
       <p className="text-muted leading-relaxed mb-6">
-        The site may include links to third-party websites. Vertex Labs is not responsible for the
+        The site may include links to third-party websites. Antony Peter is not responsible for the
         content or terms of those external sites.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Limitation of Liability</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Vertex Labs is not liable for losses or damages arising from your use of the website,
+        Antony Peter is not liable for losses or damages arising from your use of the website,
         including direct or indirect losses, business interruption, or data loss.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">Changes to These Terms</h2>
       <p className="text-muted leading-relaxed">
-        Vertex Labs may revise these terms at any time. Your continued use of the site after any
+        Antony Peter may revise these terms at any time. Your continued use of the site after any
         changes indicates acceptance of the updated terms.
       </p>
     </>
@@ -314,10 +314,10 @@ function ProjectTerms() {
       <h2 className="text-lg font-semibold text-white mb-3">7. Ownership & Intellectual Property</h2>
       <p className="text-muted leading-relaxed mb-6">
         Ownership of final deliverables transfers only after the final payment has been received.
-        Until then, Vertex Labs retains ownership of work-in-progress materials.
+        Until then, Antony Peter retains ownership of work-in-progress materials.
       </p>
       <p className="text-muted leading-relaxed mb-8">
-        Vertex Labs may showcase completed projects in its portfolio unless a separate confidentiality
+        Antony Peter may showcase completed projects in its portfolio unless a separate confidentiality
         agreement prevents public disclosure.
       </p>
 
@@ -331,7 +331,7 @@ function ProjectTerms() {
 
       <h2 className="text-lg font-semibold text-white mb-3">9. Warranty</h2>
       <p className="text-muted leading-relaxed mb-6">
-        Software is delivered according to agreed specifications. Vertex Labs cannot guarantee uninterrupted
+        Software is delivered according to agreed specifications. Antony Peter cannot guarantee uninterrupted
         operation due to browser updates, hosting failures, operating system changes, API changes or
         third-party service issues.
       </p>
@@ -339,7 +339,7 @@ function ProjectTerms() {
       <h2 className="text-lg font-semibold text-white mb-3">10. Third-Party Services</h2>
       <p className="text-muted leading-relaxed mb-8">
         Payment gateways, hosting providers, cloud services, APIs and external platforms are governed by
-        their own terms. Vertex Labs is not liable for outages or changes caused by those providers.
+        their own terms. Antony Peter is not liable for outages or changes caused by those providers.
       </p>
 
       <h2 className="text-lg font-semibold text-white mb-3">11. Limitation of Liability</h2>
@@ -347,7 +347,7 @@ function ProjectTerms() {
         Liability is limited to the total amount paid for the specific project engagement.
       </p>
       <p className="text-muted leading-relaxed mb-8">
-        Vertex Labs is not responsible for indirect damages, including lost profits, business
+        Antony Peter is not responsible for indirect damages, including lost profits, business
         interruption or data loss.
       </p>
 
