@@ -27,11 +27,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Brand */}
             <div className="flex items-center gap-3">
-              <img
-                src="/logo.jpg"
-                alt="Antony Peter"
-                className="h-14 w-auto object-contain brightness-110"
-              />
+              <div className="flex items-center justify-center rounded-2xl bg-white/5 p-2 shadow-[0_8px_30px_-20px_rgba(255,255,255,0.75)]">
+                <img
+                  src="/logo.jpg"
+                  alt="Antony Peter"
+                  className="h-16 w-auto object-contain brightness-125"
+                />
+              </div>
               <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
             </div>
 
