@@ -1,0 +1,21 @@
+{
+  "name": "Antony Peter",
+  "short_name": "AntonyPeter",
+  "description": "Portfolio of Senior Full-Stack Software Engineer & AI Engineer based in Nairobi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
