@@ -3,6 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 
+const faqSchema = (faqs: { q: string; a: string }[]) => JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(faq => ({
+    '@type': 'Question',
+    'name': faq.q,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.a,
+    },
+  })),
+})
+
 const faqs = [
   {
     q: 'How long does a project typically take?',
@@ -81,7 +94,8 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
 
 export default function FAQ() {
   return (
-    <section className="py-24 md:py-32 bg-surface/30">
+    <section id="faq" className="py-24 md:py-32 bg-surface/30">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema(faqs) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-16 items-start">
           <div className="lg:col-span-2">

@@ -75,7 +75,7 @@ export default function About() {
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder of Vertex Labs</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
+                I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
               </p>
               <p>
                 Over the past two years, I've progressed from building my first production applications to designing and developing modern web applications, SaaS platforms, e-commerce systems, real-time dashboards, and AI-powered solutions. Every project is built with a strong focus on performance, scalability, security, and long-term maintainability.
@@ -84,7 +84,7 @@ export default function About() {
                 My strength extends beyond writing code. I take the time to understand each client's business, identify the challenges that matter most, and build technology solutions that align with their goals. I believe exceptional software should do more than function—it should solve real problems, create measurable value, and support sustainable business growth.
               </p>
               <p>
-                As the <strong>Founder of Vertex Labs</strong>, I am building a <strong>digital solutions firm</strong> focused on designing and developing premium web applications, mobile applications, AI-powered solutions, enterprise software, and custom digital products. Guided by our mission, <strong>"Building the Future, One Solution at a Time,"</strong> Vertex Labs is committed to delivering secure, scalable, and high-quality software that helps businesses innovate, grow, and succeed with confidence.
+                I lead a digital solutions studio focused on designing and developing premium web applications, mobile applications, AI-powered solutions, enterprise software, and custom digital products. Guided by the mission to build the future, one solution at a time, my work is committed to delivering secure, scalable, and high-quality software that helps businesses innovate, grow, and succeed with confidence.
               </p>
             </div>
 

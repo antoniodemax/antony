@@ -55,7 +55,16 @@ const channels = [
   },
 ]
 
+const contactSchema = (siteUrl: string) => JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  'url': `${siteUrl}/#contact`,
+  'name': 'Contact Antony Peter',
+  'description': 'Contact section for custom software, SaaS and AI projects. Send an enquiry to start a discovery conversation.',
+})
+
 export default function Contact() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://antonypeter.vercel.app'
   const [form, setForm] = useState({ name: '', email: '', company: '', message: '' })
   const [sent, setSent] = useState(false)
   const [sending, setSending] = useState(false)
@@ -102,6 +111,7 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: contactSchema(siteUrl) }} />
         <div className="text-center mb-16">
           <SectionHeader
             label="Contact"

@@ -19,6 +19,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           <img
             src={project.image}
             alt={`${project.title} screenshot`}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
           />
         ) : null}
