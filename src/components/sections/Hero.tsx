@@ -69,7 +69,7 @@ export default function Hero() {
               variants={item}
               className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
             >
-              Senior Full Stack Software Engineer • AI Engineer • Founder
+              Senior Full Stack Software Engineer • AI Engineer • Founder of Antopier Technologies
             </motion.p>
 
             {/* CTAs */}

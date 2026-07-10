@@ -75,7 +75,7 @@ export default function About() {
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
+                I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder of Antopier Technologies</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
               </p>
               <p>
                 Over the past two years, I've progressed from building my first production applications to designing and developing modern web applications, SaaS platforms, e-commerce systems, real-time dashboards, and AI-powered solutions. Every project is built with a strong focus on performance, scalability, security, and long-term maintainability.
