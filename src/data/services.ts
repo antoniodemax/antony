@@ -14,10 +14,29 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: 'basic-website',
+    title: 'Basic Website',
+    description: 'A simple, affordable website ideal for personal brands and small businesses.',
+    kes: 'KES 20,000',
+    usd: 'Approx. USD 150',
+    pricingType: 'starting',
+    buttonLabel: 'Get Started',
+    features: [
+      'Template-based design',
+      'Responsive Website',
+      'Up to 3 Pages',
+      'Contact Form',
+      'Basic SEO Setup',
+      'Mobile Optimised',
+      'Performance Optimisation',
+    ],
+    timeline: '1–2 Weeks',
+    timelineNote: 'Fast turnaround with limited customisation.',
+  },
+  {
     id: 'business-website',
     title: 'Business Website',
-    description:
-      'A conversion-optimised, high-performance business website that establishes authority, generates leads, and scales with your brand.',
+    description: 'A conversion-optimised, high-performance business website that establishes authority and generates leads.',
     kes: 'KES 85,000',
     usd: 'Approx. USD 650',
     pricingType: 'starting',
@@ -34,27 +53,6 @@ export const services: Service[] = [
     ],
     timeline: '4–6 Weeks',
     timelineNote: 'Includes discovery, planning, design, and launch readiness.',
-  },
-  {
-    id: 'basic-website',
-    title: 'Basic Website',
-    description:
-      'A simple, affordable website ideal for personal brands and small businesses.',
-    kes: 'KES 20,000',
-    usd: 'Approx. USD 150',
-    pricingType: 'starting',
-    buttonLabel: 'Get Started',
-    features: [
-      'Template-based design',
-      'Responsive Website',
-      'Up to 3 Pages',
-      'Contact Form',
-      'Basic SEO Setup',
-      'Mobile Optimised',
-      'Performance Optimisation',
-    ],
-    timeline: '1–2 Weeks',
-    timelineNote: 'Fast turnaround with limited customisation.',
   },
   {
     id: 'ecommerce',

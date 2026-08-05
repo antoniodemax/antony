@@ -23,7 +23,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <h3 className="text-xl font-semibold text-white tracking-tight group-hover:text-accent transition-colors duration-300">
             {service.title}
           </h3>
-          <p className="text-sm text-muted leading-relaxed">{service.description}</p>
+          <p className="text-sm text-muted leading-relaxed min-h-[3.5rem]">{service.description}</p>
         </div>
 
         {/* Price */}
@@ -75,7 +75,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
           }}
           variant={service.pricingType === 'custom' ? 'primary' : 'secondary'}
-          className="w-full mt-2"
+          className="w-full mt-4"
           size="md"
         >
           {service.buttonLabel}
@@ -108,7 +108,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
