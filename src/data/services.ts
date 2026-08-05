@@ -36,6 +36,27 @@ export const services: Service[] = [
     timelineNote: 'Includes discovery, planning, design, and launch readiness.',
   },
   {
+    id: 'basic-website',
+    title: 'Basic Website',
+    description:
+      'A simple, affordable website ideal for personal brands and small businesses.',
+    kes: 'KES 20,000',
+    usd: 'Approx. USD 150',
+    pricingType: 'starting',
+    buttonLabel: 'Get Started',
+    features: [
+      'Template-based design',
+      'Responsive Website',
+      'Up to 3 Pages',
+      'Contact Form',
+      'Basic SEO Setup',
+      'Mobile Optimised',
+      'Performance Optimisation',
+    ],
+    timeline: '1–2 Weeks',
+    timelineNote: 'Fast turnaround with limited customisation.',
+  },
+  {
     id: 'ecommerce',
     title: 'E-Commerce Platform',
     description:
