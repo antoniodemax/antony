@@ -47,7 +47,10 @@ export default function Navigation() {
   }, [])
 
   useEffect(() => {
-    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean)
+    const sections = navLinks
+      .map(link => document.querySelector(link.href))
+      .filter((section): section is Element => section !== null)
+
     const observer = new IntersectionObserver(
       entries => {
         const visible = entries

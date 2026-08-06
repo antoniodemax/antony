@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowRight, GitHub } from 'lucide-react'
+import { ExternalLink, ArrowRight, GitBranch } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import Badge from '../ui/Badge'
 import { projects } from '../../data/projects'
@@ -82,7 +82,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                   aria-label={`View ${project.title} on GitHub`}
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
                 >
-                  <GitHub size={14} />
+                  <GitBranch size={14} />
                   GitHub
                 </a>
               )}

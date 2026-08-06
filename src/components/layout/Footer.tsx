@@ -63,7 +63,7 @@ export default function Footer() {
             <p>© 2026 Antony Peter. All rights reserved.</p>
 
             <div className="flex flex-wrap items-center gap-3 justify-center">
-              {legalLinks.map(({ label, doc }, i) => (
+              {legalLinks.map(({ label, doc }) => (
                 <button
                   key={doc}
                   onClick={() => setActiveDoc(doc)}
