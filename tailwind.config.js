@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#050505',
-        surface: '#0D0D0D',
-        card: '#111111',
+        bg: '#132238',
+        surface: '#1A2F47',
+        card: 'rgba(255,255,255,0.03)',
         accent: {
-          DEFAULT: '#ffd51e',
-          light: '#ffe556',
-          dark: '#cca600',
+          DEFAULT: '#29D8FF',
+          light: '#7EEBFF',
+          dark: '#0CB7EA',
         },
-        muted: '#A1A1AA',
-        border: '#1A1A1A',
+        muted: '#A9BED0',
+        border: 'rgba(255,255,255,0.08)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
@@ -22,14 +22,14 @@ export default {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       boxShadow: {
-        gold: '0 0 40px rgba(255,213,30,0.16)',
-        card: '0 1px 3px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04)',
-        glow: '0 0 80px rgba(255,213,30,0.16)',
+        card: '0 24px 80px rgba(0, 0, 0, 0.22)',
+        glow: '0 0 60px rgba(41, 216, 255, 0.18)',
+        accent: '0 24px 80px rgba(41, 216, 255, 0.12)',
       },
       keyframes: {
         float: {
           '0%,100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-12px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
       animation: {

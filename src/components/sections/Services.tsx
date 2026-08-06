@@ -11,40 +11,35 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
-      className="group relative flex h-full flex-col rounded-2xl border border-white/8 bg-card overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_24px_60px_rgba(0,0,0,0.35)]"
+      className="group relative flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/5 shadow-card backdrop-blur-xl overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:border-accent/30"
     >
-      {/* Gold top accent bar */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-accent/80 via-accent to-accent/20" />
+      <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full bg-accent/80" />
 
-      <div className="flex flex-col flex-1 p-8 gap-6">
-
-        {/* Header */}
+      <div className="flex flex-col flex-1 p-8 gap-6 z-10 relative">
         <div className="space-y-3">
-          <h3 className="text-xl font-semibold text-white tracking-tight group-hover:text-accent transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-white tracking-[-0.03em] group-hover:text-accent transition-colors duration-300">
             {service.title}
           </h3>
           <p className="text-sm text-muted leading-relaxed min-h-[3.5rem]">{service.description}</p>
         </div>
 
-        {/* Price */}
-        <div className="pb-6 border-b border-white/5">
+        <div className="rounded-[1.5rem] border border-white/10 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
           {service.pricingType === 'custom' ? (
             <div className="space-y-2">
-              <p className="text-xs uppercase tracking-[0.24em] text-muted/50">Investment</p>
+              <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
               <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-              <p className="text-xs text-muted uppercase tracking-[0.22em]">Custom Quote</p>
+              <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
             </div>
           ) : (
             <div className="space-y-2">
-              <p className="text-[11px] text-muted/50 uppercase tracking-widest">Starting From</p>
+              <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
               <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
               <p className="text-sm text-muted">{service.usd}</p>
             </div>
           )}
         </div>
 
-        {/* Timeline */}
-        <div className="inline-flex items-center gap-3 rounded-2xl border border-accent/15 bg-white/5 px-4 py-3">
+        <div className="inline-flex items-center gap-3 rounded-[1.5rem] border border-accent/15 bg-accent/10 px-4 py-3">
           <Clock size={16} className="text-accent" />
           <div>
             <p className="text-sm font-semibold text-accent">{service.timeline}</p>
@@ -54,11 +49,10 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </div>
         </div>
 
-        {/* Features */}
         <ul className="space-y-3 flex-1">
           {service.features.map(feature => (
             <li key={feature} className="flex items-start gap-3">
-              <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 border border-accent/20">
                 <Check size={10} className="text-accent" />
               </div>
               <span className="text-sm text-muted leading-relaxed">{feature}</span>
@@ -66,7 +60,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           ))}
         </ul>
 
-        {/* CTA */}
         <Button
           as="a"
           href="#contact"
@@ -80,7 +73,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         >
           {service.buttonLabel}
         </Button>
-
       </div>
     </motion.div>
   )
@@ -90,7 +82,6 @@ export default function Services() {
   return (
     <section id="services" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="mb-10 text-center">
           <SectionHeader
             label="Investment"
@@ -99,7 +90,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="mb-8 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-6 shadow-[0_24px_70px_rgba(0,0,0,0.15)] sm:px-8 sm:py-8">
+        <div className="mb-8 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-6 shadow-card backdrop-blur-xl sm:px-8 sm:py-8">
           <div className="max-w-4xl mx-auto">
             <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold">Discovery First</p>
             <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl">
@@ -108,7 +99,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 items-stretch">
           {services.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
@@ -135,7 +126,6 @@ export default function Services() {
             </a>.
           </p>
         </motion.div>
-
       </div>
     </section>
   )

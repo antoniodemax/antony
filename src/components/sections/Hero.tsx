@@ -13,75 +13,62 @@ const item: Variants = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 }
 
+const stats = [
+  { value: '2+', label: 'Projects Delivered' },
+  { value: '2+', label: 'Years Experience' },
+  { value: '100%', label: 'Client Satisfaction' },
+  { value: 'Kenya', label: '→ Global' },
+]
+
 export default function Hero() {
   const [bookingOpen, setBookingOpen] = useState(false)
+  const [pointer, setPointer] = useState({ x: 0, y: 0 })
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      onMouseMove={event => {
+        const rect = event.currentTarget.getBoundingClientRect()
+        setPointer({ x: event.clientX - rect.left, y: event.clientY - rect.top })
+      }}
+      className="relative min-h-screen overflow-hidden pt-20"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 pointer-events-none">
-        <img
-          src="/hero-bg.jpg"
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Base dark layer */}
-        <div className="absolute inset-0 bg-black/50" />
-        {/* Directional gradient — dark on left for text, image visible on right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-bg/90 via-bg/40 to-transparent" />
-        {/* Bottom fade into site background */}
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-bg to-transparent" />
-        {/* Subtle gold tint */}
-        <div className="absolute inset-0 bg-accent/[0.03]" />
-      </div>
+      <div className="absolute inset-0 hero-decor bg-noise opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-bg/90 via-surface/55 to-transparent pointer-events-none" />
+      <div className="absolute left-1/2 top-20 h-[280px] w-[280px] -translate-x-1/2 rounded-full bg-accent/10 blur-3xl opacity-80 pointer-events-none" />
+      <div
+        className="pointer-events-none absolute h-48 w-48 rounded-full bg-accent/15 blur-3xl opacity-60 transition-transform duration-200"
+        style={{ left: pointer.x, top: pointer.y }}
+      />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex justify-center py-20 lg:py-32">
-          <motion.div
-            variants={container}
-            initial="initial"
-            animate="animate"
-            className="flex flex-col gap-7 w-full max-w-6xl
-                       text-left items-start
-                       lg:text-center lg:items-center"
-          >
-            {/* Heading */}
-            <motion.h1
-              variants={item}
-              className="text-[2.1rem] sm:text-[2.75rem] lg:text-[3.5rem] xl:text-[4rem]
-                         font-bold leading-[1.1] tracking-[-0.03em] w-full"
-            >
-              Building scalable software,{' '}
-              <br className="hidden lg:block" />
-              <span className="text-white">intelligent AI solutions,</span>
-              {' '}and{' '}
-              <span className="text-gradient-gold">digital products</span>
-              <br className="hidden lg:block" />
-              {' '}that help ambitious businesses grow.
-            </motion.h1>
-
-            {/* Subtext */}
-            <motion.p
-              variants={item}
-              className="text-[0.95rem] sm:text-lg text-white/90 leading-relaxed max-w-lg"
-            >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.2fr_0.9fr] py-24 lg:py-32">
+          <motion.div variants={container} initial="initial" animate="animate" className="space-y-10">
+            <motion.div variants={item} className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-accent shadow-accent/10 backdrop-blur-xl">
               Senior Full Stack Software Engineer • AI Engineer • Founder of Antopier Technologies
-            </motion.p>
+            </motion.div>
 
-            {/* CTAs */}
-            <motion.div
-              variants={item}
-              className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto lg:justify-center"
-            >
+            <motion.div variants={item} className="space-y-7 max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-tight text-white">
+                Building scalable software,
+                <br className="hidden xl:block" />
+                <span className="text-white/90">intelligent AI solutions,</span>{' '}
+                and <span className="text-accent">digital products</span>
+                <br className="hidden xl:block" />
+                that help ambitious businesses grow.
+              </h1>
+
+              <p className="max-w-xl text-base sm:text-lg leading-8 text-muted">
+                Senior Full Stack Software Engineer • AI Engineer • Founder of Antopier Technologies
+              </p>
+            </motion.div>
+
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Button
                 as="a"
                 href="#work"
                 size="lg"
-                className="w-full sm:w-auto justify-center"
+                className="w-full sm:w-auto"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })
@@ -93,7 +80,7 @@ export default function Hero() {
                 as="button"
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto justify-center"
+                className="w-full sm:w-auto"
                 onClick={() => setBookingOpen(true)}
               >
                 <MessageSquare size={16} />
@@ -101,23 +88,39 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              variants={item}
-              className="flex items-center gap-6 sm:gap-10 pt-4 border-t border-white/5 w-full lg:justify-center"
-            >
-              {[
-                { value: '2+', label: 'Projects Delivered' },
-                { value: '2+', label: 'Years Experience' },
-                { value: '100%', label: 'Client Satisfaction' },
-                { value: 'Kenya', label: '→ Global' },
-              ].map((stat, i) => (
-                <div key={i} className="flex flex-col">
-                  <span className="text-lg sm:text-xl font-bold text-accent">{stat.value}</span>
-                  <span className="text-[11px] sm:text-xs text-white/80">{stat.label}</span>
+            <motion.div variants={item} className="grid grid-cols-2 sm:grid-cols-4 gap-4 rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card backdrop-blur-xl">
+              {stats.map(stat => (
+                <div key={stat.label} className="space-y-1">
+                  <p className="text-lg font-semibold text-white">{stat.value}</p>
+                  <p className="text-xs uppercase tracking-[0.35em] text-muted/80">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
+          </motion.div>
+
+          <motion.div
+            variants={item}
+            className="relative mx-auto w-full max-w-[420px] rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card backdrop-blur-xl overflow-hidden"
+          >
+            <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full border border-white/10 opacity-30" />
+            <div className="absolute right-6 top-16 h-28 w-28 rounded-full border border-accent/20 opacity-50" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface">
+              <img
+                src="/antony.jpg"
+                alt="Antony Peter — Senior Full-Stack Software Engineer"
+                loading="lazy"
+                decoding="async"
+                className="h-[520px] w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
+            </div>
+
+            <div className="relative mt-4 rounded-3xl border border-white/10 bg-bg/80 p-5 backdrop-blur-xl">
+              <p className="text-sm uppercase tracking-[0.35em] text-accent/90">Nairobi, Kenya</p>
+              <p className="mt-2 text-sm text-muted leading-relaxed">
+                Available for product software, AI, and SaaS engagements with global teams.
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -97,8 +97,8 @@ export default function FAQ() {
     <section id="faq" className="py-24 md:py-32 bg-surface/30">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema(faqs) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-5 gap-16 items-start">
-          <div className="lg:col-span-2">
+        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] items-start">
+          <div>
             <SectionHeader
               label="FAQ"
               title="Questions worth answering upfront"
@@ -107,7 +107,7 @@ export default function FAQ() {
             />
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl">
             {faqs.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} index={i} />
             ))}

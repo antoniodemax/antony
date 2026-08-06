@@ -19,7 +19,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center gap-2 font-medium tracking-tight transition-all duration-200 rounded-full whitespace-nowrap cursor-pointer select-none'
+    'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 rounded-full whitespace-nowrap cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
 
   const sizes = {
     sm: 'px-4 py-2 text-sm',
@@ -29,10 +29,10 @@ export default function Button({
 
   const variants = {
     primary:
-      'bg-accent text-black hover:bg-accent-light active:bg-accent-dark shadow-gold hover:shadow-glow',
+      'bg-accent text-black hover:bg-accent-light shadow-accent hover:shadow-glow active:scale-[0.98] min-w-[160px]',
     secondary:
-      'border border-white/10 text-white hover:border-white/25 hover:bg-white/5 bg-transparent',
-    ghost: 'text-muted hover:text-white hover:bg-white/5',
+      'border border-white/10 bg-white/5 text-white hover:border-accent/30 hover:bg-white/10 active:scale-[0.98] min-w-[160px]',
+    ghost: 'text-muted hover:text-white hover:bg-white/5 active:scale-[0.98]'
   }
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`

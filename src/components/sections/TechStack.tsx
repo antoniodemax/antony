@@ -3,21 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeader from '../ui/SectionHeader'
 import { techStack } from '../../data/techStack'
 
-const levelColors = {
-  expert: 'bg-accent/20 text-accent border-accent/25',
-  proficient: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
-  familiar: 'bg-white/5 text-muted border-white/8',
-}
-
-const levelDots = {
-  expert: 'bg-accent',
-  proficient: 'bg-blue-400',
-  familiar: 'bg-muted',
-}
-
 export default function TechStack() {
   const [active, setActive] = useState(techStack[0].id)
-
   const activeCategory = techStack.find(c => c.id === active)!
 
   return (
@@ -31,16 +18,15 @@ export default function TechStack() {
           />
         </div>
 
-        {/* Category tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {techStack.map(cat => (
             <button
               key={cat.id}
               onClick={() => setActive(cat.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 active === cat.id
-                  ? 'bg-accent text-black'
-                  : 'border border-white/8 text-muted hover:text-white hover:border-white/20 bg-card'
+                  ? 'border-accent bg-accent/10 text-accent'
+                  : 'border-white/10 bg-white/5 text-muted hover:border-accent/20 hover:text-white'
               }`}
             >
               {cat.label}
@@ -48,63 +34,38 @@ export default function TechStack() {
           ))}
         </div>
 
-        {/* Tech items */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35 }}
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             {activeCategory.items.map((item, i) => (
               <motion.div
                 key={item.name}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.04 }}
-                whileHover={{ scale: 1.04, y: -2 }}
-                className={`flex flex-col items-center gap-2.5 p-4 rounded-xl border text-center cursor-default transition-all duration-200 ${levelColors[item.level]}`}
+                whileHover={{ scale: 1.03, y: -2 }}
+                className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition-all duration-200"
               >
-                {/* Level indicator */}
-                <div className="flex gap-1">
-                  {(['expert', 'proficient', 'familiar'] as const).map((l, li) => (
-                    <div
-                      key={l}
-                      className={`w-1.5 h-1.5 rounded-full ${
-                        ['expert', 'proficient', 'familiar'].indexOf(item.level) <= li
-                          ? 'bg-white/15'
-                          : levelDots[item.level]
-                      }`}
-                    />
-                  ))}
-                </div>
-                <span className="text-xs font-semibold leading-tight">{item.name}</span>
+                {item.name}
               </motion.div>
             ))}
           </motion.div>
         </AnimatePresence>
 
-        {/* Legend */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex justify-center gap-6 mt-8"
-        >
-          {[
-            { level: 'expert', label: 'Expert', color: 'bg-accent' },
-            { level: 'proficient', label: 'Proficient', color: 'bg-blue-400' },
-            { level: 'familiar', label: 'Familiar', color: 'bg-muted' },
-          ].map(l => (
-            <div key={l.level} className="flex items-center gap-2 text-xs text-muted">
-              <div className={`w-2 h-2 rounded-full ${l.color}`} />
-              {l.label}
+        <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          {techStack.map(category => (
+            <div key={category.id} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-center">
+              <p className="text-sm font-semibold text-white mb-2">{category.label}</p>
+              <p className="text-xs text-muted leading-relaxed">{category.items.map(item => item.name).join(', ')}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

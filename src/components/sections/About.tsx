@@ -21,50 +21,45 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left: Image + quick facts */}
+        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-6"
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl overflow-hidden sm:p-8"
           >
-            {/* Profile image */}
-            <div className="relative mx-auto w-48 sm:w-64 lg:w-full lg:max-w-sm">
-              <div className="aspect-[3/4] rounded-2xl bg-card border border-white/8 overflow-hidden shadow-[0_24px_48px_rgba(0,0,0,0.5)]">
-                <img
-                  src="/antony.jpg"
-                  alt="Antony Peter — Senior Full-Stack Software Engineer"
-                  className="w-full h-full object-cover object-top"
-                  loading="lazy"
-                  decoding="async"
-                />
-                {/* Subtle gold gradient overlay at bottom */}
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
+            <div className="absolute -left-10 top-10 h-24 w-24 rounded-full border border-accent/15 opacity-60" />
+            <div className="absolute right-8 top-20 h-16 w-16 rounded-full bg-accent/10 blur-2xl opacity-70" />
 
-              {/* Floating info card */}
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 bg-card border border-white/8 rounded-xl p-3 sm:p-4 shadow-lg">
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-white font-medium">
-                  <MapPin size={12} className="text-accent" />
-                  Nairobi, Kenya
+            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
+              <img
+                src="/antony.jpg"
+                alt="Antony Peter — Senior Full-Stack Software Engineer"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
+            </div>
+
+            <div className="mt-6 rounded-3xl border border-white/10 bg-bg/80 p-5 backdrop-blur-xl">
+              <div className="flex flex-col gap-2 text-sm sm:text-base text-white">
+                <div className="inline-flex items-center gap-2 text-accent font-semibold uppercase tracking-[0.24em]">
+                  <MapPin size={14} /> Nairobi, Kenya
                 </div>
-                <div className="flex items-center gap-2 text-[11px] sm:text-xs text-muted mt-1">
-                  <Calendar size={11} />
-                  Available for projects
+                <div className="inline-flex items-center gap-2 text-muted">
+                  <Calendar size={14} /> Available for projects
                 </div>
               </div>
             </div>
-
           </motion.div>
 
-          {/* Right: Story + Mission + Philosophy */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.15, ease: 'easeOut' }}
             className="space-y-10"
           >
             <SectionHeader
@@ -73,7 +68,7 @@ export default function About() {
               align="left"
             />
 
-            <div className="space-y-4 text-muted leading-relaxed">
+            <div className="space-y-5 text-muted leading-8 text-sm sm:text-base">
               <p>
                 I'm <strong>Antony Peter</strong> — a <strong>Software Engineer, AI Engineer, and Founder of Antopier Technologies</strong>, based in Nairobi, Kenya. I build scalable digital products for businesses and organizations that view technology as a competitive advantage.
               </p>
@@ -88,35 +83,39 @@ export default function About() {
               </p>
             </div>
 
-            {/* Education */}
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted/50">Education</p>
-              <div className="flex items-start gap-3">
-                <div className="w-1 h-1 rounded-full bg-accent/60 mt-2 flex-shrink-0" />
-                <div>
-                  <p className="text-sm font-medium text-white">Software Engineering </p>
-                  <p className="text-xs text-muted">Moringa School</p>
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl">
+              <div className="space-y-3">
+                <p className="text-xs uppercase tracking-[0.35em] text-accent/80 font-semibold">Education</p>
+                <div className="flex items-start gap-3">
+                  <div className="mt-2 h-2 w-2 rounded-full bg-accent" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">Software Engineering</p>
+                    <p className="text-xs text-muted">Moringa School</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Mission + Philosophy cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {pillars.map(({ icon: Icon, title, text }) => (
                 <div
                   key={title}
-                  className="p-5 rounded-xl border border-white/5 bg-card space-y-3"
+                  className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <Icon size={15} className="text-accent" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/10 mb-4 text-accent">
+                    <Icon size={18} />
                   </div>
-                  <h4 className="text-sm font-semibold text-white">{title}</h4>
-                  <p className="text-xs text-muted leading-relaxed">{text}</p>
+                  <h4 className="text-sm font-semibold text-white mb-2">{title}</h4>
+                  <p className="text-sm text-muted leading-relaxed">{text}</p>
                 </div>
               ))}
             </div>
 
-            <Button as="a" href="#contact" size="md"
+            <Button
+              as="a"
+              href="#contact"
+              size="md"
+              className="mt-2"
               onClick={e => {
                 e.preventDefault()
                 document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })

@@ -15,7 +15,7 @@ export default function Testimonials() {
           />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid gap-6 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <motion.blockquote
               key={t.id}
@@ -23,30 +23,25 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative flex flex-col bg-card border border-white/5 rounded-2xl p-6 hover:border-white/10 transition-all duration-300"
+              className="relative flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/20"
             >
-              {/* Quote icon */}
-              <div className="absolute top-5 right-5 opacity-10">
-                <Quote size={32} className="text-accent fill-accent" />
+              <div className="absolute right-6 top-6 opacity-10">
+                <Quote size={36} className="text-accent" />
               </div>
 
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="mb-6 flex gap-1">
                 {Array.from({ length: 5 }).map((_, si) => (
-                  <div key={si} className="w-3 h-3 rounded-sm bg-accent/70" />
+                  <span key={si} className="h-2 w-2 rounded-full bg-accent/70" />
                 ))}
               </div>
 
-              {/* Quote text */}
-              <p className="text-sm text-muted leading-relaxed flex-1 italic">
+              <p className="text-sm text-muted leading-relaxed italic flex-1">
                 "{t.quote}"
               </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-3 mt-6 pt-5 border-t border-white/5">
-                {/* Avatar */}
+              <div className="mt-8 flex items-center gap-4 pt-6 border-t border-white/10">
                 <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold text-black flex-shrink-0"
+                  className="flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-black"
                   style={{ background: t.color }}
                   aria-hidden="true"
                 >
@@ -54,9 +49,7 @@ export default function Testimonials() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-white">{t.name}</p>
-                  <p className="text-xs text-muted">
-                    {t.role}, {t.company}
-                  </p>
+                  <p className="text-xs text-muted">{t.role}, {t.company}</p>
                 </div>
               </div>
             </motion.blockquote>

@@ -17,6 +17,7 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [compact, setCompact] = useState(false)
   const [bookingOpen, setBookingOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('#home')
 
   const containerRef = useRef<HTMLDivElement>(null)
   const logoRef = useRef<HTMLAnchorElement>(null)
@@ -43,6 +44,23 @@ export default function Navigation() {
     if (containerRef.current) ro.observe(containerRef.current)
     checkFit()
     return () => ro.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean)
+    const observer = new IntersectionObserver(
+      entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0))[0]
+        if (visible?.target instanceof HTMLElement) {
+          setActiveSection(`#${visible.target.id}`)
+        }
+      },
+      { threshold: [0.25, 0.5, 0.75] }
+    )
+    sections.forEach(section => observer.observe(section))
+    return () => observer.disconnect()
   }, [])
 
   const handleNavClick = (href: string) => {
@@ -74,11 +92,11 @@ export default function Navigation() {
               className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
-              <div className="flex items-center">
+              <div className="flex items-center rounded-3xl bg-white/5 px-3 py-2 shadow-card border border-white/10">
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
-                  className="h-20 lg:h-24 w-auto object-contain brightness-110"
+                  className="h-16 lg:h-18 w-auto object-contain brightness-110"
                 />
               </div>
             </a>
@@ -98,15 +116,22 @@ export default function Navigation() {
 
             {/* Desktop nav links — absolutely centered, hidden when compact */}
             {!compact && (
-              <div className="flex items-center gap-10 sm:gap-12 absolute left-1/2 -translate-x-1/2">
+              <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-8 sm:gap-10">
                 {navLinks.map(link => (
                   <a
                     key={link.href}
                     href={link.href}
                     onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                    className="text-[11px] sm:text-xs lg:text-sm font-semibold tracking-[0.18em] text-white/90 hover:text-white transition-colors duration-200 whitespace-nowrap"
+                    className={`relative text-[11px] sm:text-xs lg:text-sm font-semibold tracking-[0.18em] transition-colors duration-200 whitespace-nowrap ${
+                      activeSection === link.href ? 'text-white' : 'text-white/70 hover:text-white'
+                    }`}
                   >
                     {link.label}
+                    <span
+                      className={`absolute left-1/2 top-full h-[2px] w-8 -translate-x-1/2 rounded-full transition-all duration-300 ${
+                        activeSection === link.href ? 'bg-accent opacity-100' : 'bg-transparent opacity-0'
+                      }`}
+                    />
                   </a>
                 ))}
               </div>
@@ -115,7 +140,7 @@ export default function Navigation() {
             {/* Right side — CTA or hamburger */}
             <div className="ml-auto flex items-center">
               {!compact ? (
-                <Button size="sm" onClick={() => setBookingOpen(true)}>
+                <Button size="sm" className="bg-white/5 text-white border border-white/10 hover:border-accent/30 hover:bg-white/10" onClick={() => setBookingOpen(true)}>
                   Book a Consultation
                 </Button>
               ) : (

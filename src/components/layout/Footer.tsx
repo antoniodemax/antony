@@ -22,28 +22,28 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="border-t border-white/5 bg-bg">
+      <footer className="border-t border-white/10 bg-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Brand */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center rounded-2xl bg-white/5 p-2 shadow-[0_8px_30px_-20px_rgba(255,255,255,0.75)]">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="flex items-center gap-4">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-card">
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
-                  className="h-16 w-auto object-contain brightness-125"
+                  className="h-14 w-auto object-contain brightness-110"
                 />
               </div>
-              <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
+              <div>
+                <p className="text-sm font-semibold text-white">Antony Peter</p>
+                <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
+              </div>
             </div>
 
-            {/* Tagline */}
             <p className="text-sm text-muted text-center">
               Building scalable digital products.
             </p>
 
-            {/* Socials */}
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 justify-center">
               {socials.map(({ icon: Icon, href, label, color }) => (
                 <a
                   key={label}
@@ -51,36 +51,30 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg border border-white/8 flex items-center justify-center hover:border-white/20 transition-all duration-200 hover:scale-110"
+                  className="flex h-11 w-11 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
                 >
-                  <Icon size={15} style={{ color }} />
+                  <Icon size={16} style={{ color }} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Sub-footer */}
-          <div className="mt-8 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-muted/60">© 2026 Antony Peter. All rights reserved.</p>
+          <div className="mt-10 border-t border-white/10 pt-8 text-sm text-muted/70 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p>© 2026 Antony Peter. All rights reserved.</p>
 
-            {/* Legal links */}
-            <div className="flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-3 justify-center">
               {legalLinks.map(({ label, doc }, i) => (
-                <span key={doc} className="flex items-center gap-1">
-                  <button
-                    onClick={() => setActiveDoc(doc)}
-                    className="text-xs text-muted/60 hover:text-white transition-colors duration-200 px-1"
-                  >
-                    {label}
-                  </button>
-                  {i < legalLinks.length - 1 && (
-                    <span className="text-white/10 text-xs">·</span>
-                  )}
-                </span>
+                <button
+                  key={doc}
+                  onClick={() => setActiveDoc(doc)}
+                  className="text-xs text-muted/70 transition-colors duration-200 hover:text-white"
+                >
+                  {label}
+                </button>
               ))}
             </div>
 
-            <p className="text-xs text-muted/40">Kenya → Global</p>
+            <p className="text-xs text-muted/50">Kenya → Global</p>
           </div>
         </div>
       </footer>
