@@ -132,7 +132,14 @@ html[data-theme='light'] {
 
   .hero-portrait {
     animation: float-portrait 8s ease-in-out infinite;
-    will-change: transform;
+    will-change: transform, box-shadow;
+    border-radius: 1.5rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hero-portrait:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 45px 110px rgba(0, 0, 0, 0.32);
   }
 
   @keyframes float-portrait {

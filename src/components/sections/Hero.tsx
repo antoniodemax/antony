@@ -98,18 +98,17 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={item} className="relative mx-auto w-full max-w-[420px]">
-            <div className="pointer-events-none absolute left-1/2 top-12 h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-cyan-300/15 blur-3xl opacity-90" />
-            <div className="pointer-events-none absolute -right-8 top-24 h-28 w-28 rounded-full border border-cyan-200/30 opacity-60" />
-            <div className="pointer-events-none absolute left-0 bottom-10 h-28 w-28 rounded-full border border-white/10 opacity-40" />
+          <motion.div variants={item} className="relative mx-auto w-full max-w-[420px] overflow-visible">
+            <div className="pointer-events-none absolute left-1/2 top-10 h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-cyan-300/12 blur-3xl opacity-90" />
+            <div className="pointer-events-none absolute -right-8 top-20 h-24 w-24 rounded-full border border-cyan-200/20 opacity-60" />
+            <div className="pointer-events-none absolute left-6 bottom-12 h-24 w-24 rounded-full border border-white/10 opacity-30" />
             <img
               src="/antony.jpg"
               alt="Antony Peter — Senior Full-Stack Software Engineer"
               loading="lazy"
               decoding="async"
-              className="relative hero-portrait mx-auto h-[520px] w-full object-cover object-center shadow-[0_50px_120px_rgba(0,0,0,0.24)]"
+              className="relative hero-portrait mx-auto h-[560px] w-full object-cover object-top shadow-[0_35px_90px_rgba(0,0,0,0.28)]"
             />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bg/95 via-transparent to-transparent" />
           </motion.div>
         </div>
       </div>
