@@ -42,7 +42,7 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.2fr_0.9fr] py-24 lg:py-32">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] py-24 lg:py-32">
           <motion.div variants={container} initial="initial" animate="animate" className="space-y-10">
             <motion.div variants={item} className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-accent shadow-accent/10 backdrop-blur-xl">
               Senior Full Stack Software Engineer • AI Engineer • Founder of Antopier Technologies
@@ -100,11 +100,11 @@ export default function Hero() {
 
           <motion.div
             variants={item}
-            className="relative mx-auto w-full max-w-[420px] rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-card backdrop-blur-xl overflow-hidden"
+            className="relative mx-auto w-full max-w-[420px] rounded-[1.5rem] border border-white/10 bg-white/5 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.18)] backdrop-blur-xl overflow-hidden"
           >
-            <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full border border-white/10 opacity-30" />
-            <div className="absolute right-6 top-16 h-28 w-28 rounded-full border border-accent/20 opacity-50" />
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface">
+            <div className="absolute -left-8 -top-8 h-32 w-32 rounded-full border border-white/10 opacity-30" />
+            <div className="absolute right-6 top-16 h-24 w-24 rounded-full border border-accent/20 opacity-50" />
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-surface">
               <img
                 src="/antony.jpg"
                 alt="Antony Peter — Senior Full-Stack Software Engineer"
@@ -112,10 +112,10 @@ export default function Hero() {
                 decoding="async"
                 className="h-[520px] w-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent" />
             </div>
 
-            <div className="relative mt-4 rounded-3xl border border-white/10 bg-bg/80 p-5 backdrop-blur-xl">
+            <div className="relative mt-4 rounded-3xl border border-white/10 bg-bg/90 p-4 backdrop-blur-xl">
               <p className="text-sm uppercase tracking-[0.35em] text-accent/90">Nairobi, Kenya</p>
               <p className="mt-2 text-sm text-muted leading-relaxed">
                 Available for product software, AI, and SaaS engagements with global teams.
