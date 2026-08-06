@@ -21,40 +21,7 @@ export default function About() {
   return (
     <section id="about" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-start">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl overflow-hidden sm:p-8"
-          >
-            <div className="absolute -left-10 top-10 h-24 w-24 rounded-full border border-accent/15 opacity-60" />
-            <div className="absolute right-8 top-20 h-16 w-16 rounded-full bg-accent/10 blur-2xl opacity-70" />
-
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-[0_30px_80px_rgba(0,0,0,0.18)]">
-              <img
-                src="/antony.jpg"
-                alt="Antony Peter — Senior Full-Stack Software Engineer"
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover object-top"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
-            </div>
-
-            <div className="mt-6 rounded-3xl border border-white/10 bg-bg/80 p-5 backdrop-blur-xl">
-              <div className="flex flex-col gap-2 text-sm sm:text-base text-white">
-                <div className="inline-flex items-center gap-2 text-accent font-semibold uppercase tracking-[0.24em]">
-                  <MapPin size={14} /> Nairobi, Kenya
-                </div>
-                <div className="inline-flex items-center gap-2 text-muted">
-                  <Calendar size={14} /> Available for projects
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
+        <div className="grid gap-12">
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
