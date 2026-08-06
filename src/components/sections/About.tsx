@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, Target, Lightbulb } from 'lucide-react'
+import { Target, Lightbulb } from 'lucide-react'
 
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
