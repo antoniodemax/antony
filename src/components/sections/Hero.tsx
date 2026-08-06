@@ -99,18 +99,17 @@ export default function Hero() {
           </motion.div>
 
           <motion.div variants={item} className="relative mx-auto w-full max-w-[420px] overflow-visible">
-            <div className="pointer-events-none absolute left-1/2 top-10 h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-cyan-300/12 blur-3xl opacity-90" />
+            <div className="pointer-events-none absolute left-1/2 top-10 h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-cyan-300/12 blur-3xl opacity-88" />
             <div className="pointer-events-none absolute -right-8 top-20 h-24 w-24 rounded-full border border-cyan-200/20 opacity-60" />
             <div className="pointer-events-none absolute left-6 bottom-12 h-24 w-24 rounded-full border border-white/10 opacity-30" />
             <img
-              src="/antony.jpg"
+              src="/portrait.png"
               alt="Antony Peter — Senior Full-Stack Software Engineer"
               loading="lazy"
               decoding="async"
-              className="relative hero-portrait mx-auto h-[560px] w-full object-cover object-top shadow-[0_35px_90px_rgba(0,0,0,0.28)]"
+              className="relative hero-portrait ml-auto h-[560px] w-full object-cover object-top shadow-[0_35px_90px_rgba(0,0,0,0.28)]"
             />
           </motion.div>
-        </div>
       </div>
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </section>
