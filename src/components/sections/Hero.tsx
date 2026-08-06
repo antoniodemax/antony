@@ -41,7 +41,7 @@ export default function Hero() {
         style={{ left: pointer.x, top: pointer.y }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" />
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] py-24 lg:py-32">
           <motion.div variants={container} initial="initial" animate="animate" className="space-y-10">
             <motion.div variants={item} className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-accent shadow-accent/10 backdrop-blur-xl">
