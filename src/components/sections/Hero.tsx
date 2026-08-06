@@ -59,7 +59,7 @@ export default function Hero() {
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg leading-8 text-muted">
-                Senior Full Stack Software Engineer • AI Engineer • Founder of Antopier Technologies
+                Senior Full Stack Software Engineer • AI Engineer • Aspiring CyberSecurity Analyst
               </p>
             </motion.div>
 
@@ -98,29 +98,18 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div
-            variants={item}
-            className="relative mx-auto w-full max-w-[420px] rounded-[1.5rem] border border-white/10 bg-white/5 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.18)] backdrop-blur-xl overflow-hidden"
-          >
-            <div className="absolute -left-8 -top-8 h-32 w-32 rounded-full border border-white/10 opacity-30" />
-            <div className="absolute right-6 top-16 h-24 w-24 rounded-full border border-accent/20 opacity-50" />
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-surface">
-              <img
-                src="/antony.jpg"
-                alt="Antony Peter — Senior Full-Stack Software Engineer"
-                loading="lazy"
-                decoding="async"
-                className="h-[520px] w-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent" />
-            </div>
-
-            <div className="relative mt-4 rounded-3xl border border-white/10 bg-bg/90 p-4 backdrop-blur-xl">
-              <p className="text-sm uppercase tracking-[0.35em] text-accent/90">Nairobi, Kenya</p>
-              <p className="mt-2 text-sm text-muted leading-relaxed">
-                Available for product software, AI, and SaaS engagements with global teams.
-              </p>
-            </div>
+          <motion.div variants={item} className="relative mx-auto w-full max-w-[420px]">
+            <div className="pointer-events-none absolute left-1/2 top-12 h-[340px] w-[340px] -translate-x-1/2 rounded-full bg-cyan-300/15 blur-3xl opacity-90" />
+            <div className="pointer-events-none absolute -right-8 top-24 h-28 w-28 rounded-full border border-cyan-200/30 opacity-60" />
+            <div className="pointer-events-none absolute left-0 bottom-10 h-28 w-28 rounded-full border border-white/10 opacity-40" />
+            <img
+              src="/antony.jpg"
+              alt="Antony Peter — Senior Full-Stack Software Engineer"
+              loading="lazy"
+              decoding="async"
+              className="relative hero-portrait mx-auto h-[520px] w-full object-cover object-center shadow-[0_50px_120px_rgba(0,0,0,0.24)]"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bg/95 via-transparent to-transparent" />
           </motion.div>
         </div>
       </div>
