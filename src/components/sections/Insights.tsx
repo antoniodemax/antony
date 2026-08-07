@@ -24,8 +24,8 @@ const articles = [
       'In a world of fast ships and MVP culture, the businesses that build durable products are the ones that took architecture seriously from day one. A deep dive into what "scalable" really means.',
     readTime: '9 min read',
     date: 'May 2026',
-    gradient: 'from-indigo-900/40 via-blue-900/20 to-slate-900/30',
-    color: '#6366F1',
+    gradient: 'from-amber-900/40 via-orange-900/25 to-slate-900/30',
+    color: '#F0A500',
     tag: 'Engineering',
   },
   {

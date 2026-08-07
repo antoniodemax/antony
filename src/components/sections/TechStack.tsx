@@ -22,6 +22,8 @@ export default function TechStack() {
           {techStack.map(cat => (
             <button
               key={cat.id}
+              type="button"
+              aria-pressed={active === cat.id}
               onClick={() => setActive(cat.id)}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 active === cat.id
@@ -36,14 +38,14 @@ export default function TechStack() {
 
         <AnimatePresence mode="wait">
           <motion.div
-            key={active}
+            key={active ?? 'tech-stack'}
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.35 }}
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
-            {activeCategory.items.map((item, i) => (
+            {(activeCategory?.items ?? []).map((item, i) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, scale: 0.96 }}

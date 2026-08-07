@@ -29,9 +29,9 @@ export default function Button({
 
   const variants = {
     primary:
-      'bg-accent text-black hover:bg-accent-light shadow-accent hover:shadow-glow active:scale-[0.98] min-w-[160px]',
+      'bg-accent text-black hover:bg-accent-light shadow-sm shadow-black/15 active:scale-[0.98]',
     secondary:
-      'border border-white/10 bg-white/5 text-white hover:border-accent/30 hover:bg-white/10 active:scale-[0.98] min-w-[160px]',
+      'border border-white/10 bg-white/5 text-white hover:border-accent/30 hover:bg-white/10 active:scale-[0.98]',
     ghost: 'text-muted hover:text-white hover:bg-white/5 active:scale-[0.98]'
   }
 

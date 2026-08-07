@@ -24,10 +24,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               alt={`${project.title} screenshot`}
               loading="lazy"
               decoding="async"
-              className="h-full min-h-[340px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="h-full min-h-[260px] sm:min-h-[340px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           ) : (
-            <div className="h-full min-h-[340px] bg-surface" />
+            <div className="h-full min-h-[260px] sm:min-h-[340px] bg-surface" />
           )}
           <div className="absolute inset-x-0 top-4 flex justify-between px-5">
             <span

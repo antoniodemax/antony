@@ -169,7 +169,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-bg/98 backdrop-blur-xl pt-24 px-8 flex flex-col"
+            className="fixed inset-0 z-40 bg-bg/98 backdrop-blur-xl pt-24 px-6 sm:px-8 flex flex-col overflow-y-auto"
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link, i) => (
