@@ -37,12 +37,11 @@ export default function Hero() {
 
             <motion.div variants={item} className="space-y-7 max-w-2xl">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-tight text-white">
-                Building scalable software,
+                Building scalable software and
                 <br className="hidden xl:block" />
-                <span className="text-white/90">intelligent AI solutions,</span>{' '}
-                and <span className="text-accent">digital products</span>
+                <span className="text-white/90">intelligent AI solutions</span>
                 <br className="hidden xl:block" />
-                that help ambitious businesses grow.
+                for ambitious businesses.
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg leading-8 text-muted">
@@ -85,13 +84,13 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          <motion.div variants={item} className="relative mx-auto w-full max-w-[420px] overflow-visible">
+          <motion.div variants={item} className="relative mx-auto w-full max-w-[320px] overflow-visible">
             <img
               src="/portrait.png"
               alt="Antony Peter — Senior Full-Stack Software Engineer"
               loading="lazy"
               decoding="async"
-              className="hero-portrait mx-auto h-[560px] w-auto object-top"
+              className="hero-portrait mx-auto h-[500px] w-auto object-top"
             />
           </motion.div>
         </div>
