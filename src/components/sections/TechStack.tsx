@@ -57,15 +57,6 @@ export default function TechStack() {
             ))}
           </motion.div>
         </AnimatePresence>
-
-        <div className="mt-8 grid gap-3 sm:grid-cols-3">
-          {techStack.map(category => (
-            <div key={category.id} className="rounded-3xl glass-surface px-5 py-4 text-center">
-              <p className="text-sm font-semibold text-white mb-2">{category.label}</p>
-              <p className="text-xs text-muted leading-relaxed">{category.items.map(item => item.name).join(', ')}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   )
