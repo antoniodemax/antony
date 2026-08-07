@@ -26,7 +26,7 @@ export default function TechStack() {
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 active === cat.id
                   ? 'border-accent bg-accent/10 text-accent'
-                  : 'border-white/10 bg-white/5 text-muted hover:border-accent/20 hover:text-white'
+                  : 'border-white/10 bg-bg/70 text-muted hover:border-accent/20 hover:text-white'
               }`}
             >
               {cat.label}
@@ -50,7 +50,7 @@ export default function TechStack() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.04 }}
                 whileHover={{ scale: 1.03, y: -2 }}
-                className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition-all duration-200"
+                className="rounded-full border border-white/10 bg-bg/70 px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition-all duration-200"
               >
                 {item.name}
               </motion.div>
@@ -60,7 +60,7 @@ export default function TechStack() {
 
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
           {techStack.map(category => (
-            <div key={category.id} className="rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-center">
+            <div key={category.id} className="rounded-3xl glass-surface px-5 py-4 text-center">
               <p className="text-sm font-semibold text-white mb-2">{category.label}</p>
               <p className="text-xs text-muted leading-relaxed">{category.items.map(item => item.name).join(', ')}</p>
             </div>

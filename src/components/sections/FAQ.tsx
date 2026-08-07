@@ -107,7 +107,7 @@ export default function FAQ() {
             />
           </div>
 
-          <div className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl">
+          <div className="space-y-4 rounded-[2rem] glass-surface p-6">
             {faqs.map((faq, i) => (
               <FAQItem key={i} q={faq.q} a={faq.a} index={i} />
             ))}

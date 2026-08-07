@@ -13,7 +13,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.75, delay: index * 0.1, ease: 'easeOut' }}
-      className="group relative rounded-[2rem] border border-white/10 bg-white/5 shadow-card backdrop-blur-xl overflow-hidden"
+      className="group relative rounded-[2rem] glass-surface overflow-hidden"
     >
       <div className={`grid gap-6 lg:grid-cols-2 ${reversed ? 'lg:grid-flow-col-dense' : ''}`}>
         <div className={`relative overflow-hidden ${reversed ? 'lg:order-2' : ''}`}>
@@ -80,7 +80,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${project.title} on GitHub`}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-bg/70 px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
                 >
                   <GitBranch size={14} />
                   GitHub

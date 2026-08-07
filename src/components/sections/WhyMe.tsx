@@ -69,7 +69,7 @@ export default function WhyMe() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
               whileHover={{ y: -4 }}
-              className="group p-6 rounded-2xl border border-white/5 bg-card hover:border-accent/15 hover:bg-accent/3 transition-all duration-300 cursor-default"
+              className="group p-6 rounded-2xl glass-surface hover:border-accent/15 hover:bg-accent/10 transition-all duration-300 cursor-default"
             >
               <div className="w-10 h-10 rounded-xl bg-accent/10 group-hover:bg-accent/15 flex items-center justify-center mb-4 transition-colors duration-300">
                 <Icon size={18} className="text-accent" />

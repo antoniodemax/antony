@@ -20,9 +20,23 @@ export default function App() {
   const parts = path.split('/').filter(Boolean)
 
   return (
-    <div className="bg-bg text-white min-h-screen font-sans antialiased">
+    <div className="bg-bg text-white min-h-screen font-sans antialiased relative overflow-hidden">
+      <div className="fixed inset-0 -z-20 overflow-hidden">
+        <video
+          className="ambient-video absolute inset-0 h-full w-full object-cover"
+          src="/coding.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          onEnded={event => event.currentTarget.play()}
+          aria-hidden="true"
+        />
+        <div className="ambient-video-overlay absolute inset-0" />
+      </div>
       <Navigation />
-      <main className="min-h-screen">
+      <main className="relative min-h-screen">
         <AnimatePresence mode="wait">
           <motion.div
             key={path}

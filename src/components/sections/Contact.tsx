@@ -93,8 +93,8 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 hero-decor opacity-50" />
-      <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/80 to-transparent" />
-      <div className="absolute right-24 top-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/90 to-transparent" />
+      <div className="absolute right-24 top-24 h-80 w-80 rounded-full bg-accent/10 blur-3xl opacity-50" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: contactSchema(siteUrl) }} />
@@ -112,7 +112,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="space-y-4 rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-card backdrop-blur-xl"
+            className="space-y-4 rounded-[2rem] glass-surface p-8"
           >
             <p className="text-sm font-semibold text-white mb-6">Reach Me Directly</p>
             {channels.map(({ icon: Icon, label, value, href, color, bg }, i) => (
@@ -160,7 +160,7 @@ export default function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center gap-6 rounded-[2rem] border border-white/10 bg-white/5 p-10 shadow-card text-center"
+                className="flex flex-col items-center justify-center gap-6 rounded-[2rem] glass-surface p-10 text-center"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/15 text-accent">
                   <Send size={20} />
@@ -186,7 +186,7 @@ export default function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="space-y-4 rounded-[2rem] border border-white/10 bg-bg/80 p-6 shadow-card backdrop-blur-xl"
+                className="space-y-4 rounded-[2rem] glass-surface p-6"
               >
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-1.5">

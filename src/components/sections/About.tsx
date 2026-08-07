@@ -50,7 +50,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl">
+            <div className="rounded-[2rem] glass-surface p-6">
               <div className="space-y-3">
                 <p className="text-xs uppercase tracking-[0.35em] text-accent/80 font-semibold">Education</p>
                 <div className="flex items-start gap-3">
@@ -67,7 +67,7 @@ export default function About() {
               {pillars.map(({ icon: Icon, title, text }) => (
                 <div
                   key={title}
-                  className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-card backdrop-blur-xl"
+                  className="rounded-[2rem] glass-surface p-6"
                 >
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-accent/10 mb-4 text-accent">
                     <Icon size={18} />

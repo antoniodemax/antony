@@ -23,7 +23,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
-              className="relative flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-accent/20"
+              className="relative flex h-full flex-col rounded-[2rem] glass-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/20"
             >
               <div className="absolute right-6 top-6 opacity-10">
                 <Quote size={36} className="text-accent" />

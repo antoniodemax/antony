@@ -130,6 +130,26 @@ html[data-theme='light'] {
       linear-gradient(180deg, rgba(255,255,255,0.02), transparent 55%);
   }
 
+  .ambient-video {
+    opacity: 0.65;
+    filter: saturate(0.6) brightness(0.55) contrast(0.92) blur(0.4px);
+    transform: scale(1.03);
+    transition: opacity 0.35s ease;
+  }
+
+  .ambient-video-overlay {
+    background: linear-gradient(180deg, rgba(8,17,31,0.82), rgba(8,17,31,0.88) 35%, rgba(8,17,31,0.74) 100%);
+    mix-blend-mode: normal;
+  }
+
+  .glass-surface {
+    background-color: rgba(15, 28, 46, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+  }
+
   .hero-portrait {
     display: block;
     max-width: 100%;

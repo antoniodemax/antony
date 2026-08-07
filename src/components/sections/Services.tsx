@@ -11,7 +11,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: 'easeOut' }}
-      className="group relative flex h-full flex-col rounded-[2rem] border border-white/10 bg-white/5 shadow-card backdrop-blur-xl overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:border-accent/30"
+      className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:border-accent/30"
     >
       <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full bg-accent/80" />
 
@@ -90,7 +90,7 @@ export default function Services() {
           />
         </div>
 
-        <div className="mb-8 rounded-[2rem] border border-white/10 bg-white/5 px-6 py-6 shadow-card backdrop-blur-xl sm:px-8 sm:py-8">
+        <div className="mb-8 rounded-[2rem] glass-surface px-6 py-6 sm:px-8 sm:py-8">
           <div className="max-w-4xl mx-auto">
             <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold">Discovery First</p>
             <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl">
