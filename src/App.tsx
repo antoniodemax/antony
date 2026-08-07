@@ -6,6 +6,7 @@ import Services from './components/sections/Services'
 import WhyMe from './components/sections/WhyMe'
 import Testimonials from './components/sections/Testimonials'
 import About from './components/sections/About'
+import TechStack from './components/sections/TechStack'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
 import usePath from './hooks/usePath'
@@ -48,6 +49,7 @@ export default function App() {
               <>
                 <Hero />          {/* Home */}
                 <About />         {/* About */}
+                <TechStack />     {/* skills — under About */}
                 <Services />      {/* Services */}
                 <WhyMe />         {/* supports Services */}
                 <Projects />      {/* Work */}
