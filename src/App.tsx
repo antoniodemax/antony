@@ -20,7 +20,7 @@ export default function App() {
   const parts = path.split('/').filter(Boolean)
 
   return (
-    <div className="bg-bg text-white min-h-screen font-sans antialiased relative overflow-hidden">
+    <div className="bg-transparent text-white min-h-screen font-sans antialiased relative overflow-hidden">
       <div className="fixed inset-0 -z-20 overflow-hidden">
         <video
           className="ambient-video absolute inset-0 h-full w-full object-cover"

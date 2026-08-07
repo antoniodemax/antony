@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#132238',
-        surface: '#1A2F47',
-        card: 'rgba(255,255,255,0.03)',
+        bg: '#090909',
+        surface: '#121416',
+        card: 'rgba(255,255,255,0.04)',
         accent: {
-          DEFAULT: '#29D8FF',
-          light: '#7EEBFF',
-          dark: '#0CB7EA',
+          DEFAULT: '#E8C289',
+          light: '#F6E6C0',
+          dark: '#B78D4D',
         },
-        muted: '#A9BED0',
+        muted: '#B9B3A7',
         border: 'rgba(255,255,255,0.08)',
       },
       fontFamily: {

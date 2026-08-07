@@ -25,8 +25,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden pt-20">
-      <div className="absolute inset-0 hero-decor bg-noise opacity-80" />
-      <div className="absolute inset-0 bg-gradient-to-br from-bg/90 via-surface/55 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 hero-decor bg-noise opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-950/15 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] py-24 lg:py-32">
