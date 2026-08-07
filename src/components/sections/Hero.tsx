@@ -24,23 +24,17 @@ export default function Hero() {
   const [bookingOpen, setBookingOpen] = useState(false)
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden pt-20">
+    <section id="home" className="relative min-h-screen overflow-hidden pt-20 sm:pt-24 lg:pt-28">
       <div className="absolute inset-0 hero-decor bg-noise opacity-40" />
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-slate-950/15 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_1fr] py-24 lg:py-32">
-          <motion.div variants={container} initial="initial" animate="animate" className="space-y-10">
-            <motion.div variants={item} className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-sm text-accent shadow-accent/10 backdrop-blur-xl">
-              Senior Full Stack Software Engineer • AI Engineer • Aspiring CyberSecurity Analyst
-            </motion.div>
-
-            <motion.div variants={item} className="space-y-7 max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-tight text-white">
-                Building scalable software and
-                <br className="hidden xl:block" />
-                <span className="text-white/90">intelligent AI solutions</span>
-                <br className="hidden xl:block" />
+        <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] py-20 lg:py-28">
+          <motion.div variants={container} initial="initial" animate="animate" className="space-y-8 sm:space-y-10">
+            <motion.div variants={item} className="space-y-6 max-w-xl sm:max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight sm:leading-[1.05] text-white">
+                Building scalable software and <span className="text-white/90">intelligent AI solutions</span>
+                <br className="hidden lg:block" />
                 for ambitious businesses.
               </h1>
 
@@ -49,7 +43,7 @@ export default function Hero() {
               </p>
             </motion.div>
 
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <Button
                 as="a"
                 href="#work"
@@ -90,7 +84,7 @@ export default function Hero() {
               alt="Antony Peter — Senior Full-Stack Software Engineer"
               loading="lazy"
               decoding="async"
-              className="hero-portrait mx-auto h-[500px] w-auto object-top"
+              className="hero-portrait mx-auto h-[420px] w-auto object-top sm:h-[460px] lg:h-[500px]"
             />
           </motion.div>
         </div>
