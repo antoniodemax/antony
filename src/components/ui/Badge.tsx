@@ -7,7 +7,7 @@ export default function Badge({ children, variant = 'default' }: BadgeProps) {
   const variants = {
     default: 'bg-white/5 text-white border border-white/10',
     accent: 'bg-accent/10 text-accent border border-accent/20',
-    muted: 'bg-white/5/20 text-muted border border-white/10',
+    muted: 'bg-muted/10 text-muted border border-muted/20',
   }
 
   return (

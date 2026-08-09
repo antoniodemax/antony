@@ -95,7 +95,7 @@ export default function Navigation() {
               className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
-              <div className="flex items-center rounded-3xl bg-white/5 px-3 py-2 shadow-card border border-white/10">
+              <div className="flex items-center rounded-3xl bg-white/5 px-3 py-2 shadow-card border border-accent/20">
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
@@ -126,7 +126,7 @@ export default function Navigation() {
                     href={link.href}
                     onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
                     className={`relative text-[11px] sm:text-xs lg:text-sm font-semibold tracking-[0.18em] transition-colors duration-200 whitespace-nowrap ${
-                      activeSection === link.href ? 'text-white' : 'text-white/70 hover:text-white'
+                      activeSection === link.href ? 'text-accent' : 'text-muted hover:text-accent-light'
                     }`}
                   >
                     {link.label}
@@ -143,7 +143,7 @@ export default function Navigation() {
             {/* Right side — CTA or hamburger */}
             <div className="ml-auto flex items-center">
               {!compact ? (
-                <Button size="sm" className="bg-white/5 text-white border border-white/10 hover:border-accent/30 hover:bg-white/10" onClick={() => setBookingOpen(true)}>
+                <Button size="sm" variant="secondary" onClick={() => setBookingOpen(true)}>
                   Book a Consultation
                 </Button>
               ) : (
@@ -189,6 +189,7 @@ export default function Navigation() {
             <div className="mt-8">
               <Button
                 size="lg"
+                variant="primary"
                 className="w-full"
                 onClick={() => { setMobileOpen(false); setBookingOpen(true) }}
               >

@@ -4,16 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#090909',
-        surface: '#121416',
-        card: 'rgba(255,255,255,0.04)',
+        bg: '#050807',
+        surface: '#0B100E',
+        card: '#0B100E',
         accent: {
-          DEFAULT: '#E8C289',
-          light: '#F6E6C0',
-          dark: '#B78D4D',
+          DEFAULT: '#8FCB9B',
+          light: '#A7DDB2',
+          dark: '#3F8F63',
         },
-        muted: '#B9B3A7',
-        border: 'rgba(255,255,255,0.08)',
+        muted: '#6FAF88',
+        border: 'rgba(255,255,255,0.07)',
+        accentBorder: 'rgba(143,203,155,0.20)',
+        accentBorderHover: 'rgba(143,203,155,0.35)',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
@@ -23,8 +25,8 @@ export default {
       },
       boxShadow: {
         card: '0 24px 80px rgba(0, 0, 0, 0.22)',
-        glow: '0 0 60px rgba(41, 216, 255, 0.18)',
-        accent: '0 24px 80px rgba(41, 216, 255, 0.12)',
+        glow: '0 0 60px rgba(143,203,155,0.18)',
+        accent: '0 24px 80px rgba(143,203,155,0.12)',
       },
       keyframes: {
         float: {

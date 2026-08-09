@@ -28,7 +28,7 @@ export default function TechStack() {
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200 ${
                 active === cat.id
                   ? 'border-accent bg-accent/10 text-accent'
-                  : 'border-white/10 bg-bg/70 text-muted hover:border-accent/20 hover:text-white'
+                  : 'border-accent/20 bg-bg/70 text-muted hover:border-accent/30 hover:text-accent'
               }`}
             >
               {cat.label}
@@ -52,7 +52,7 @@ export default function TechStack() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: i * 0.04 }}
                 whileHover={{ scale: 1.03, y: -2 }}
-                className="rounded-full border border-white/10 bg-bg/70 px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition-all duration-200"
+                className="rounded-full border border-accent/20 bg-bg/70 px-4 py-3 text-center text-sm font-semibold text-white shadow-card transition-all duration-200"
               >
                 {item.name}
               </motion.div>

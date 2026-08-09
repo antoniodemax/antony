@@ -23,7 +23,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <p className="text-sm text-muted leading-relaxed min-h-[3.5rem]">{service.description}</p>
         </div>
 
-        <div className="rounded-[1.5rem] border border-white/10 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+        <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
           {service.pricingType === 'custom' ? (
             <div className="space-y-2">
               <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>

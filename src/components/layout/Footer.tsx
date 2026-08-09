@@ -22,11 +22,11 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="border-t border-white/10 bg-bg">
+      <footer className="border-t border-accent/20 bg-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-4">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-card">
+              <div className="rounded-3xl border border-accent/20 bg-white/5 p-3 shadow-card">
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
@@ -51,7 +51,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-11 w-11 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
+                  className="flex h-11 w-11 items-center justify-center rounded-3xl border border-accent/20 bg-white/5 text-white transition-all duration-200 hover:border-accent/30 hover:text-accent"
                 >
                   <Icon size={16} style={{ color }} />
                 </a>
@@ -59,15 +59,15 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 border-t border-white/10 pt-8 text-sm text-muted/70 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 Antony Peter. All rights reserved.</p>
+          <div className="mt-10 border-t border-accent/20 pt-8 text-sm text-muted/70 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-muted">© 2026 Antony Peter. All rights reserved.</p>
 
             <div className="flex flex-wrap items-center gap-3 justify-center">
               {legalLinks.map(({ label, doc }) => (
                 <button
                   key={doc}
                   onClick={() => setActiveDoc(doc)}
-                  className="text-xs text-muted/70 transition-colors duration-200 hover:text-white"
+                  className="text-xs text-muted/70 transition-colors duration-200 hover:text-accent"
                 >
                   {label}
                 </button>

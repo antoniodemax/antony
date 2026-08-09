@@ -31,8 +31,8 @@ export default function Button({
     primary:
       'bg-accent text-black hover:bg-accent-light shadow-sm shadow-black/15 active:scale-[0.98]',
     secondary:
-      'border border-white/10 bg-white/5 text-white hover:border-accent/30 hover:bg-white/10 active:scale-[0.98]',
-    ghost: 'text-muted hover:text-white hover:bg-white/5 active:scale-[0.98]'
+      'border border-accent/30 bg-transparent text-white hover:border-accent/30 hover:bg-accent/10 hover:text-accent active:scale-[0.98]',
+    ghost: 'text-muted hover:text-accent hover:bg-accent/5 active:scale-[0.98]'
   }
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`
