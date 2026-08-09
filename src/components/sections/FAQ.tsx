@@ -97,7 +97,7 @@ export default function FAQ() {
     <section id="faq" className="py-24 md:py-32 bg-surface/30">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema(faqs) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] items-start">
+        <div className="gap-16 grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] items-start">
           <div>
             <SectionHeader
               label="FAQ"

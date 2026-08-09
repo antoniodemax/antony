@@ -99,7 +99,7 @@ export default function Navigation() {
                 <img
                   src="/logo.jpg"
                   alt="Antony Peter"
-                  className="h-16 lg:h-18 w-auto object-contain brightness-110"
+                  className="h-14 lg:h-16 w-auto object-contain brightness-110"
                 />
               </div>
             </a>
@@ -180,7 +180,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                   onClick={e => { e.preventDefault(); handleNavClick(link.href) }}
-                  className="py-4 text-lg font-medium text-white border-b border-white/5 tracking-wide"
+                  className="py-5 text-lg font-medium text-white border-b border-white/5 tracking-wide"
                 >
                   {link.label}
                 </motion.a>

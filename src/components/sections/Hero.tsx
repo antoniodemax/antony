@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] py-20 lg:py-28">
           <motion.div variants={container} initial="initial" animate="animate" className="space-y-8 sm:space-y-10">
             <motion.div variants={item} className="space-y-6 max-w-xl sm:max-w-2xl">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-tight sm:leading-[1.05] text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight sm:leading-[1.05] text-white">
                 Building scalable software and <span className="text-white/90">intelligent AI solutions</span>
                 <br className="hidden lg:block" />
                 for ambitious businesses.
@@ -48,7 +48,7 @@ export default function Hero() {
                 as="a"
                 href="#work"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })
@@ -60,7 +60,7 @@ export default function Hero() {
                 as="button"
                 variant="secondary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full mt-4 sm:mt-0 sm:w-auto"
                 onClick={() => setBookingOpen(true)}
               >
                 <MessageSquare size={16} />
@@ -68,7 +68,7 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            <motion.div variants={item} className="grid grid-cols-2 sm:grid-cols-4 gap-4 rounded-[2rem] glass-surface p-5">
+            <motion.div variants={item} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-[2rem] glass-surface p-5">
               {stats.map(stat => (
                 <div key={stat.label} className="space-y-1">
                   <p className="text-lg font-semibold text-white">{stat.value}</p>

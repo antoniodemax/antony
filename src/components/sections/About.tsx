@@ -63,7 +63,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
               {pillars.map(({ icon: Icon, title, text }) => (
                 <div
                   key={title}

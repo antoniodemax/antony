@@ -32,7 +32,7 @@ export default function Credibility() {
   return (
     <section className="py-8 border-y border-white/5 bg-surface/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map(({ icon: Icon, value, label, sub }, i) => (
             <motion.div
               key={i}
@@ -41,8 +41,16 @@ export default function Credibility() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`flex items-center gap-3 px-4 sm:px-6 py-5 ${
-                i < stats.length - 1 ? 'border-r border-white/5' : ''
-              } ${i >= 2 ? 'border-t border-white/5 lg:border-t-0' : ''}`}
+                // Right border:
+                (i % 2 === 0 ? ' sm:border-r border-white/5' : '') + // sm: right border on even indices (0,2)
+                (i % 4 !== 3 ? ' lg:border-r border-white/5' : '')   // lg: right border on indices 0,1,2
+              } ${
+                // Bottom border:
+                // xs: 4 rows -> bottom border on first three
+                (i < 3 ? ' border-b border-white/5' : '') +
+                // sm: 2 rows -> border-b on first two
+                (i < 2 ? ' sm:border-b border-white/5' : '')
+              } lg:border-b-0`}
             >
               <div className="w-9 h-9 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                 <Icon size={16} className="text-accent" />

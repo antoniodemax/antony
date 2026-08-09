@@ -24,10 +24,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               alt={`${project.title} screenshot`}
               loading="lazy"
               decoding="async"
-              className="h-full min-h-[260px] sm:min-h-[340px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="h-full min-h-[240px] sm:min-h-[280px] lg:min-h-[340px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
           ) : (
-            <div className="h-full min-h-[260px] sm:min-h-[340px] bg-surface" />
+            <div className="h-full min-h-[240px] sm:min-h-[280px] lg:min-h-[340px] bg-surface" />
           )}
           <div className="absolute inset-x-0 top-4 flex justify-between px-5">
             <span
@@ -39,13 +39,13 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </div>
         </div>
 
-        <div className="flex flex-col justify-between p-8 xl:p-10">
+        <div className="flex flex-col justify-between p-6 sm:p-8 xl:p-10">
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-accent/90">
               <span className="h-px w-8 bg-accent/60" />
               {project.tagline}
             </div>
-            <h3 className="text-3xl font-semibold tracking-[-0.03em] text-white transition-colors duration-300 group-hover:text-accent">
+            <h3 className="text-2xl sm:text-3xl font-semibold tracking-[-0.03em] text-white transition-colors duration-300 group-hover:text-accent">
               {project.title}
             </h3>
             <p className="text-sm text-muted leading-relaxed">{project.problem}</p>
@@ -121,7 +121,7 @@ export default function Projects() {
           </motion.a>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-6 sm:space-y-10">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}

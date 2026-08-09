@@ -60,7 +60,7 @@ export default function WhyMe() {
           />
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {reasons.map(({ icon: Icon, title, description }, i) => (
             <motion.div
               key={title}
