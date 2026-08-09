@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Check, Clock } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 import { services } from '../../data/services'
 
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
+  const [showInvestment, setShowInvestment] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -23,21 +25,52 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <p className="text-sm text-muted leading-relaxed min-h-[3.5rem]">{service.description}</p>
         </div>
 
-        <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
-          {service.pricingType === 'custom' ? (
-            <div className="space-y-2">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
-              <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-              <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
-            </div>
+        <motion.div
+          key={showInvestment ? 'shown' : 'hidden'}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          {showInvestment ? (
+            <>
+              <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+                {service.pricingType === 'custom' ? (
+                  <div className="space-y-2">
+                    <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
+                    <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
+                    <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
+                    <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
+                    <p className="text-sm text-muted">{service.usd}</p>
+                  </div>
+                )}
+              </div>
+              <button
+                onClick={() => setShowInvestment(false)}
+                className="mt-2 text-sm text-accent/80 hover:text-accent underline"
+                aria-label="Hide investment"
+              >
+                Hide Investment
+              </button>
+            </>
           ) : (
-            <div className="space-y-2">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
-              <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-              <p className="text-sm text-muted">{service.usd}</p>
-            </div>
+            <Button
+              as="button"
+              variant="secondary"
+              size="sm"
+              onClick={() => setShowInvestment(true)}
+              className="w-auto self-start"
+              aria-expanded={false}
+              aria-controls="investment-details"
+            >
+              View Investment →
+            </Button>
           )}
-        </div>
+        </motion.div>
 
         <div className="inline-flex items-center gap-3 rounded-[1.5rem] border border-accent/15 bg-accent/10 px-4 py-3">
           <Clock size={16} className="text-accent" />
@@ -59,20 +92,6 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             </li>
           ))}
         </ul>
-
-        <Button
-          as="a"
-          href="#contact"
-          onClick={e => {
-            e.preventDefault()
-            document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-          }}
-          variant={service.pricingType === 'custom' ? 'primary' : 'secondary'}
-          className="w-full mt-4"
-          size="md"
-        >
-          {service.buttonLabel}
-        </Button>
       </div>
     </motion.div>
   )

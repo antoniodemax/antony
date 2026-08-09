@@ -17,8 +17,8 @@ export const services: Service[] = [
     id: 'basic-website',
     title: 'Basic Website',
     description: 'A simple, affordable website ideal for personal brands and small businesses.',
-    kes: 'KES 20,000',
-    usd: 'Approx. USD 150',
+    kes: 'KES 30,000',
+    usd: 'Approx. USD 230',
     pricingType: 'starting',
     buttonLabel: 'Get Started',
     features: [
@@ -59,8 +59,8 @@ export const services: Service[] = [
     title: 'E-Commerce Platform',
     description:
       'Full-featured online store with payment integration, inventory management, and a seamless checkout experience built for conversion.',
-    kes: 'KES 150,000',
-    usd: 'Approx. USD 1,150',
+    kes: 'KES 140,000',
+    usd: 'Approx. USD 1,080',
     pricingType: 'starting',
     buttonLabel: 'Start Your Store',
     features: [
@@ -81,8 +81,8 @@ export const services: Service[] = [
     title: 'Custom Web Application',
     description:
       'Bespoke, scalable web applications built to solve complex business problems — from internal tools to full SaaS products.',
-    kes: 'KES 250,000',
-    usd: 'Approx. USD 1,920',
+    kes: 'KES 200,000+',
+    usd: 'Approx. USD 1,540+',
     pricingType: 'starting',
     buttonLabel: 'Discuss Your Project',
     features: [
