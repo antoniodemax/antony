@@ -106,13 +106,13 @@ export default function Contact() {
           />
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] items-start max-w-5xl mx-auto">
+        <div className="gap-6 lg:gap-12 grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] items-start max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="space-y-4 rounded-[2rem] glass-surface p-8"
+            className="space-y-4 rounded-[2rem] glass-surface p-6 sm:p-8"
           >
             <p className="text-sm font-semibold text-white mb-6">Reach Me Directly</p>
             {channels.map(({ icon: Icon, label, value, href, color, bg }, i) => (
@@ -126,23 +126,22 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ x: 4 }}
-                className="group flex items-center gap-4 rounded-3xl border border-white/10 bg-bg/80 px-5 py-4 text-white transition-all duration-200 hover:border-accent/20 hover:bg-white/10"
+                className="group flex items-center gap-3 rounded-3xl border border-white/10 bg-bg/80 px-4 sm:px-5 py-3 sm:py-4 text-white transition-all duration-200 hover:border-accent/20 hover:bg-white/10"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-3xl" style={{ background: bg }}>
-                  <Icon size={18} style={{ color }} />
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-3xl" style={{ background: bg }}>
+                  <Icon size={16} className="sm:size-18" style={{ color }} />
                 </div>
                 <div className="flex-1">
                   <p className="text-xs uppercase tracking-[0.3em] text-muted/70">{label}</p>
                   <p className="text-sm font-medium text-white">{value}</p>
                 </div>
                 <ArrowRight
-                  size={14}
-                  className="text-muted transition-colors duration-200 group-hover:text-white"
+                  size={12} className="sm:size-14 text-muted transition-colors duration-200 group-hover:text-white"
                 />
               </motion.a>
             ))}
 
-            <div className="rounded-[2rem] border border-accent/15 bg-accent/10 p-5">
+            <div className="rounded-[2rem] border border-accent/15 bg-accent/10 p-4 sm:p-5">
               <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold mb-2">Project Enquiries</p>
               <p className="text-sm text-muted leading-relaxed">
                 Every project enquiry receives a response within one business day. Once I’ve reviewed your requirements, I’ll reply by email with the next steps. If your project is a good fit, we’ll schedule a discovery call to discuss goals, timeline, budget, and scope before preparing a detailed proposal.
