@@ -98,7 +98,7 @@ export default function Navigation() {
               <img
                 src="/logo.jpg"
                 alt="Antony Peter"
-                className="h-16 lg:h-20 w-auto object-contain brightness-110 transition-opacity duration-200 hover:opacity-90"
+                className="h-18 lg:h-22 w-auto object-contain brightness-110 transition-opacity duration-200 hover:opacity-90"
               />
             </a>
 
