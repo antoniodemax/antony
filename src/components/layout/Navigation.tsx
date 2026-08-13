@@ -95,13 +95,11 @@ export default function Navigation() {
               className="flex-shrink-0"
               aria-label="Antony Peter — Home"
             >
-              <div className="flex items-center rounded-3xl bg-white/5 px-3 py-2 shadow-card border border-accent/20">
-                <img
-                  src="/logo.jpg"
-                  alt="Antony Peter"
-                  className="h-14 lg:h-16 w-auto object-contain brightness-110"
-                />
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Antony Peter"
+                className="h-16 lg:h-20 w-auto object-contain brightness-110 transition-opacity duration-200 hover:opacity-90"
+              />
             </a>
 
             {/* Hidden measurement clone — always in DOM so ResizeObserver can read real link widths */}
