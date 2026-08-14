@@ -30,20 +30,20 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] py-20 lg:py-28">
-          <motion.div variants={container} initial="initial" animate="animate" className="space-y-8 sm:space-y-10">
-            <motion.div variants={item} className="space-y-6 max-w-xl sm:max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight sm:leading-[1.05] text-white">
+          <motion.div variants={container} initial="initial" animate="animate" className="space-y-10 sm:space-y-12">
+            <motion.div variants={item} className="space-y-8 max-w-xl sm:max-w-2xl">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-tight sm:leading-[1.1] text-white">
                 Building scalable software and <span className="text-white/90">intelligent AI solutions</span>
                 <br className="hidden lg:block" />
                 for ambitious businesses.
               </h1>
 
-              <p className="max-w-xl text-base sm:text-lg leading-8 text-muted">
+              <p className="max-w-xl text-base sm:text-lg leading-relaxed text-muted">
                 Senior Full Stack Software Engineer • AI Engineer • Aspiring CyberSecurity Analyst
               </p>
             </motion.div>
 
-            <motion.div variants={item} className="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <motion.div variants={item} className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-6">
               <Button
                 as="a"
                 href="#work"
@@ -60,7 +60,7 @@ export default function Hero() {
                 as="button"
                 variant="secondary"
                 size="lg"
-                className="w-full mt-4 sm:mt-0 sm:w-auto"
+                className="w-full mt-6 sm:mt-0 sm:w-auto"
                 onClick={() => setBookingOpen(true)}
               >
                 <MessageSquare size={16} />
@@ -68,9 +68,9 @@ export default function Hero() {
               </Button>
             </motion.div>
 
-            <motion.div variants={item} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 rounded-[2rem] glass-surface p-5">
+            <motion.div variants={item} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 rounded-[2rem] glass-surface p-6">
               {stats.map(stat => (
-                <div key={stat.label} className="space-y-1">
+                <div key={stat.label} className="space-y-2">
                   <p className="text-lg font-semibold text-white">{stat.value}</p>
                   <p className="text-xs uppercase tracking-[0.35em] text-muted/80">{stat.label}</p>
                 </div>
