@@ -26,7 +26,7 @@ export const projects: Project[] = [
       'Full-stack SaaS with real-time workspaces, cryptographic e-signatures, KRA eTIMS tax compliance, AI-assisted deal structuring, and white-label client portals.',
     stack: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Framer Motion'],
     color: '#D4AF37',
-    gradient: 'from-amber-900/40 via-yellow-900/20 to-stone-900/40',
+    gradient: 'from-amber-400/40 via-yellow-400/20 to-stone-900/40',
     image: '/project-crevia.png',
     liveUrl: 'https://crevia.app/',
   },
