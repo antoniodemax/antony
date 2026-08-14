@@ -4,7 +4,6 @@ import Hero from './components/sections/Hero'
 import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
 import WhyMe from './components/sections/WhyMe'
-import Testimonials from './components/sections/Testimonials'
 import About from './components/sections/About'
 import TechStack from './components/sections/TechStack'
 import InsightsList from './components/insights/InsightsList'
@@ -53,7 +52,6 @@ export default function App() {
                 <Services />      {/* Services */}
                 <WhyMe />         {/* supports Services */}
                 <Projects />      {/* Work */}
-                <Testimonials />  {/* social proof — under Work */}
                 <FAQ />           {/* before Contact */}
                 <Contact />       {/* Contact */}
               </>
