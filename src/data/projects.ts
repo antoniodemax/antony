@@ -42,7 +42,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     color: '#8B5CF6',
     gradient: 'from-violet-900/40 via-purple-900/20 to-slate-900/40',
-    image: '/project-millux.png',
+    image: '/millux.png',
     liveUrl: 'https://milluxcollections.vercel.app/',
   },
 ]

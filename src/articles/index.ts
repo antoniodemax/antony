@@ -70,7 +70,7 @@ const articles: Article[] = [
     readingTime: '6 min',
     category: 'Product',
     tags: ['SaaS', 'Africa', 'Product'],
-    featuredImage: '/project-millux.png',
+    featuredImage: '/millux.png',
     featured: false,
     content: `
       <h2 id="intro">Intro</h2>
