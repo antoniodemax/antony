@@ -26,13 +26,18 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-4">
-              <div className="rounded-3xl border border-accent/20 bg-white/5 p-3 shadow-card">
-                <img
-                  src="/logo.jpg"
-                  alt="Antony Peter"
-                  className="h-14 w-auto object-contain brightness-110"
-                />
-              </div>
+              <a
+                  href="#home"
+                  onClick={e => { e.preventDefault(); document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' }); }}
+                  className="flex-shrink-0"
+                  aria-label="Antony Peter — Home"
+                >
+                  <img
+                    src="/logo.jpg"
+                    alt="Antony Peter"
+                    className="h-20 lg:h-24 w-auto object-contain brightness-110 transition-opacity duration-200 hover:opacity-90"
+                  />
+                </a>
               <div>
                 <p className="text-sm font-semibold text-white">Antony Peter</p>
                 <p className="text-xs text-muted">Senior Full-Stack Software Engineer</p>
