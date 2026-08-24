@@ -39,7 +39,7 @@ export default function Hero() {
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg leading-relaxed text-muted">
-                Senior Full Stack Software Engineer • AI Engineer • Aspiring CyberSecurity Analyst
+                Senior Full Stack Software Engineer • AI Engineer • CyberSecurity Analyst
               </p>
             </motion.div>
 

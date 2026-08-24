@@ -59,6 +59,11 @@ export default function About() {
                     <p className="text-sm font-semibold text-white">Software Engineering</p>
                     <p className="text-xs text-muted">Moringa School</p>
                   </div>
+                  <div className="mt-2 h-2 w-2 rounded-full bg-accent" />
+                  <div>
+                    <p className="text-sm font-semibold text-white">Cyber Security</p>
+                    <p className="text-xs text-muted">Cisco Networking Academy</p>
+                  </div>
                 </div>
               </div>
             </div>
