@@ -41,7 +41,6 @@ export const techStack: TechCategory[] = [
     label: 'Database',
     items: [
       { name: 'PostgreSQL', level: 'expert' },
-      { name: 'Supabase', level: 'expert' },
       { name: 'Prisma ORM', level: 'expert' },
       { name: 'SQLite', level: 'proficient' },
     ],
