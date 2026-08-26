@@ -13,11 +13,6 @@ const item: Variants = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 }
 
-const stats = [
-  { value: '2+', label: 'Years Experience' },
-  { value: '100%', label: 'Client Satisfaction' },
-  { value: 'Kenya', label: '→ Global' },
-]
 
 export default function Hero() {
   const [bookingOpen, setBookingOpen] = useState(false)
@@ -64,16 +59,6 @@ export default function Hero() {
                 Let's Talk
               </Button>
             </motion.div>
-
-            <motion.div variants={item} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6 rounded-[2rem] glass-surface p-6">
-              {stats.map(stat => (
-                <div key={stat.label} className="space-y-2">
-                  <p className="text-lg font-semibold text-white">{stat.value}</p>
-                  <p className="text-xs uppercase tracking-[0.35em] text-muted/80">{stat.label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
 
           <motion.div variants={item} className="relative mx-auto w-full max-w-[320px] overflow-visible sm:max-w-[360px] md:max-w-[420px]">
             <img
