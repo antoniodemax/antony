@@ -69,6 +69,7 @@ export default function Hero() {
               className="hero-portrait mx-auto h-[320px] w-auto object-top sm:h-[420px] lg:h-[500px]"
             />
           </motion.div>
+        </motion.div>
         </div>
       </div>
       <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
