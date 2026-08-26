@@ -33,13 +33,11 @@ export default function Hero() {
           <motion.div variants={container} initial="initial" animate="animate" className="space-y-10 sm:space-y-12">
             <motion.div variants={item} className="space-y-8 max-w-xl sm:max-w-2xl">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-tight sm:leading-[1.1] text-white">
-                Building scalable software and <span className="text-white/90">intelligent AI solutions</span>
-                <br className="hidden lg:block" />
-                for ambitious businesses.
+                Engineering threat-resistant, scalable software and intelligent AI solutions
               </h1>
 
               <p className="max-w-xl text-base sm:text-lg leading-relaxed text-muted">
-                Senior Full Stack Software Engineer • AI Engineer • CyberSecurity Analyst
+                Senior Full Stack Software Engineer • AI  • CyberSecurity Analyst
               </p>
             </motion.div>
 
