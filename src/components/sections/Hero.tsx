@@ -14,7 +14,6 @@ const item: Variants = {
 }
 
 const stats = [
-  { value: '2+', label: 'Projects Delivered' },
   { value: '2+', label: 'Years Experience' },
   { value: '100%', label: 'Client Satisfaction' },
   { value: 'Kenya', label: '→ Global' },
@@ -32,7 +31,7 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] py-20 lg:py-28">
           <motion.div variants={container} initial="initial" animate="animate" className="space-y-10 sm:space-y-12">
             <motion.div variants={item} className="space-y-8 max-w-xl sm:max-w-2xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.02em] leading-tight sm:leading-[1.1] text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-semibold tracking-[-0.02em] leading-tight sm:leading-[1.1] text-white">
                 Engineering threat-resistant, scalable software and intelligent AI solutions
               </h1>
 
