@@ -35,7 +35,7 @@ export const projects: Project[] = [
     problem:
       'Creative agencies and independent consultants lacked a unified platform to manage contracts, invoicing, client communication, and compliance — relying on fragmented, expensive tools.',
     outcome:
-      'Full-stack SaaS with real-time workspaces, cryptographic e-signatures, KRA eTIMS tax compliance, AI-assisted deal structuring, and white-label client portals.',
+      'Full-stack SaaS with real-time workspaces, cryptographic e-signatures, AI-assisted deal structuring, and white-label client portals.',
     stack: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Framer Motion'],
     color: '#D4AF37',
     gradient: 'from-amber-400/30 via-yellow-400/20 to-stone-400/30',

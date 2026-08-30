@@ -65,7 +65,7 @@ export default function Projects() {
           <SectionHeader
             label="Featured Work"
             title="Products built with intention"
-            description="Real products built and shipped — from a luxury fashion storefront to a full-stack B2B SaaS platform."
+            description="Real products built and shipped."
             align="left"
           />
           <motion.a
