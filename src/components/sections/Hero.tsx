@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { type Variants, motion } from 'framer-motion'
+import type { ReactNode, ButtonHTMLAttributes } from 'react'
 import { ArrowRight, MessageSquare } from 'lucide-react'
-import Button from '../ui/Button'
 import BookingModal from '../ui/BookingModal'
 
 const container: Variants = {
@@ -13,6 +13,71 @@ const item: Variants = {
   animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
 }
 
+interface HeroButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
+  children: ReactNode
+  as?: 'button' | 'a'
+  href?: string
+}
+
+// HeroButton component with asymmetric cut-corner shape
+function HeroButton({
+  variant = 'primary',
+  size = 'lg',
+  children,
+  className = '',
+  as,
+  href,
+  onClick,
+}: HeroButtonProps) {
+  const base =
+    'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 whitespace-nowrap cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
+
+  const sizes = {
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-sm',
+    lg: 'px-8 py-4 text-base',
+  } as const
+
+  const variants = {
+    primary:
+      'bg-accent text-black hover:bg-accent-light shadow-sm shadow-black/15',
+    secondary:
+      'border border-accent/30 bg-transparent text-white hover:border-accent/30 hover:bg-accent/10 hover:text-accent',
+    ghost: 'text-muted hover:text-accent hover:bg-accent/5',
+  } as const
+
+  // Asymmetric cut-corner shape: clip-path to cut top-left corner
+  const shapeClass =
+    'border-0 rounded-none [clip-path:polygon(8px_0,0_8px,0_100%,100%_100%,100%_0)]'
+
+  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className} ${shapeClass}`
+
+  if (as === 'a') {
+    return (
+      <motion.a
+        href={href}
+        className={classes}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+      >
+        {children}
+      </motion.a>
+    )
+  }
+
+  return (
+    <motion.button
+      className={classes}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={onClick}
+    >
+      {children}
+    </motion.button>
+  )
+}
 
 export default function Hero() {
   const [bookingOpen, setBookingOpen] = useState(false)
@@ -36,7 +101,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div variants={item} className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-6">
-              <Button
+              <HeroButton
                 as="a"
                 href="#work"
                 size="lg"
@@ -47,8 +112,8 @@ export default function Hero() {
                 }}
               >
                 View My Work <ArrowRight size={16} />
-              </Button>
-              <Button
+              </HeroButton>
+              <HeroButton
                 as="button"
                 variant="secondary"
                 size="lg"
@@ -57,7 +122,7 @@ export default function Hero() {
               >
                 <MessageSquare size={16} />
                 Let's Talk
-              </Button>
+              </HeroButton>
             </motion.div>
           </motion.div>
           <motion.div variants={item} className="relative mx-auto w-full max-w-[320px] overflow-visible sm:max-w-[360px] md:max-w-[420px]">
