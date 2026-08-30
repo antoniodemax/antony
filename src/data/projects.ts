@@ -16,6 +16,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'pos-supermarket',
+    title: 'POS Supermarket System',
+    industry: 'Retail / Point-of-Sale',
+    tagline: 'Streamlining supermarket operations with a full-stack POS',
+    problem: 'A full-stack point-of-sale system for managing sales, products, inventory, and day-to-day supermarket operations.',
+    outcome: 'A robust POS system that manages sales, inventory, and customer transactions efficiently, improving operational accuracy and speed.',
+    stack: ['PHP', 'PostgreSQL', 'Blade', 'Tailwind CSS', 'TypeScript'],
+    color: '#10B981',
+    gradient: 'from-emerald-400/30 via-green-400/20 to-slate-400/30',
+    liveUrl: 'https://github.com/flavian-jumba/POS-supermarket',
+  },
+  {
     id: 'crevia',
     title: 'Crevia',
     industry: 'B2B SaaS / Creative Economy',
