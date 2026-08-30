@@ -25,7 +25,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </span>
         </div>
         {/* Content */}
-        <div className="flex-1 p-4 sm:p-5">
+        <div className="flex-1 p-6 sm:p-8">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.4] text-accent/90">
               <span className="h-px w-4 bg-accent/60" />
@@ -106,7 +106,7 @@ export default function Projects() {
           </motion.a>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4 items-stretch">
+        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 items-stretch">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
