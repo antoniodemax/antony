@@ -7,6 +7,10 @@ import { services } from '../../data/services'
 
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const [showInvestment, setShowInvestment] = useState(false);
+  const hasInvestment = !!service.kes && !!service.usd;
+  const hasTimeline = !!service.timeline;
+  const hasFeatures = !!service.features && service.features.length > 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 32 }}
@@ -25,73 +29,79 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           <p className="text-sm text-muted leading-relaxed min-h-[3.5rem]">{service.description}</p>
         </div>
 
-        <motion.div
-          key={showInvestment ? 'shown' : 'hidden'}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
-        >
-          {showInvestment ? (
-            <>
-              <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
-                {service.pricingType === 'custom' ? (
-                  <div className="space-y-2">
-                    <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
-                    <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-                    <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
-                    <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-                    <p className="text-sm text-muted">{service.usd}</p>
-                  </div>
-                )}
-              </div>
-              <button
-                onClick={() => setShowInvestment(false)}
-                className="mt-2 text-sm text-accent/80 hover:text-accent underline"
-                aria-label="Hide investment"
+        {hasInvestment && (
+          <motion.div
+            key="investment"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {showInvestment ? (
+              <>
+                <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
+                  {service.pricingType === 'custom' ? (
+                    <div className="space-y-2">
+                      <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
+                      <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
+                      <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
+                      <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
+                      <p className="text-sm text-muted">{service.usd}</p>
+                    </div>
+                  )}
+                </div>
+                <button
+                  onClick={() => setShowInvestment(false)}
+                  className="mt-2 text-sm text-accent/80 hover:text-accent underline"
+                  aria-label="Hide investment"
+                >
+                  Hide Investment
+                </button>
+              </>
+            ) : (
+              <Button
+                as="button"
+                variant="secondary"
+                size="sm"
+                onClick={() => setShowInvestment(true)}
+                className="w-auto self-start"
+                aria-expanded={false}
+                aria-controls="investment-details"
               >
-                Hide Investment
-              </button>
-            </>
-          ) : (
-            <Button
-              as="button"
-              variant="secondary"
-              size="sm"
-              onClick={() => setShowInvestment(true)}
-              className="w-auto self-start"
-              aria-expanded={false}
-              aria-controls="investment-details"
-            >
-              View Investment →
-            </Button>
-          )}
-        </motion.div>
+                View Investment →
+              </Button>
+            )}
+          </motion.div>
+        )}
 
-        <div className="inline-flex items-center gap-3 rounded-[1.5rem] border border-accent/15 bg-accent/10 px-4 py-3">
-          <Clock size={16} className="text-accent" />
-          <div>
-            <p className="text-sm font-semibold text-accent">{service.timeline}</p>
-            {service.timelineNote ? (
-              <p className="text-xs text-muted mt-1 leading-relaxed">{service.timelineNote}</p>
-            ) : null}
+        {hasTimeline && (
+          <div className="inline-flex items-center gap-3 rounded-[1.5rem] border border-accent/15 bg-accent/10 px-4 py-3">
+            <Clock size={16} className="text-accent" />
+            <div>
+              <p className="text-sm font-semibold text-accent">{service.timeline}</p>
+              {service.timelineNote ? (
+                <p className="text-xs text-muted mt-1 leading-relaxed">{service.timelineNote}</p>
+              ) : null}
+            </div>
           </div>
-        </div>
+        )}
 
-        <ul className="space-y-3 flex-1">
-          {service.features.map(feature => (
-            <li key={feature} className="flex items-start gap-3">
-              <div className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 border border-accent/20">
-                <Check size={10} className="text-accent" />
-              </div>
-              <span className="text-sm text-muted leading-relaxed">{feature}</span>
-            </li>
-          ))}
-        </ul>
+        {hasFeatures && (
+          <ul className="space-y-3 flex-1">
+            {service.features.map(feature => (
+              <li key={feature} className="flex items-start gap-3">
+                <div className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent/10 border border-accent/20">
+                  <Check size={10} className="text-accent" />
+                </div>
+                <span className="text-sm text-muted leading-relaxed">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </motion.div>
   )
@@ -103,17 +113,17 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <SectionHeader
-            label="Investment"
-            title="Investment"
-            description="Every project is unique. The pricing below represents the typical starting investment for each service. Following a discovery session, you'll receive a detailed proposal outlining the final scope, timeline, investment, and delivery schedule."
+            label="Services"
+            title="Our Services"
+            description="We offer a range of services to help you build modern, secure, and scalable digital products."
           />
         </div>
 
         <div className="mb-8 rounded-[2rem] glass-surface px-6 py-6 sm:px-8 sm:py-8">
           <div className="max-w-4xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold">Discovery First</p>
+            <p className="text-xs uppercase tracking-[0.35em] text-accent font-semibold">Our Approach</p>
             <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl">
-              Every successful project begins with a discovery session where we discuss your business goals, technical requirements, project scope, timeline, and budget before preparing a detailed proposal.
+              We focus on understanding your needs and delivering tailored solutions that meet your goals.
             </p>
           </div>
         </div>
