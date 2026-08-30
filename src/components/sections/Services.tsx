@@ -7,6 +7,7 @@ import { services } from '../../data/services'
 
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const [showInvestment, setShowInvestment] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState<'kes' | 'usd' | null>(null);
   const hasInvestment = !!service.kes && !!service.usd;
   const hasTimeline = !!service.timeline;
   const hasFeatures = !!service.features && service.features.length > 0;
@@ -40,18 +41,33 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             {showInvestment ? (
               <>
                 <div className="rounded-[1.5rem] border border-accent/20 bg-bg/70 p-5 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]">
-                  {service.pricingType === 'custom' ? (
-                    <div className="space-y-2">
-                      <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
-                      <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-                      <p className="text-xs uppercase tracking-[0.22em] text-muted">Custom Quote</p>
-                    </div>
-                  ) : (
-                    <div className="space-y-2">
-                      <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Starting From</p>
-                      <p className="text-3xl font-bold text-white tracking-tight">{service.kes}</p>
-                      <p className="text-sm text-muted">{service.usd}</p>
-                    </div>
+                  <p className="text-[11px] uppercase tracking-[0.35em] text-muted/60">Investment</p>
+                  <div className="flex gap-4">
+                    <button
+                      className={`px-3 py-2 text-sm font-medium rounded-full ${selectedCurrency === 'kes' ? 'bg-accent/20 text-accent' : 'bg-transparent text-white/80 hover:bg-accent/10'}`}
+                      onClick={() => setSelectedCurrency('kes')}
+                    >
+                      KES
+                    </button>
+                    <button
+                      className={`px-3 py-2 text-sm font-medium rounded-full ${selectedCurrency === 'usd' ? 'bg-accent/20 text-accent' : 'bg-transparent text-white/80 hover:bg-accent/10'}`}
+                      onClick={() => setSelectedCurrency('usd')}
+                    >
+                      USD
+                    </button>
+                  </div>
+                  {selectedCurrency && (
+                    <motion.div
+                      key={selectedCurrency}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <p className="mt-4 text-3xl font-bold text-white tracking-tight">
+                        {selectedCurrency === 'kes' ? service.kes : service.usd}
+                      </p>
+                    </motion.div>
                   )}
                 </div>
                 <button
