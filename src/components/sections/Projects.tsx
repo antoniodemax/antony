@@ -18,7 +18,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <h3 className="text-xl font-semibold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-accent">
           {project.title}
         </h3>
-        <p className="text-sm text-muted leading-relaxed line-clamp-2">{project.problem}</p>
+        <p className="text-sm text-muted leading-relaxed line-clamp-2">{project.outcome}</p>
         <div className="flex flex-wrap gap-2">
           {project.stack.map((tech, idx) => (
             <span key={`${tech}-${idx}`} className="inline-flex items-center rounded-full px-3 py-2 text-xs font-medium tracking-[0.02em] transition-colors duration-200 bg-accent/10 text-accent border border-accent/20">
