@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, ArrowRight, GitBranch } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
-import Badge from '../ui/Badge'
 import { projects } from '../../data/projects'
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
@@ -57,9 +56,9 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             <div className="mt-4 space-y-4">
               <div className="flex flex-wrap gap-1.5">
                 {project.stack.map((tech, idx) => (
-                  <Badge key={`${tech}-${idx}`} variant="accent" size="sm">
+                  <span key={`${tech}-${idx}`} className="inline-flex items-center rounded-full px-2 py-1 text-[10px] font-medium tracking-[0.02em] transition-colors duration-200 bg-accent/10 text-accent border border-accent/20">
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
 
