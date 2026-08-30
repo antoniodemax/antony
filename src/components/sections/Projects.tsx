@@ -10,69 +10,47 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.75, delay: index * 0.1, ease: 'easeOut' }}
-      className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden"
+      className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden hover:-translate-y-2 hover:border-accent/30"
     >
       {/* Accent bar */}
       <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full" style={{ backgroundColor: `hsla(${project.color}, 0.8)` }} />
-      <div className="relative flex-1 h-full">
-        {/* Industry badge */}
-        <div className="absolute top-3 right-4">
-          <span
-            className="rounded-full border border-white/10 bg-black/25 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.2] text-accent"
-            style={{ backdropFilter: 'blur(18px)' }}
-          >
-            {project.industry}
-          </span>
+      <div className="flex flex-col flex-1 p-8 sm:p-10 gap-6">
+        <h3 className="text-xl font-semibold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-accent">
+          {project.title}
+        </h3>
+        <p className="text-sm text-muted leading-relaxed line-clamp-2">{project.problem}</p>
+        <div className="flex flex-wrap gap-2">
+          {project.stack.map((tech, idx) => (
+            <span key={`${tech}-${idx}`} className="inline-flex items-center rounded-full px-3 py-2 text-xs font-medium tracking-[0.02em] transition-colors duration-200 bg-accent/10 text-accent border border-accent/20">
+              {tech}
+            </span>
+          ))}
         </div>
-        {/* Content */}
-        <div className="flex-1 p-6 sm:p-8">
-          <div className="space-y-3">
-            <div className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.4] text-accent/90">
-              <span className="h-px w-4 bg-accent/60" />
-              {project.tagline}
-            </div>
-            <h3 className="text-lg font-semibold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-accent">
-              {project.title}
-            </h3>
-            <p className="text-sm text-muted leading-relaxed line-clamp-2">{project.problem}</p>
-          </div>
-
-          <div className="mt-4 space-y-4">
-            <div className="flex flex-wrap gap-1.5">
-              {project.stack.map((tech, idx) => (
-                <span key={`${tech}-${idx}`} className="inline-flex items-center rounded-full px-2 py-1 text-[10px] font-medium tracking-[0.02em] transition-colors duration-200 bg-accent/10 text-accent border border-accent/20">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} live`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/30 hover:bg-accent/10"
-                >
-                  <ExternalLink size={12} />
-                  Live
-                </a>
-              )}
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${project.title} on GitHub`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
-                >
-                  <GitBranch size={12} />
-                  Github
-                </a>
-              )}
-            </div>
-          </div>
+        <div className="flex flex-wrap gap-2">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} live`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/30 hover:bg-accent/10"
+            >
+              <ExternalLink size={12} />
+              Live
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${project.title} on GitHub`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
+            >
+              <GitBranch size={12} />
+              Github
+            </a>
+          )}
         </div>
       </div>
     </motion.article>
