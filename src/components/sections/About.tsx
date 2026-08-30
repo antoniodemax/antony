@@ -30,7 +30,7 @@ I believe great technology requires more than writing code. It requires **proble
           >
             <SectionHeader
               label="About Me"
-              title="I'm Antony Peter — a Software Engineer and Cybersecurity Professional based in Nairobi, Kenya. I build modern, scalable digital products while applying a security-first mindset to the systems behind them."
+              title=""
               align="left"
             />
             <div className="space-y-5 text-muted leading-8 text-sm sm:text-base">
