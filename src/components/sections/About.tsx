@@ -35,7 +35,7 @@ I believe great technology requires more than writing code. It requires **proble
             />
             <div className="space-y-5 text-muted leading-8 text-sm sm:text-base">
               {paragraphs.map((paragraph, index) => (
-                <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '$1') }} />
+                <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
               ))}
             </div>
             <Button
