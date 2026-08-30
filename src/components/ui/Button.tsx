@@ -19,23 +19,27 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 rounded-full whitespace-nowrap cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
+    'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 whitespace-nowrap cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
 
   const sizes = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-sm',
-    lg: 'px-8 py-4 text-base',
+    sm: 'px-4 py-2',
+    md: 'px-6 py-3',
+    lg: 'px-8 py-4',
   }
 
   const variants = {
     primary:
       'bg-accent text-black hover:bg-accent-light shadow-sm shadow-black/15 active:scale-[0.98]',
     secondary:
-      'border border-accent/30 bg-transparent text-white hover:border-accent/30 hover:bg-accent/10 hover:text-accent active:scale-[0.98]',
-    ghost: 'text-muted hover:text-accent hover:bg-accent/5 active:scale-[0.98]'
+      'border border-accent/30 bg-transparent text-white hover-border-accent/30 hover:bg-accent/10 hover:text-accent active:scale-[0.98]',
+    ghost: 'text-muted hover:text-accent hover:bg-accent/5 active:scale-[0.98]',
   }
 
-  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`
+  // Asymmetric cut-corner shape: clip-path to cut top-left corner with compensation padding
+  const shapeClass =
+    'border-0 rounded-none [clip-path:polygon(8px_0,0_8px,0_100%,100%_100%,100%_0)] pl-8 pt-8'
+
+  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className} ${shapeClass}`
 
   if (Tag === 'a') {
     return (
