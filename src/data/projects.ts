@@ -57,4 +57,18 @@ export const projects: Project[] = [
     image: '/millux.png',
     liveUrl: 'https://milluxcollections.vercel.app/',
   },
+
+  {
+    id: 'simply-feminine-network',
+    title: 'Simply Feminine Network',
+    industry: 'NGO / Women Empowerment',
+    tagline: 'Empowering women, advocating for social causes, and uplifting vulnerable communities through mentorship, health campaigns, and charitable outreach.',
+    problem: 'The organization needed a digital presence to amplify its mission, showcase initiatives, and facilitate outreach and donations.',
+    outcome: 'A responsive website that highlights programs, impact stories, and enables community engagement and support.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    color: '#EC4899',
+    gradient: 'from-rose-400/30 via-pink-400/20 to-slate-400/30',
+    liveUrl: 'https://simplyfemininenetwork-2rh3.vercel.app/',
+    githubUrl: 'https://github.com/antoniodemax/simplyfemininenetwork'
+  }
 ]
