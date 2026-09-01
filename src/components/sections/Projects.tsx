@@ -28,17 +28,21 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
         <div className="flex flex-wrap gap-2">
           {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`View ${project.title} live`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/30 hover:bg-accent/10"
-            >
-              <ExternalLink size={12} />
-              Live
-            </a>
-          )}
+          <button
+            onClick={(e) => {
+              e.preventDefault()
+              if (project.id === 'millux') {
+                alert('Website is currently under maintenance. Please check back soon for the launch of Millux Collections.')
+              } else {
+                window.open(project.liveUrl, '_blank', 'noopener,noreferrer')
+              }
+            }}
+            className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/30 hover:bg-accent/10"
+          >
+            <ExternalLink size={12} />
+            Live
+          </button>
+        )}
           {project.githubUrl && (
             <a
               href={project.githubUrl}
