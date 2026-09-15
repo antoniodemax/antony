@@ -67,6 +67,7 @@ I believe great technology requires more than writing code. It requires **proble
                 as="a"
                 href="#contact"
                 size="md"
+                className="w-full sm:w-auto"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
@@ -78,6 +79,7 @@ I believe great technology requires more than writing code. It requires **proble
                 as="a"
                 variant="secondary"
                 size="md"
+                className="w-full sm:w-auto"
                 href="/Antony_Peter_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"

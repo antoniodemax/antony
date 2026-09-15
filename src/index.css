@@ -121,6 +121,142 @@ html[data-theme='light'] {
   }
 }
 
+/* Lets the outline colour animate on hover in browsers that support @property. */
+@property --btn-border {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: transparent;
+}
+
+@layer components {
+  /* ---------------------------------------------------------------------
+     Buttons: cut-corner signature shape, three variants, three sizes.
+     The outline is painted with background gradients (not `border`) so
+     the clip-path cannot clip it away. Outer shadows are clipped by
+     clip-path, so feedback uses fill, lift and inner light instead.
+     --------------------------------------------------------------------- */
+  .btn {
+    --cut: 10px;
+    --btn-border: transparent;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    clip-path: polygon(var(--cut) 0, 0 var(--cut), 0 100%, 100% 100%, 100% 0);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      --btn-border 0.2s ease;
+  }
+
+  .btn svg {
+    flex-shrink: 0;
+  }
+
+  .btn-sm { --cut: 8px;  height: 2.5rem; padding: 0 1.125rem; font-size: 0.8125rem; }
+  .btn-md { --cut: 10px; height: 3rem;   padding: 0 1.5rem;   font-size: 0.875rem; }
+  .btn-lg { --cut: 12px; height: 3.5rem; padding: 0 2rem;     font-size: 0.9375rem; }
+
+  /* Primary: solid brand green, dark label for contrast, soft top light. */
+  .btn-primary {
+    color: #050807;
+    background-color: #8FCB9B;
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 55%);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.35),
+      inset 0 -1px 0 rgba(0,0,0,0.12);
+  }
+  .btn-primary:hover {
+    background-color: #A7DDB2;
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    background-color: #7FBF8C;
+    transform: translateY(0);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.18);
+  }
+
+  /* Secondary: 1px green outline that follows the cut corner, faint tint. */
+  .btn-secondary {
+    --btn-border: rgba(143,203,155,0.45);
+    color: var(--app-text);
+    background-color: rgba(143,203,155,0.04);
+    background-image:
+      linear-gradient(135deg, transparent 50%, var(--btn-border) 50%, var(--btn-border) calc(50% + 1.2px), transparent calc(50% + 1.2px)),
+      linear-gradient(var(--btn-border), var(--btn-border)),
+      linear-gradient(var(--btn-border), var(--btn-border)),
+      linear-gradient(var(--btn-border), var(--btn-border)),
+      linear-gradient(var(--btn-border), var(--btn-border));
+    background-repeat: no-repeat;
+    background-size:
+      var(--cut) var(--cut),
+      1px calc(100% - var(--cut)),
+      calc(100% - var(--cut)) 1px,
+      1px 100%,
+      100% 1px;
+    background-position: 0 0, 0 100%, 100% 0, 100% 0, 0 100%;
+  }
+  .btn-secondary:hover {
+    --btn-border: #8FCB9B;
+    color: #A7DDB2;
+    background-color: rgba(143,203,155,0.12);
+    transform: translateY(-1px);
+  }
+  .btn-secondary:active {
+    background-color: rgba(143,203,155,0.18);
+    transform: translateY(0);
+  }
+
+  /* Ghost: text-only, for low-emphasis actions. */
+  .btn-ghost {
+    color: var(--app-muted);
+    background-color: transparent;
+  }
+  .btn-ghost:hover {
+    color: #8FCB9B;
+    background-color: rgba(143,203,155,0.08);
+  }
+
+  /* Keyboard focus: inset rings survive the clip-path. */
+  .btn:focus-visible {
+    box-shadow: inset 0 0 0 2px #8FCB9B;
+  }
+  .btn-primary:focus-visible {
+    box-shadow:
+      inset 0 0 0 2px #050807,
+      inset 0 0 0 4px #A7DDB2;
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn:hover {
+      transition: none;
+      transform: none;
+    }
+  }
+}
+
 @layer utilities {
   .text-gradient {
     background: linear-gradient(135deg, #ffffff 0%, #d7c6a3 100%);

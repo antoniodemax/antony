@@ -39,7 +39,7 @@ export default function Hero() {
                 as="a"
                 href="#work"
                 size="lg"
-                className="w-full"
+                className="w-full sm:w-auto"
                 onClick={e => {
                   e.preventDefault()
                   document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' })

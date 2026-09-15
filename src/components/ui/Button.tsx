@@ -1,5 +1,4 @@
 import { type ReactNode, type ButtonHTMLAttributes } from 'react'
-import { motion } from 'framer-motion'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost'
@@ -11,6 +10,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   rel?: string
 }
 
+/**
+ * Cut-corner button. Visual styles live in src/index.css under `.btn`
+ * so the clip-path, outline, hover and focus states stay in one place.
+ */
 export default function Button({
   variant = 'primary',
   size = 'md',
@@ -18,53 +21,29 @@ export default function Button({
   className = '',
   as: Tag = 'button',
   href,
+  type,
   ...props
 }: ButtonProps) {
-  const base =
-    'inline-flex items-center justify-center gap-2 font-semibold tracking-tight transition-all duration-200 whitespace-nowrap cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg'
-
-  const sizes = {
-    sm: 'px-4 py-2',
-    md: 'px-6 py-3',
-    lg: 'px-8 py-4',
-  }
-
-  const variants = {
-    primary:
-      'bg-accent text-black hover:bg-accent-light shadow-sm shadow-black/15 active:scale-[0.98]',
-    secondary:
-      'border border-accent/30 bg-transparent text-white hover-border-accent/30 hover:bg-accent/10 hover:text-accent active:scale-[0.98]',
-    ghost: 'text-muted hover:text-accent hover:bg-accent/5 active:scale-[0.98]',
-  }
-
-  // Asymmetric cut-corner shape: clip-path to cut top-left corner with compensation padding
-  const shapeClass =
-    'border-0 rounded-none [clip-path:polygon(8px_0,0_8px,0_100%,100%_100%,100%_0)] pl-8 pt-8'
-
-  const classes = `${base} ${sizes[size]} ${variants[variant]} ${className} ${shapeClass}`
+  // Literal class names so Tailwind's content scanner keeps the @layer rules.
+  const variantClass = {
+    primary: 'btn-primary',
+    secondary: 'btn-secondary',
+    ghost: 'btn-ghost',
+  }[variant]
+  const sizeClass = { sm: 'btn-sm', md: 'btn-md', lg: 'btn-lg' }[size]
+  const classes = `btn ${variantClass} ${sizeClass} ${className}`.trim()
 
   if (Tag === 'a') {
     return (
-      <motion.a
-        href={href}
-        className={classes}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
-        {...(props as object)}
-      >
+      <a href={href} className={classes} {...(props as object)}>
         {children}
-      </motion.a>
+      </a>
     )
   }
 
   return (
-    <motion.button
-      className={classes}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      {...(props as object)}
-    >
+    <button type={type ?? 'button'} className={classes} {...props}>
       {children}
-    </motion.button>
+    </button>
   )
 }
