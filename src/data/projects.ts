@@ -16,6 +16,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'elimu-mtaani',
+    title: 'Elimu Mtaani',
+    industry: 'EdTech / AI (Claude Hackathon)',
+    tagline: 'AI-assisted lesson planning and self-directed learning for Kenyan CBC classrooms',
+    problem:
+      'Kenyan teachers spend hours turning curriculum documents into term plans, daily lessons, quizzes and classroom activities, while students have no safe way to explore topics on their own.',
+    outcome:
+      'Led development of a hackathon platform that turns one curriculum source into a full term timetable, narrated slide lessons, quizzes, classroom games and an AI tutor chat, with role-based teacher and student experiences and no learner data stored.',
+    stack: ['Next.js', 'TypeScript', 'Convex', 'Clerk', 'Anthropic Claude API', 'Tailwind CSS', 'Playwright'],
+    color: '#F59E0B',
+    gradient: 'from-amber-400/30 via-orange-400/20 to-slate-400/30',
+    githubUrl: 'https://github.com/jarviswuod/elimuMtaani',
+  },
+  {
     id: 'pos-supermarket',
     title: 'POS Supermarket System',
     industry: 'Retail / Point-of-Sale',
