@@ -7,6 +7,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   as?: 'button' | 'a'
   href?: string
+  target?: string
+  rel?: string
 }
 
 export default function Button({
@@ -48,6 +50,7 @@ export default function Button({
         className={classes}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        {...(props as object)}
       >
         {children}
       </motion.a>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { FileText } from 'lucide-react'
 
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
@@ -38,18 +39,31 @@ I believe great technology requires more than writing code. It requires **proble
                 <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
               ))}
             </div>
-            <Button
-              as="a"
-              href="#contact"
-              size="md"
-              className="mt-2"
-              onClick={e => {
-                e.preventDefault()
-                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-            >
-              Let's Build Together
-            </Button>
+            <div className="mt-2 flex flex-wrap items-center gap-4">
+              <Button
+                as="a"
+                href="#contact"
+                size="md"
+                onClick={e => {
+                  e.preventDefault()
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+                }}
+              >
+                Let's Build Together
+              </Button>
+              <Button
+                as="a"
+                variant="secondary"
+                size="md"
+                href="/Antony_Peter_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View resume (opens in a new tab)"
+              >
+                <FileText size={16} />
+                View Resume
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>
