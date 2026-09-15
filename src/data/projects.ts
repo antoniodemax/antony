@@ -40,7 +40,7 @@ export const projects: Project[] = [
     color: '#D4AF37',
     gradient: 'from-amber-400/30 via-yellow-400/20 to-stone-400/30',
     image: '/project-crevia.png',
-    liveUrl: 'https://crevia.app/',
+    liveUrl: 'https://www.crevia.app/',
   },
   {
     id: 'millux',
