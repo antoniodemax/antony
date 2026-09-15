@@ -15,6 +15,12 @@ My education and continuous learning have allowed me to build a strong foundatio
 
 I believe great technology requires more than writing code. It requires **problem-solving, security awareness, continuous learning, and a deep understanding of how systems work**. My goal is to keep building software that is not only functional and scalable, but also reliable, resilient, and secure.`
 
+  const education = [
+    { title: 'Software Engineering', institution: 'Moringa School' },
+    { title: 'Cyber Security', institution: 'Cisco Networking Academy' },
+    { title: 'AI Prompt Engineering', institution: 'Cisco Networking Academy' },
+  ]
+
   // Split by double newline to get paragraphs
   const paragraphs = aboutContent.split('\n\n')
 
@@ -39,6 +45,23 @@ I believe great technology requires more than writing code. It requires **proble
                 <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
               ))}
             </div>
+            <div className="rounded-[2rem] glass-surface p-6">
+              <div className="space-y-4">
+                <p className="text-xs uppercase tracking-[0.35em] text-accent/80 font-semibold">Education</p>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {education.map(({ title, institution }) => (
+                    <div key={title} className="flex items-start gap-3">
+                      <div className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-accent" />
+                      <div>
+                        <p className="text-sm font-semibold text-white">{title}</p>
+                        <p className="text-xs text-muted">{institution}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             <div className="mt-2 flex flex-wrap items-center gap-4">
               <Button
                 as="a"
