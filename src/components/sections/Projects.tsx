@@ -21,8 +21,6 @@ function ProjectCard({ project, index, onOpen }: CardProps) {
       onClick={() => onOpen(project)}
       className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-accent/30"
     >
-      {/* Accent bar */}
-      <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full opacity-80" style={{ backgroundColor: project.color }} />
       <div className="flex flex-col flex-1 p-8 sm:p-10 gap-6">
         <h3 className="text-xl font-semibold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-accent">
           {project.title}
