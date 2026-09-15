@@ -1,19 +1,28 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowRight, GitBranch } from 'lucide-react'
+import { ExternalLink, ArrowRight, GitBranch, Info } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
-import { projects } from '../../data/projects'
+import ProjectModal from '../ui/ProjectModal'
+import { projects, type Project } from '../../data/projects'
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+interface CardProps {
+  project: Project
+  index: number
+  onOpen: (project: Project) => void
+}
+
+function ProjectCard({ project, index, onOpen }: CardProps) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.75, delay: index * 0.1, ease: 'easeOut' }}
-      className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden hover:-translate-y-2 hover:border-accent/30"
+      onClick={() => onOpen(project)}
+      className="group relative flex h-full flex-col rounded-[2rem] glass-surface overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:border-accent/30"
     >
       {/* Accent bar */}
-      <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full" style={{ backgroundColor: `hsla(${project.color}, 0.8)` }} />
+      <div className="absolute left-0 top-0 h-16 w-2 rounded-tr-full opacity-80" style={{ backgroundColor: project.color }} />
       <div className="flex flex-col flex-1 p-8 sm:p-10 gap-6">
         <h3 className="text-xl font-semibold tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-accent">
           {project.title}
@@ -26,14 +35,24 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             </span>
           ))}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-auto flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={e => { e.stopPropagation(); onOpen(project) }}
+            aria-label={`View full details for ${project.title}`}
+            className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/40 hover:bg-accent/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+          >
+            <Info size={12} />
+            Details
+          </button>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={e => e.stopPropagation()}
               aria-label={`View ${project.title} live`}
-              className="inline-flex items-center gap-1.5 rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-semibold text-accent transition-all duration-200 hover:border-accent/30 hover:bg-accent/10"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
             >
               <ExternalLink size={12} />
               Live
@@ -44,6 +63,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={e => e.stopPropagation()}
               aria-label={`View ${project.title} on GitHub`}
               className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
             >
@@ -58,6 +78,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 }
 
 export default function Projects() {
+  const [active, setActive] = useState<Project | null>(null)
+
   return (
     <section id="work" className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,10 +108,11 @@ export default function Projects() {
 
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 items-stretch">
           {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
+            <ProjectCard key={project.id} project={project} index={i} onOpen={setActive} />
           ))}
         </div>
       </div>
+      <ProjectModal project={active} onClose={() => setActive(null)} />
     </section>
   )
 }
