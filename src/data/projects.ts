@@ -59,6 +59,22 @@ export const projects: Project[] = [
   },
 
   {
+    id: 'underwrld',
+    title: 'UNDERWRLD',
+    industry: 'Music Production / Creative Studio',
+    tagline: 'A bold digital home for an underground music production studio',
+    problem:
+      'A music production studio with a growing catalogue needed a website that matched its underground identity, showcased its services and releases, and let artists request sessions without the team chasing emails.',
+    outcome:
+      'A high-impact marketing site with a Spotify-linked catalogue and session-request form, plus a Google-secured admin dashboard for reviewing and managing every inquiry.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel Functions', 'Upstash Redis'],
+    color: '#EF4444',
+    gradient: 'from-red-500/30 via-rose-400/20 to-slate-400/30',
+    liveUrl: 'https://underwrld.vercel.app/',
+    githubUrl: 'https://github.com/antoniodemax/underwrld',
+  },
+
+  {
     id: 'simply-feminine-network',
     title: 'Simply Feminine Network',
     industry: 'NGO / Women Empowerment',
