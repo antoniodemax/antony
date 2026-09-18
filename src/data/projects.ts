@@ -112,7 +112,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     color: '#EC4899',
     gradient: 'from-rose-400/30 via-pink-400/20 to-slate-400/30',
-    liveUrl: 'https://simplyfemininenetwork-2rh3.vercel.app/',
+    liveUrl: 'https://simplyfemininenetwork-42vf.vercel.app/',
     githubUrl: 'https://github.com/antoniodemax/simplyfemininenetwork'
   }
 ]
