@@ -30,6 +30,20 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/jarviswuod/elimuMtaani',
   },
   {
+    id: 'sokowise',
+    title: 'SokoWise',
+    industry: 'Fintech / SMB Operations',
+    tagline: 'Simple business management for Kenyan small businesses',
+    problem:
+      'Kenyan shop owners, food stalls and small retailers run on cash, M-Pesa and customer credit at once, yet most bookkeeping tools are foreign templates with the currency swapped, so sales, stock, debts and expenses end up in notebooks and memory.',
+    outcome:
+      'A mobile-first PWA where a sale can be split across cash, M-Pesa and credit, stock and customer debts are tracked automatically, M-Pesa confirmation SMSs can be shared straight into the app and matched to sales, supplier receipts are photographed and turned into restocks, and an assistant answers questions about the business in English or Swahili from the owner\'s own records.',
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'FastAPI', 'PostgreSQL', 'PWA', 'Render'],
+    color: '#0B6E4F',
+    gradient: 'from-emerald-500/30 via-teal-400/20 to-slate-400/30',
+    liveUrl: 'https://sokowise-staging.vercel.app/',
+  },
+  {
     id: 'pos-supermarket',
     title: 'POS Supermarket System',
     industry: 'Retail / Point-of-Sale',
