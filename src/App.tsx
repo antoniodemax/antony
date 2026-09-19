@@ -9,12 +9,14 @@ import TechStack from './components/sections/TechStack'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
 import usePath from './hooks/usePath'
+import useCanonical from './hooks/useCanonical'
 import { AnimatePresence, motion } from 'framer-motion'
 import FAQ from './components/sections/FAQ'
 import Contact from './components/sections/Contact'
 
 export default function App() {
   const path = usePath()
+  useCanonical(path)
   const isInsights = path.startsWith('/insights')
   const parts = path.split('/').filter(Boolean)
 

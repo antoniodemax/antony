@@ -18,13 +18,9 @@ const envPath = path.resolve(process.cwd(), '.env')
 const env = parseEnvFile(envPath)
 const siteUrl = env.SITE_URL || 'https://antonypeter.vercel.app'
 
-const pages = [
-  '/',
-  '/#about',
-  '/#services',
-  '/#work',
-  '/#contact',
-]
+// Section anchors (#about, #work, …) are stripped by crawlers and collapse to '/',
+// so only real routes belong here.
+const pages = ['/']
 
 const articles = [
   '/insights',
