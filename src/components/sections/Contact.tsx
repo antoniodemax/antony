@@ -136,7 +136,7 @@ export default function Contact() {
                   <p className="text-sm font-medium text-white">{value}</p>
                 </div>
                 <ArrowRight
-                  size={12} className="sm:size-14 text-muted transition-colors duration-200 group-hover:text-white"
+                  size={16} className="shrink-0 text-muted transition-colors duration-200 group-hover:text-white"
                 />
               </motion.a>
             ))}
