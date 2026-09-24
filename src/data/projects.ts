@@ -30,6 +30,20 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/jarviswuod/elimuMtaani',
   },
   {
+    id: 'kada-ya-moko',
+    title: 'Kada Ya Moko',
+    industry: 'Developer Tools / AI (4th Overall, 2nd Everyday Track — Claude Hackathon)',
+    tagline: 'An AI coworker that sits in the middle of a developer\'s tools and holds the context',
+    problem:
+      'Developers live with the six tab problem — Slack, GitHub, Gmail, Calendar, the terminal and an AI chat all open at once, context copied between them by hand, the same situation re-explained to every tool, and nothing in the middle that knows what needs to happen next.',
+    outcome:
+      'Placed 4th overall and 2nd in the Everyday Track at the Claude Hackathon in Nairobi. Built with a team of five, an AI coworker that works across a developer\'s tools while holding one shared context: it pulls open GitHub issues, triages them and posts the summary straight into Slack. Behind it sits an orchestration layer where a manager keeps the broader plan and routes each task to a different model based on the effort it actually needs, rather than applying the same intelligence to everything.',
+    stack: ['React', 'TypeScript', 'Anthropic Claude API', 'Multi-model orchestration', 'GitHub API', 'Slack API', 'Tailwind CSS', 'Vercel'],
+    color: '#38BDF8',
+    gradient: 'from-sky-400/30 via-cyan-400/20 to-slate-400/30',
+    liveUrl: 'https://kada-ya-moko.vercel.app/',
+  },
+  {
     id: 'sokowise',
     title: 'SokoWise',
     industry: 'Fintech / SMB Operations',
