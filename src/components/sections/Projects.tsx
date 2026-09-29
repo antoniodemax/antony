@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, ArrowRight, GitBranch, Info } from 'lucide-react'
+import { ExternalLink, ArrowRight, GitBranch, Info, Award } from 'lucide-react'
 import SectionHeader from '../ui/SectionHeader'
 import ProjectModal from '../ui/ProjectModal'
 import { projects, type Project } from '../../data/projects'
@@ -67,6 +67,19 @@ function ProjectCard({ project, index, onOpen }: CardProps) {
             >
               <GitBranch size={12} />
               Github
+            </a>
+          )}
+          {project.certificateUrl && (
+            <a
+              href={project.certificateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={e => e.stopPropagation()}
+              aria-label={`View ${project.title} hackathon certificate`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
+            >
+              <Award size={12} />
+              Certificate
             </a>
           )}
         </div>

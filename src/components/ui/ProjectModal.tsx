@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, ExternalLink, GitBranch } from 'lucide-react'
+import { X, ExternalLink, GitBranch, Award } from 'lucide-react'
 import Button from './Button'
 import type { Project } from '../../data/projects'
 
@@ -89,7 +89,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 ))}
               </div>
 
-              {(project.liveUrl || project.githubUrl) && (
+              {(project.liveUrl || project.githubUrl || project.certificateUrl) && (
                 <div className="flex flex-wrap items-center gap-4 border-t border-white/10 pt-8">
                   {project.liveUrl && (
                     <Button
@@ -118,6 +118,21 @@ export default function ProjectModal({ project, onClose }: Props) {
                     >
                       <GitBranch size={16} />
                       View Source
+                    </Button>
+                  )}
+                  {project.certificateUrl && (
+                    <Button
+                      as="a"
+                      variant="secondary"
+                      size="md"
+                      href={project.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} hackathon certificate (opens in a new tab)`}
+                      className="w-full sm:w-auto"
+                    >
+                      <Award size={16} />
+                      View Certificate
                     </Button>
                   )}
                 </div>

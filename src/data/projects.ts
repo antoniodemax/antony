@@ -12,6 +12,7 @@ export interface Project {
   liveUrl?: string
   caseStudyUrl?: string
   githubUrl?: string
+  certificateUrl?: string
 }
 
 export const projects: Project[] = [
@@ -29,6 +30,7 @@ export const projects: Project[] = [
     gradient: 'from-lime-400/30 via-green-400/20 to-slate-400/30',
     liveUrl: 'https://smart-fundis.vercel.app',
     githubUrl: 'https://github.com/simpleHacker0893/smart-fundis',
+    certificateUrl: '/certificates/gomycode-come-build-with-ai-2026.pdf',
   },
   {
     id: 'elimu-mtaani',
