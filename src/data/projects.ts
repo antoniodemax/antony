@@ -16,6 +16,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'smart-fundis',
+    title: 'Smart Fundis',
+    industry: 'Marketplace / AI (Team project, GOMYCODE × NVIDIA "Come Build with AI" Hackathon, Sept 2026)',
+    tagline: 'Kazi yako, sifa yako. Your work, your reputation.',
+    problem:
+      'Clients in Kenya can\'t easily tell a skilled fundi from an unskilled one, and skilled jua kali workers have no cheap, trusted way to prove what they can do.',
+    outcome:
+      'A verified-fundi marketplace for Kenya. Fundis prove their skills with a short phone video, NVIDIA AI checks the work step by step, and a human Expert gives the final approval. Built with my team at the GOMYCODE × NVIDIA "Come Build with AI" hackathon. A fundi records a real task, such as installing a 13A socket; NVIDIA Cosmos Reason 2 reviews the video against a skills rubric, and Nemotron writes clear feedback in English and Kiswahili. Approved work becomes a verified Badge on the fundi\'s public profile, where clients can find them. Trust is built in: the fundi shows a fresh handwritten code on camera so videos can\'t be reused, safety steps are never auto-passed, the AI can lower a verdict but never raise it, and consent is shown in English and Kiswahili before any upload.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'Convex', 'Clerk', 'Vercel', 'NVIDIA Cosmos Reason 2', 'NVIDIA Nemotron', 'NVIDIA Brev', 'LangGraph', 'FastAPI', 'PWA'],
+    color: '#76B900',
+    gradient: 'from-lime-400/30 via-green-400/20 to-slate-400/30',
+    liveUrl: 'https://smart-fundis.vercel.app',
+    githubUrl: 'https://github.com/simpleHacker0893/smart-fundis',
+  },
+  {
     id: 'elimu-mtaani',
     title: 'Elimu Mtaani',
     industry: 'EdTech / AI (1st Place, Claude Hackathon)',
