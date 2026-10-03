@@ -17,6 +17,21 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'venture-route',
+    title: 'Venture Route',
+    industry: 'Venture Building / Neuro-Symbolic AI (Team project, SingularityNET × Omega × BASIX Hackathon, MeTTa Track, Oct 2026)',
+    tagline: 'AI explains. MeTTa decides.',
+    problem:
+      'A founder with a startup idea knows BASIX has the people and resources they need, but those are scattered across profiles and records, so they end up guessing who is actually good, and an AI that "matches" people only gives a confident answer nobody can check.',
+    outcome:
+      'Built in three days with Team ThisisAnfield (Simon Njuguna, Naomi Wangui and me) at the online SingularityNET × Omega × BASIX hackathon. A founder describes the idea by typing or by speaking to Chloe, our voice assistant. Seven MeTTa rules on a Hyperon engine of 181 facts then pick the smallest credible team, plus reusable IP, a cohort and a partner through a four-hop partner chain, and show the facts behind each pick. A skill only counts when a confirmed credential or project proves it, and when the ecosystem can\'t deliver, the app names the gap and the next step instead of inventing a match. The AI model only turns the idea into a brief and explains the result; it never chooses anyone. The product also has sign-in, admin-confirmed credentials, bids only eligible builders can place, interview booking and a public Builder Showcase, backed by 1,100+ automated tests against the real MeTTa runtime with no mocks. I built the web app: the landing page, sign-in, the founder and builder dashboards, the Showcase and the mobile layout, so users can see on screen why something was recommended. I also added OpenRouter as a second model provider behind the engine\'s adapter.',
+    stack: ['MeTTa', 'Hyperon', 'Python', 'FastAPI', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Clerk', 'Neon Postgres', 'SQLModel', 'OpenRouter', 'PWA', 'Vercel', 'Render'],
+    color: '#35418A',
+    gradient: 'from-indigo-400/30 via-emerald-400/20 to-slate-400/30',
+    liveUrl: 'https://basix-venture-route.vercel.app/',
+    githubUrl: 'https://github.com/simpleHacker0893/basix-venture-route',
+  },
+  {
     id: 'smart-fundis',
     title: 'Smart Fundis',
     industry: 'Marketplace / AI (Team project, GOMYCODE × NVIDIA "Come Build with AI" Hackathon, Sept 2026)',
