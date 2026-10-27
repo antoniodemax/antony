@@ -69,6 +69,19 @@ function ProjectCard({ project, index, onOpen }: CardProps) {
               Github
             </a>
           )}
+          {project.eventUrl && (
+            <a
+              href={project.eventUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={e => e.stopPropagation()}
+              aria-label={`View ${project.title} hackathon`}
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-bg/70 px-4 py-2 text-xs font-semibold text-white transition-all duration-200 hover:border-accent/20 hover:text-accent"
+            >
+              <ExternalLink size={12} />
+              Hackathon
+            </a>
+          )}
           {project.certificateUrl && (
             <a
               href={project.certificateUrl}

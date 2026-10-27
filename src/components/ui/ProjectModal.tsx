@@ -89,7 +89,7 @@ export default function ProjectModal({ project, onClose }: Props) {
                 ))}
               </div>
 
-              {(project.liveUrl || project.githubUrl || project.certificateUrl) && (
+              {(project.liveUrl || project.githubUrl || project.eventUrl || project.certificateUrl) && (
                 <div className="flex flex-wrap items-center gap-4 border-t border-white/10 pt-8">
                   {project.liveUrl && (
                     <Button
@@ -118,6 +118,21 @@ export default function ProjectModal({ project, onClose }: Props) {
                     >
                       <GitBranch size={16} />
                       View Source
+                    </Button>
+                  )}
+                  {project.eventUrl && (
+                    <Button
+                      as="a"
+                      variant="secondary"
+                      size="md"
+                      href={project.eventUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} hackathon (opens in a new tab)`}
+                      className="w-full sm:w-auto"
+                    >
+                      <ExternalLink size={16} />
+                      Hackathon
                     </Button>
                   )}
                   {project.certificateUrl && (
