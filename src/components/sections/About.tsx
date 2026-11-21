@@ -5,7 +5,7 @@ import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
 
 export default function About() {
-  const aboutContent = `I'm **Antony Peter** — a **Software Engineer and Cybersecurity Professional** based in Nairobi, Kenya. I build modern, scalable digital products while applying a security-first mindset to the systems behind them.
+  const aboutContent = `I'm **Antony Peter** — a **Software Engineer and Cybersecurity Professional** with **3 years of experience**, based in Nairobi, Kenya. I build modern, scalable digital products while applying a security-first mindset to the systems behind them.
 
 My journey in technology has focused on **software engineering, web application development, and cybersecurity**. I work across the full development lifecycle, from designing interfaces and architecting applications to building backend systems, managing databases, and deploying production-ready solutions.
 
