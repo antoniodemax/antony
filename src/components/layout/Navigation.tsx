@@ -96,7 +96,10 @@ export default function Navigation() {
               aria-label="Antony Peter — Home"
             >
               <img
-                src="/logo.jpg"
+                src="/logo.webp"
+                width={432}
+                height={288}
+                decoding="async"
                 alt="Antony Peter"
                 className="h-20 lg:h-24 w-auto object-contain brightness-110 transition-opacity duration-200 hover:opacity-90"
               />

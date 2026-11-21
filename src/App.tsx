@@ -8,6 +8,7 @@ import About from './components/sections/About'
 import TechStack from './components/sections/TechStack'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
+import { useEffect, useRef } from 'react'
 import usePath from './hooks/usePath'
 import useCanonical from './hooks/useCanonical'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -16,6 +17,25 @@ import Contact from './components/sections/Contact'
 
 export default function App() {
   const path = usePath()
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // The ambient video is decoration: show its poster straight away and only
+  // start fetching the video once the page itself has finished loading, so it
+  // never competes with the content for bandwidth.
+  useEffect(() => {
+    const start = () => {
+      const video = videoRef.current
+      if (!video || video.src) return
+      video.src = '/coding-720.mp4'
+      video.play().catch(() => {})
+    }
+    if (document.readyState === 'complete') {
+      start()
+      return
+    }
+    window.addEventListener('load', start, { once: true })
+    return () => window.removeEventListener('load', start)
+  }, [])
   useCanonical(path)
   const isInsights = path.startsWith('/insights')
   const parts = path.split('/').filter(Boolean)
@@ -25,12 +45,12 @@ export default function App() {
       <div className="fixed inset-0 -z-20 overflow-hidden">
         <video
           className="ambient-video absolute inset-0 h-full w-full object-cover"
-          src="/coding.mp4"
-          autoPlay
+          ref={videoRef}
+          poster="/coding-poster.webp"
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           onEnded={event => event.currentTarget.play()}
           aria-hidden="true"
         />

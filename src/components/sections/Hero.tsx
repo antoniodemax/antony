@@ -61,9 +61,11 @@ export default function Hero() {
           </motion.div>
           <motion.div variants={item} className="relative mx-auto w-full max-w-[320px] overflow-visible sm:max-w-[360px] md:max-w-[420px]">
             <img
-              src="/portrait.png"
+              src="/portrait.webp"
+              width={342}
+              height={730}
               alt="Antony Peter — Senior Full-Stack Software Engineer"
-              loading="lazy"
+              fetchPriority="high"
               decoding="async"
               className="hero-portrait mx-auto h-[320px] w-auto object-top sm:h-[420px] lg:h-[500px]"
             />
