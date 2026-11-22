@@ -79,6 +79,21 @@ export const projects: Project[] = [
     liveUrl: 'https://kada-ya-moko.vercel.app/',
   },
   {
+    id: 'njuguna-njenga',
+    title: "Njuguna's Portfolio",
+    industry: 'Personal Brand / Portfolio',
+    tagline: 'A portfolio for a senior AI engineer that shows his systems part by part',
+    problem:
+      'A senior AI engineer and technical architect with ten years of work behind him needed a site that lets clients and recruiters see what he has built, and how his systems fit together, without reading a long CV.',
+    outcome:
+      'A fast portfolio site that opens with his headline numbers, lists six live products with their links and code, and explains his client work for the UN World Food Programme through a before-and-after system diagram visitors can click through. Pages are pre-rendered to plain HTML so search engines read every word, and the site can be installed on a phone like an app.',
+    stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Motion', 'React Router', 'PWA', 'Vercel'],
+    color: '#D97706',
+    gradient: 'from-amber-500/30 via-orange-400/20 to-slate-400/30',
+    liveUrl: 'https://njuguna-njenga.vercel.app/',
+    githubUrl: 'https://github.com/antoniodemax/njuguna-njenga',
+  },
+  {
     id: 'sokowise',
     title: 'SokoWise',
     industry: 'Fintech / SMB Operations',
