@@ -5,6 +5,7 @@ import Projects from './components/sections/Projects'
 import Services from './components/sections/Services'
 import WhyMe from './components/sections/WhyMe'
 import About from './components/sections/About'
+import Awards from './components/sections/Awards'
 import TechStack from './components/sections/TechStack'
 import InsightsList from './components/insights/InsightsList'
 import ArticlePage from './components/insights/ArticlePage'
@@ -70,6 +71,7 @@ export default function App() {
               <>
                 <Hero />          {/* Home */}
                 <About />         {/* About */}
+                <Awards />        {/* hackathon results — under About, not in the nav */}
                 <TechStack />     {/* skills — under About */}
                 <Services />      {/* Services */}
                 <WhyMe />         {/* supports Services */}

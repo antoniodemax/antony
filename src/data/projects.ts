@@ -32,6 +32,7 @@ export const projects: Project[] = [
     liveUrl: 'https://basix-venture-route.vercel.app/',
     githubUrl: 'https://github.com/simpleHacker0893/basix-venture-route',
     eventUrl: 'https://basix.market/',
+    certificateUrl: '/certificates/basix-metta-omega-hackathon-2026.pdf',
   },
   {
     id: 'smart-fundis',
