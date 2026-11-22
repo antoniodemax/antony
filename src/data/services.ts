@@ -26,18 +26,6 @@ export const services: Service[] = [
     recommended: false,
   },
   {
-    id: 'frontend-development',
-    title: 'Frontend Development',
-    description: 'Modern, responsive interfaces and web applications built with a focus on performance and usability.',
-    kes: 'KES 65,000',
-    usd: 'Approx. USD 500',
-    pricingType: 'starting',
-    buttonLabel: 'View Investment',
-    features: [],
-    timeline: '',
-    recommended: false,
-  },
-  {
     id: 'backend-development',
     title: 'Backend Development',
     description: 'Secure APIs, databases, authentication, business logic, and reliable backend systems.',
