@@ -15,6 +15,7 @@ import useCanonical from './hooks/useCanonical'
 import { AnimatePresence, motion } from 'framer-motion'
 import FAQ from './components/sections/FAQ'
 import Contact from './components/sections/Contact'
+import InstallPrompt from './components/ui/InstallPrompt'
 
 export default function App() {
   const path = usePath()
@@ -88,6 +89,7 @@ export default function App() {
         </AnimatePresence>
       </main>
       <Footer />
+      <InstallPrompt />
     </div>
   )
 }
