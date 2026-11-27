@@ -13,6 +13,8 @@ const education: { title: string; institution: string; status: EducationStatus }
   { title: 'AI Prompt Engineering', institution: 'Cisco Networking Academy', status: 'done' },
   { title: 'AWS Solutions Architect', institution: 'Amazon Web Services', status: 'in-progress' },
   { title: 'CyberOps', institution: 'Cisco Networking Academy', status: 'in-progress' },
+  { title: 'AI Fluency: Framework & Foundations', institution: 'Anthropic', status: 'in-progress' },
+  { title: 'MCP: Advanced Topics', institution: 'Anthropic', status: 'in-progress' },
 ]
 
 // Same clipped top-left corner as the site's buttons, scaled down.
@@ -131,30 +133,34 @@ I believe great technology requires more than writing code. It requires **proble
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     className="overflow-hidden"
                   >
-                    {/* Fills column by column on desktop: completed on the left, in progress on the right. */}
-                    <ul className="grid px-5 pb-3 sm:px-7 md:grid-flow-col md:grid-cols-2 md:grid-rows-3 md:gap-x-12">
-                      {education.map(({ title, institution, status }) => (
-                        <li
-                          key={title}
-                          className="grid grid-cols-[auto_1fr] items-start gap-x-3.5 gap-y-1.5 border-t border-white/[0.07] py-4 sm:grid-cols-[auto_1fr_auto]"
-                        >
-                          <span className="mt-0.5">
-                            <StatusBox status={status} />
-                          </span>
-                          <span className="min-w-0">
-                            <span className="block text-sm font-semibold leading-snug text-white">{title}</span>
-                            <span className="mt-0.5 block text-xs text-muted">{institution}</span>
-                          </span>
-                          <span
-                            className={`col-start-2 text-[10px] sm:col-start-3 sm:mt-1 sm:text-right font-semibold uppercase tracking-[0.18em] ${
-                              status === 'done' ? 'text-accent' : 'text-[#E2B45C]'
-                            }`}
-                          >
-                            {status === 'done' ? 'Completed' : 'In progress'}
-                          </span>
-                        </li>
+                    {/* Completed on the left, in progress on the right; stacked on phones. */}
+                    <div className="grid px-5 pb-3 sm:px-7 md:grid-cols-2 md:gap-x-12">
+                      {(['done', 'in-progress'] as const).map(group => (
+                        <ul key={group}>
+                          {education.filter(item => item.status === group).map(({ title, institution, status }) => (
+                            <li
+                              key={title}
+                              className="grid grid-cols-[auto_1fr] items-start gap-x-3.5 gap-y-1.5 border-t border-white/[0.07] py-4 sm:grid-cols-[auto_1fr_auto]"
+                            >
+                              <span className="mt-0.5">
+                                <StatusBox status={status} />
+                              </span>
+                              <span className="min-w-0">
+                                <span className="block text-sm font-semibold leading-snug text-white">{title}</span>
+                                <span className="mt-0.5 block text-xs text-muted">{institution}</span>
+                              </span>
+                              <span
+                                className={`col-start-2 text-[10px] sm:col-start-3 sm:mt-1 sm:text-right font-semibold uppercase tracking-[0.18em] ${
+                                  status === 'done' ? 'text-accent' : 'text-[#E2B45C]'
+                                }`}
+                              >
+                                {status === 'done' ? 'Completed' : 'In progress'}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
                       ))}
-                    </ul>
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
