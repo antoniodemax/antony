@@ -14,7 +14,7 @@ const education: { title: string; institution: string; status: EducationStatus }
   { title: 'AWS Solutions Architect', institution: 'Amazon Web Services', status: 'in-progress' },
   { title: 'CyberOps', institution: 'Cisco Networking Academy', status: 'in-progress' },
   { title: 'AI Fluency: Framework & Foundations', institution: 'Anthropic', status: 'in-progress' },
-  { title: 'MCP: Advanced Topics', institution: 'Anthropic', status: 'in-progress' },
+  { title: 'MCP: Advanced Topics', institution: 'Anthropic', status: 'done' },
 ]
 
 // Same clipped top-left corner as the site's buttons, scaled down.
