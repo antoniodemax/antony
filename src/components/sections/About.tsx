@@ -12,7 +12,7 @@ const education: { title: string; institution: string; status: EducationStatus }
   { title: 'Cyber Security', institution: 'Cisco Networking Academy', status: 'done' },
   { title: 'AI Prompt Engineering', institution: 'Cisco Networking Academy', status: 'done' },
   { title: 'AWS Solutions Architect', institution: 'Amazon Web Services', status: 'in-progress' },
-  { title: 'CyberOps', institution: 'Cisco Networking Academy', status: 'in-progress' },
+  { title: 'CyberOps Associate', institution: 'Cisco Networking Academy', status: 'in-progress' },
   { title: 'AI Fluency: Framework & Foundations', institution: 'Anthropic', status: 'in-progress' },
   { title: 'MCP: Advanced Topics', institution: 'Anthropic', status: 'done' },
   { title: '100 Days of Code: Web Development Bootcamp', institution: 'Udemy', status: 'done' },
