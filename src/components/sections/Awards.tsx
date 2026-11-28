@@ -1,25 +1,40 @@
 import { motion } from 'framer-motion'
 import { Award } from 'lucide-react'
 import { awards } from '../../data/awards'
+import CollapsibleCard from '../ui/CollapsibleCard'
 
 export default function Awards() {
+  // awards.ts lists the best result first.
+  const topResult = awards[0]?.position
+
   return (
-    <section aria-labelledby="awards-heading" className="pb-24 md:pb-32">
+    <section aria-labelledby="awards-label" className="pb-24 md:pb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="rounded-[2rem] glass-surface p-6 sm:p-8"
         >
-          <h2
-            id="awards-heading"
-            className="text-xs uppercase tracking-[0.35em] text-accent/80 font-semibold"
+          <CollapsibleCard
+            id="awards"
+            label="Awards & Hackathons"
+            summary={
+              <>
+                <span className="inline-flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 bg-accent" />
+                  {awards.length} hackathons
+                </span>
+                {topResult && (
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 bg-[#E2B45C]" />
+                    Best result: {topResult}
+                  </span>
+                )}
+              </>
+            }
           >
-            Awards &amp; Hackathons
-          </h2>
-          <ul className="mt-2 divide-y divide-white/5">
+          <ul className="divide-y divide-white/5 border-t border-white/[0.07] px-5 pb-5 sm:px-7">
             {awards.map(({ id, project, host, position, certificateUrl }) => (
               <li
                 key={id}
@@ -53,6 +68,7 @@ export default function Awards() {
               </li>
             ))}
           </ul>
+          </CollapsibleCard>
         </motion.div>
       </div>
     </section>

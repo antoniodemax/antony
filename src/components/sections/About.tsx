@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Check, ChevronDown, FileText } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { Check, FileText } from 'lucide-react'
 
 import SectionHeader from '../ui/SectionHeader'
 import Button from '../ui/Button'
+import CollapsibleCard from '../ui/CollapsibleCard'
 
 type EducationStatus = 'done' | 'in-progress'
 
@@ -55,7 +55,6 @@ function StatusBox({ status }: { status: EducationStatus }) {
 }
 
 export default function About() {
-  const [educationOpen, setEducationOpen] = useState(false)
   const doneCount = education.filter(item => item.status === 'done').length
   const inProgressCount = education.length - doneCount
 
@@ -93,47 +92,22 @@ I believe great technology requires more than writing code. It requires **proble
                 <p key={index} dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
               ))}
             </div>
-            <div className="rounded-3xl glass-surface">
-              <button
-                type="button"
-                onClick={() => setEducationOpen(open => !open)}
-                aria-expanded={educationOpen}
-                aria-controls="education-list"
-                className="flex w-full items-center gap-4 px-5 py-5 text-left sm:px-7"
-              >
-                <span className="min-w-0 flex-1">
-                  <span className="block text-xs font-semibold uppercase tracking-[0.35em] text-accent/80">
-                    Education
+            <CollapsibleCard
+              id="education"
+              label="Education"
+              summary={
+                <>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 bg-accent" />
+                    {doneCount} completed
                   </span>
-                  <span className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
-                    <span className="inline-flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 bg-accent" />
-                      {doneCount} completed
-                    </span>
-                    <span className="inline-flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 bg-[#E2B45C]" />
-                      {inProgressCount} in progress
-                    </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 bg-[#E2B45C]" />
+                    {inProgressCount} in progress
                   </span>
-                </span>
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center border border-accentBorder text-accent">
-                  <ChevronDown
-                    size={18}
-                    className={`transition-transform duration-300 ${educationOpen ? 'rotate-180' : ''}`}
-                  />
-                </span>
-              </button>
-
-              <AnimatePresence initial={false}>
-                {educationOpen && (
-                  <motion.div
-                    id="education-list"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="overflow-hidden"
-                  >
+                </>
+              }
+            >
                     {/* Completed on the left, in progress on the right; stacked on phones. */}
                     <div className="grid px-5 pb-3 sm:px-7 md:grid-cols-2 md:gap-x-12">
                       {(['done', 'in-progress'] as const).map(group => (
@@ -162,10 +136,7 @@ I believe great technology requires more than writing code. It requires **proble
                         </ul>
                       ))}
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+            </CollapsibleCard>
 
             <div className="mt-2 flex flex-wrap items-center gap-4">
               <Button
