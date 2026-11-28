@@ -15,6 +15,7 @@ const education: { title: string; institution: string; status: EducationStatus }
   { title: 'CyberOps', institution: 'Cisco Networking Academy', status: 'in-progress' },
   { title: 'AI Fluency: Framework & Foundations', institution: 'Anthropic', status: 'in-progress' },
   { title: 'MCP: Advanced Topics', institution: 'Anthropic', status: 'done' },
+  { title: '100 Days of Code: Web Development Bootcamp', institution: 'Udemy', status: 'done' },
 ]
 
 // Same clipped top-left corner as the site's buttons, scaled down.
